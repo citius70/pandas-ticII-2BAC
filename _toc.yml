@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+  - file: 1_introduccion.ipynb
+  - file: 2_dataframe.ipynb
+  - file: 3_dataframe_info.ipynb
+  - file: 2_1_dataframe_ejercicios.ipynb
+  - file: 3_dataframe_informacion.ipynb
+  - file: 4_dataframe_manipulacion.ipynb
+  - file: 5_dataframe_graficos.ipynb

@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 1_introduccion
+- file: 2_dataframe
+- file: 3_dataframe_info
+- file: 2_1_dataframe_ej01
