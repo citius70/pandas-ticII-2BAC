@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ejercicicio sobre creación de dataframes" href="2_1_dataframe_ejercicios.html" />
-    <link rel="prev" title="1. ¿Qué es Pandas?" href="1_introduccion.html" />
+    <link rel="prev" title="- Ejemplo completo:" href="1_2_ejemplo_completo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -169,12 +169,21 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">Ejemplos prácticos de Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">- <strong>Ejemplo completo</strong>:</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. ¿Qué es un DataFrame?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_dataframe_informacion.html">Información sobre el DataFrame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">Manipulación de DataFrames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6_resumen.html"><strong>1. Estructuras de datos principales</strong></a></li>
+
+
+
 
 </ul>
 
@@ -399,6 +408,7 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importa la librería Pandas, para utilizarla más adelante, deberás invocarla usando &quot;pd&quot;</span>
+
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Crea un DataFrame llamado, por ejemplo, &quot;data&quot; desde un Excel que está en Google Drive</span>
@@ -468,10 +478,10 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 </div></div></div>
 </div>
 <p><img alt="picture" src="_images/dataframe.png" /></p>
-<p>La imagen muestra un DataFrame, que es una estructura de datos bidimensional, similar a una tabla de Excel. Sus elementos son:</p>
+<p>La imagen muestra un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, que es una estructura de datos bidimensional, similar a una tabla de Excel. Sus elementos son:</p>
 <ul class="simple">
-<li><p><strong>Nombre de las columnas (axis=1)</strong>: Encima del DataFrame se muestra el nombre de las columnas, que son “Artista” y “Spotify streams (millones)”. Las columnas representan diferentes variables y cada una contiene datos de su respectiva categoría. La etiqueta ‘axis=1’ se refiere a la orientación horizontal de las columnas en el DataFrame.</p></li>
-<li><p><strong>Etiquetas de índice (axis=0)</strong>: A la izquierda del DataFrame hay una columna adicional sin nombre que muestra las etiquetas de índice, que van desde 0 hasta 5. Estas son básicamente posiciones o identificadores únicos para cada fila de datos. La etiqueta ‘axis=0’ se refiere a la orientación vertical de las filas en el DataFrame. Si bien en esta imagen son números, estos valores pueden tomar otros tipos de datos, siempre y cuando sean identificadores únicos de cada fila.</p></li>
+<li><p><strong>Nombre de las columnas (axis=1)</strong>: Encima del DataFrame se muestra el nombre de las columnas, que son “<strong>Artista</strong>” y “<strong>Spotify streams (millones)</strong>”. Las columnas representan diferentes variables y cada una contiene datos de su respectiva categoría. La etiqueta ‘axis=1’ se refiere a la orientación horizontal de las columnas en el DataFrame.</p></li>
+<li><p><strong>Etiquetas de índice (axis=0)</strong>: A la izquierda del DataFrame hay una columna adicional sin nombre que muestra las etiquetas de índice, que van desde 0 hasta 5 (en este caso). Estas son básicamente posiciones o <strong>identificadores únicos para cada fila</strong> de datos. La etiqueta ‘axis=0’ se refiere a la orientación vertical de las filas en el DataFrame. Si bien en esta imagen son números, estos valores pueden tomar otros tipos de datos, siempre y cuando sean identificadores únicos de cada fila.</p></li>
 <li><p><strong>Datos</strong>: En el centro del DataFrame se encuentran los datos. Cada fila representa un conjunto de datos correspondientes a un artista y sus streams en Spotify expresados en millones.</p></li>
 <li><p><strong>Datos faltantes (NaN)</strong>: En la última fila de la columna “Spotify streams (millones)”, hay un valor “NaN”. Este es un acrónimo de “Not a Number” y es utilizado en Pandas para indicar datos que faltan o que son indefinidos.</p></li>
 </ul>
@@ -479,6 +489,11 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <section id="crear-un-dataframe">
 <h2>2.2. Crear un DataFrame<a class="headerlink" href="#crear-un-dataframe" title="Link to this heading">#</a></h2>
 <p>Los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> pueden ser creados de dos formas distintas: <strong>manualmente</strong> y desde un <strong>archivo</strong> ya creado.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+    A[Manualmente] --&gt;|Diccionario| B(DataFrame)
+    C[Importando Archivo] --&gt;|Excel, CSV, JSON, SQL..| B
+</pre></div>
+</div>
 <section id="crear-un-dataframe-manualmente">
 <h3>2.2.1. Crear un DataFrame manualmente<a class="headerlink" href="#crear-un-dataframe-manualmente" title="Link to this heading">#</a></h3>
 <p>Los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> pueden crearse manualmente de distintas maneras, aunque la más sencilla es utilizando previamente un <strong>diccionario</strong>. El primer paso será crear el diccionario y después crear el DataFrame con <code class="docutils literal notranslate"><span class="pre">DataFrame(</span> <span class="pre">)</span></code></p>
@@ -1152,12 +1167,12 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_introduccion.html"
+       href="1_2_ejemplo_completo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. ¿Qué es Pandas?</p>
+        <p class="prev-next-title">- <strong>Ejemplo completo</strong>:</p>
       </div>
     </a>
     <a class="right-next"
