@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ejercicicio sobre creación de dataframes" href="2_1_dataframe_ejercicios.html" />
-    <link rel="prev" title="- Ejemplo completo:" href="1_2_ejemplo_completo.html" />
+    <link rel="prev" title="Ejemplo completo" href="1_2_ejemplo_completo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -171,7 +171,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">Ejemplos prácticos de Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">- <strong>Ejemplo completo</strong>:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">Ejemplo completo</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. ¿Qué es un DataFrame?</a></li>
@@ -490,6 +490,11 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <h2>2.2. Crear un DataFrame<a class="headerlink" href="#crear-un-dataframe" title="Link to this heading">#</a></h2>
 <p>Los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> pueden ser creados de dos formas distintas: <strong>manualmente</strong> y desde un <strong>archivo</strong> ya creado.</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+    A[Manualmente] --&gt;|Diccionario| B(DataFrame)
+    C[Importando Archivo] --&gt;|Excel, CSV, JSON, SQL| B
+
+```mermaid
+flowchart LR
     A[Manualmente] --&gt;|Diccionario| B(DataFrame)
     C[Importando Archivo] --&gt;|Excel, CSV, JSON, SQL..| B
 </pre></div>
@@ -1172,7 +1177,7 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">- <strong>Ejemplo completo</strong>:</p>
+        <p class="prev-next-title">Ejemplo completo</p>
       </div>
     </a>
     <a class="right-next"
