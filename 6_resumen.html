@@ -238,6 +238,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -596,13 +627,15 @@
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Figura: Ejemplo de un DataFrame mostrado en el margen.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p><span class="sd-sphinx-override sd-badge">plain badge</span></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">secondary</span>, <span class="sd-sphinx-override sd-badge sd-outline-secondary sd-text-secondary">secondary-line</span></p>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
