@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ejercicicio sobre creación de dataframes &#8212; My sample book</title>
+    <title>Ejercicio sobre obtención de información de una Dataframe &#8212; My sample book</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '2_1_dataframe_ejercicios';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_1_dataframe_informacion_ejercicios';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Información sobre el DataFrame" href="3_dataframe_informacion.html" />
-    <link rel="prev" title="2. ¿Qué es un DataFrame?" href="2_dataframe.html" />
+    <link rel="next" title="Manipulación de DataFrames" href="4_dataframe_manipulacion.html" />
+    <link rel="prev" title="Información sobre el DataFrame" href="3_dataframe_informacion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,12 +174,12 @@
 <li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">Ejemplo completo</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicicio sobre creación de dataframes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="3_dataframe_informacion.html">Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
 
 </ul>
 </details></li>
@@ -267,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2_1_dataframe_ejercicios.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3_1_dataframe_informacion_ejercicios.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@
       
       
       
-      <li><a href="_sources/2_1_dataframe_ejercicios.ipynb" target="_blank"
+      <li><a href="_sources/3_1_dataframe_informacion_ejercicios.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +373,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ejercicicio sobre creación de dataframes</h1>
+    <h1>Ejercicio sobre obtención de información de una Dataframe</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,9 +383,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">Ejercicio 1. Crear un dataframe <strong>manualmente</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">Ejercicio 2. Crear un dataframe <strong>importando un archivo</strong> CSV</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">Ejercicio 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">Ejercicio 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">Ejercicio 5</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">Ejercicio 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">Ejercicio 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">Ejercicio 8</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -396,145 +409,128 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ejercicicio-sobre-creacion-de-dataframes">
-<h1>Ejercicicio sobre creación de dataframes<a class="headerlink" href="#ejercicicio-sobre-creacion-de-dataframes" title="Link to this heading">#</a></h1>
-<section id="ejercicio-1-crear-un-dataframe-manualmente">
-<h2>Ejercicio 1. Crear un dataframe <strong>manualmente</strong><a class="headerlink" href="#ejercicio-1-crear-un-dataframe-manualmente" title="Link to this heading">#</a></h2>
-<p><strong>Objetivo</strong>: Crear un DataFrame que contenga información sobre algunos estudiantes, incluyendo su nombre, edad y calificación final.</p>
-<p><strong>Salida Esperada</strong>: Cuando ejecutes el código, deberías ver una salida similar a esta:</p>
-<p><img alt="Pandas" src="imagenes/ejercicio01_salida.png.svg" /></p>
-<p align="center">
-    <img src="imagenes/ejercicio01_salida.png" width="20%">
-</p>
-<p><strong>Pasos</strong>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-sobre-obtencion-de-informacion-de-una-dataframe">
+<h1>Ejercicio sobre <strong>obtención de información</strong> de una Dataframe<a class="headerlink" href="#ejercicio-sobre-obtencion-de-informacion-de-una-dataframe" title="Link to this heading">#</a></h1>
+<p>Vamos a trabajar sobre un archivo CSV con datos de mujeres con <strong>síndrome de ovario poliquístico</strong> (SOP)</p>
+<p>Acerca del conjunto de datos:
+Se trata de un conjunto de datos sobre mujeres con síndrome de ovario poliquístico (SOP), generado según los criterios de Róterdam. Los Criterios de Róterdam, establecidos en 2003 por un consenso internacional de expertos, definen que, <strong>para que una mujer sea diagnosticada con el síndrome</strong>, debe cumplir al menos <strong>dos de los tres criterios</strong>:</p>
 <ol class="arabic simple">
-<li><p>Importa la biblioteca <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
-<li><p>Define los datos de los estudiantes en un diccionario que deseas incluir en el DataFrame</p></li>
-<li><p>Crea el dataframe a partir de los datos del diccionario</p></li>
-<li><p>Muestra el dataframe</p></li>
+<li><p>Menstruación irregular: Sí (1) No(0)</p></li>
+<li><p>Nivel de testosterona: Más de 50 ng/dL</p></li>
+<li><p>Folículos por ovario (detectados por ecografía pelviana): Más de 10</p></li>
 </ol>
+<p>Las columnas numéricas categóricas (Menstruación irregular y diagnóstico de SOP) se codifican en formato binario, donde [0] representa “no” y [1] representa “sí”.</p>
+<p>El archivo CSV se encuentra en la web <a class="reference external" href="http://Kaggle.com">Kaggle.com</a> especializada en análisis de datos. Exactamente lo encontrás en <strong><a class="reference external" href="https://www.kaggle.com/datasets/lucass0s0/polycystic-ovary-syndrome-pcos">https://www.kaggle.com/datasets/lucass0s0/polycystic-ovary-syndrome-pcos</a></strong></p>
+<ol class="arabic simple">
+<li><p>Descarga el archivo .zip y descomprímelo.</p></li>
+<li><p>Súbelo a tu Google Drive y consigue el link al archivo.</p></li>
+<li><p><strong>¡Muy importante!</strong> El archivo tiene una columna que se llama <strong>Testosterone_Level(ng/dL)</strong>. Este nombre tiene caracteres (<strong>los paréntesis</strong>) que van a dar problemas a la hora de utilizar esta columna. Por ello, cambia su nombre por <strong>Testosterone_Level</strong> .</p></li>
+</ol>
+<section id="ejercicio-1">
+<h2>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Link to this heading">#</a></h2>
+<p>Importa la librería Pandas y ponle el alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paso 1. Importa la biblioteca `pandas`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 1</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Paso 2. Define los datos de los estudiantes en un diccionario que deseas incluir en el DataFrame</span>
-<span class="n">estudiantes</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Luis&#39;</span><span class="p">,</span> <span class="s1">&#39;Carlos&#39;</span><span class="p">,</span> <span class="s1">&#39;María&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Edad&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span>
-    <span class="s1">&#39;Calificación&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> 
-<span class="p">}</span>
-
-<span class="c1"># Paso 3. Crea el dataframe a partir de los datos del diccionario</span>
-<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">estudiantes</span><span class="p">)</span>
-
-<span class="c1"># Paso 4: Muestra el dataframe</span>
-<span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nombre</th>
-      <th>Edad</th>
-      <th>Calificación</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Ana</td>
-      <td>20</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Luis</td>
-      <td>21</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Carlos</td>
-      <td>19</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>María</td>
-      <td>22</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
-<section id="ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">
-<h2>Ejercicio 2. Crear un dataframe <strong>importando un archivo</strong> CSV<a class="headerlink" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv" title="Link to this heading">#</a></h2>
-<p><strong>Objetivo</strong>: Crear un DataFrame a partir de un archivo Excel publicado en internet.</p>
-<p><strong>Salida Esperada</strong>: Cuando ejecutes el código, deberías ver una salida similar a esta:</p>
-<p align="center">
-    <img src="imagenes/dataframe_spotify.png" width="50%">
-</p>
-<p><strong>Pasos</strong>:</p>
-<p>Descargar el archivo:</p>
-<ol class="arabic simple">
-<li><p>Visita la siguiente web: <a class="reference external" href="https://mavenanalytics.io/data-playground">https://mavenanalytics.io/data-playground</a></p></li>
-<li><p>Descarga el archivo zip de datos correspondiente a la “Video Game Sales” (Ventas de 64.012 videojuegos entre 1971-2024)</p></li>
-<li><p>Descomprime el archivo. Una vez hecho esto, verás dos archivos csv. El que utilizarás es “<strong>vgchartz-2024.csv</strong>”</p></li>
-</ol>
-<p>Importar pandas:</p>
-<ol class="arabic simple" start="4">
-<li><p>Importa la biblioteca pandas</p></li>
-</ol>
-<p>Crear el DataFrame:</p>
-<ol class="arabic simple" start="5">
-<li><p>Utiliza el método “read_csv” para crear el datafame. Puedes llamarlo “data”, “data_ventas”….</p>
-<ul class="simple">
-<li><p>¡Atención! Además del nombre del archivo “vgchartz-2024.csv”, tienes que indicar el path al mismo.</p>
-<ul>
-<li><p>En mi caso df = pd.read_csv(r”C:\Users\alber\Desktop\vgchartz-2024.csv”)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Visualiza el DataFrame.</p></li>
-</ol>
+<section id="ejercicio-2">
+<h2>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Link to this heading">#</a></h2>
+<p>Carga el archivo <code class="docutils literal notranslate"><span class="pre">pcos_rotterdam_balanceado.csv</span></code>, que has guardado en tu Google Drive, utilizando su link.
+A su vez crea el Dataframe con el nombre <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paso 1: Visita la siguiente web: https://mavenanalytics.io/data-playground</span>
-<span class="c1"># Paso 2: Descarga el archivo zip de datos correspondiente a la &quot;Historia completa de streaming de un usuario de Spotify&quot; (Spotify Streaming History)</span>
-<span class="c1"># Paso 3: Descomprime el archivo. Una vez hecho esto, verás dos archivos csv. El que utilizarás es &quot;spotify_history.csv&quot;</span>
-<span class="c1"># --------------</span>
-<span class="c1"># Paso 4: Utiliza el método &quot;read_csv&quot; para crear el datafame. Puedes llamarlo &quot;data&quot;, &quot;data_spotify&quot;....</span>
-<span class="c1"># Paso 4.1. ¡Atención! Además del nombre del archivo &quot;spotify_history&quot;, tienes que indicar el path al mismo.</span>
-<span class="c1"># En mi caso df = pd.read_csv(r&quot;C:\Users\alber\Desktop\spotify_history.csv&quot;)</span>
-<span class="c1"># -------------</span>
-<span class="c1"># Paso 5: Importa la biblioteca pandas</span>
-<span class="c1"># Paso 6: Visualiza el daframe</span>
-
-<span class="c1"># ESCRIBE EL CÓDIGO AQUÍ:</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/vgchartz-2024.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/pcos_rotterdam_balanceado_v1.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3">
+<h2>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code> para ver la <strong>forma</strong> (nº columnas x nº filas). Verás que el archivo tiene 6 columnas y ¡¡¡3000 filas!!!.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3000, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-4">
+<h2>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">columns</span></code> para ver el <strong>nombre de las columnas</strong>. Verás que las columnas se llaman: Age, BMI, …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 4</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Age&#39;, &#39;BMI&#39;, &#39;Menstrual_Irregularity&#39;, &#39;Testosterone_Level&#39;,
+       &#39;Antral_Follicle_Count&#39;, &#39;PCOS_Diagnosis&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-5">
+<h2>Ejercicio 5<a class="headerlink" href="#ejercicio-5" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>para ver el <strong>tipo de columnas</strong>. Verás que hay 4 columnas de tipo número <strong>entero</strong> y 2 de tipo número <strong>decimal</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Ejercicio 5<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>data.dtypes</p>
+<section id="ejercicio-6">
+<h2>Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Link to this heading">#</a></h2>
+<p>Obtén todos los datos (filas) de la columna <code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
+<p>No te preocupes si solo ves los cinco primeros datos y los cinco últimos datos. Recuerda uq tiene 3000 filas. En el siguiente capítulo resolveremos cómo podemos ver todos los datos de archivos muy largos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
+<span class="n">data</span><span class="o">.</span><span class="n">Testosterone_Level</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       46.1
+1       59.4
+2       69.3
+3       77.7
+4       49.4
+        ... 
+2995    38.5
+2996    40.6
+2997    79.2
+2998    40.9
+2999    49.6
+Name: Testosterone_Level, Length: 3000, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-7">
+<h2>Ejercicio 7<a class="headerlink" href="#ejercicio-7" title="Link to this heading">#</a></h2>
+<p>Obtén todos los datos (filas) de las columnas <code class="docutils literal notranslate"><span class="pre">Age</span></code>y<code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Ejercicio 7</span>
+<span class="n">data</span><span class="p">[[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Testosterone_Level&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -557,216 +553,194 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>img</th>
-      <th>title</th>
-      <th>console</th>
-      <th>genre</th>
-      <th>publisher</th>
-      <th>developer</th>
-      <th>critic_score</th>
-      <th>total_sales</th>
-      <th>na_sales</th>
-      <th>jp_sales</th>
-      <th>pal_sales</th>
-      <th>other_sales</th>
-      <th>release_date</th>
-      <th>last_update</th>
+      <th>Age</th>
+      <th>Testosterone_Level</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>/games/boxart/full_6510540AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>PS3</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.4</td>
-      <td>20.32</td>
-      <td>6.37</td>
-      <td>0.99</td>
-      <td>9.85</td>
-      <td>3.12</td>
-      <td>2013-09-17</td>
-      <td>NaN</td>
+      <td>29</td>
+      <td>46.1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>/games/boxart/full_5563178AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>PS4</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.7</td>
-      <td>19.39</td>
-      <td>6.06</td>
-      <td>0.60</td>
-      <td>9.71</td>
-      <td>3.02</td>
-      <td>2014-11-18</td>
-      <td>2018-01-03</td>
+      <td>20</td>
+      <td>59.4</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>/games/boxart/827563ccc.jpg</td>
-      <td>Grand Theft Auto: Vice City</td>
-      <td>PS2</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.6</td>
-      <td>16.15</td>
-      <td>8.41</td>
-      <td>0.47</td>
-      <td>5.49</td>
-      <td>1.78</td>
-      <td>2002-10-28</td>
-      <td>NaN</td>
+      <td>23</td>
+      <td>69.3</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>/games/boxart/full_9218923AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>X360</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>NaN</td>
-      <td>15.86</td>
-      <td>9.06</td>
-      <td>0.06</td>
-      <td>5.33</td>
-      <td>1.42</td>
-      <td>2013-09-17</td>
-      <td>NaN</td>
+      <td>19</td>
+      <td>77.7</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>/games/boxart/full_4990510AmericaFrontccc.jpg</td>
-      <td>Call of Duty: Black Ops 3</td>
-      <td>PS4</td>
-      <td>Shooter</td>
-      <td>Activision</td>
-      <td>Treyarch</td>
-      <td>8.1</td>
-      <td>15.09</td>
-      <td>6.18</td>
-      <td>0.41</td>
-      <td>6.05</td>
-      <td>2.44</td>
-      <td>2015-11-06</td>
-      <td>2018-01-14</td>
+      <td>19</td>
+      <td>49.4</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>64011</th>
-      <td>/games/boxart/full_2779838AmericaFrontccc.jpg</td>
-      <td>XBlaze Lost: Memories</td>
-      <td>PC</td>
-      <td>Visual Novel</td>
-      <td>Aksys Games</td>
-      <td>Arc System Works</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2016-08-11</td>
-      <td>2019-01-28</td>
+      <th>2995</th>
+      <td>26</td>
+      <td>38.5</td>
     </tr>
     <tr>
-      <th>64012</th>
-      <td>/games/boxart/full_8031506AmericaFrontccc.jpg</td>
-      <td>Yoru, Tomosu</td>
-      <td>PS4</td>
-      <td>Visual Novel</td>
-      <td>Nippon Ichi Software</td>
-      <td>Nippon Ichi Software</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2020-07-30</td>
-      <td>2020-05-09</td>
+      <th>2996</th>
+      <td>42</td>
+      <td>40.6</td>
     </tr>
     <tr>
-      <th>64013</th>
-      <td>/games/boxart/full_6553045AmericaFrontccc.jpg</td>
-      <td>Yoru, Tomosu</td>
-      <td>NS</td>
-      <td>Visual Novel</td>
-      <td>Nippon Ichi Software</td>
-      <td>Nippon Ichi Software</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2020-07-30</td>
-      <td>2020-05-09</td>
+      <th>2997</th>
+      <td>24</td>
+      <td>79.2</td>
     </tr>
     <tr>
-      <th>64014</th>
-      <td>/games/boxart/full_6012940JapanFrontccc.png</td>
-      <td>Yunohana SpRING! ~Mellow Times~</td>
-      <td>NS</td>
-      <td>Visual Novel</td>
-      <td>Idea Factory</td>
-      <td>Otomate</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2019-02-28</td>
-      <td>2019-02-24</td>
+      <th>2998</th>
+      <td>35</td>
+      <td>40.9</td>
     </tr>
     <tr>
-      <th>64015</th>
-      <td>/games/boxart/default.jpg</td>
-      <td>Yurukill: The Calumniation Games</td>
-      <td>PS4</td>
-      <td>Visual Novel</td>
-      <td>Unknown</td>
-      <td>G.rev Ltd.</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2023-09-29</td>
+      <th>2999</th>
+      <td>28</td>
+      <td>49.6</td>
     </tr>
   </tbody>
 </table>
-<p>64016 rows × 14 columns</p>
+<p>3000 rows × 2 columns</p>
 </div></div></div>
 </div>
-<p><strong>¡Enhorabuena!</strong> Has convertido una hoja de cálculo de más de 60.000 filas en un <strong>Dataframe</strong> de Pandas. Este es el primer paso para aprovechar las funciones de esta librería de Python. Esto lo harás en los próximos capítulos.</p>
+</section>
+<section id="ejercicio-8">
+<h2>Ejercicio 8<a class="headerlink" href="#ejercicio-8" title="Link to this heading">#</a></h2>
+<p>Obtén los datos de las mujeres de las filas: 6, 27, 654, 1321 y 2567</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 8</span>
+<span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">1321</span><span class="p">,</span> <span class="mi">2567</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Menstrual_Irregularity</th>
+      <th>Testosterone_Level</th>
+      <th>Antral_Follicle_Count</th>
+      <th>PCOS_Diagnosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>21</td>
+      <td>25.3</td>
+      <td>0</td>
+      <td>44.2</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>55.7</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>42</td>
+      <td>26.9</td>
+      <td>0</td>
+      <td>38.9</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1321</th>
+      <td>38</td>
+      <td>17.7</td>
+      <td>0</td>
+      <td>39.8</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2567</th>
+      <td>21</td>
+      <td>26.9</td>
+      <td>0</td>
+      <td>45.0</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ejercicio</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">Ejercicio</span> <span class="mi">9</span>
+              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtén los datos de la mujer de la fila: 1970</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1970</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                        28.0
+BMI                        27.3
+Menstrual_Irregularity      1.0
+Testosterone_Level        101.9
+Antral_Follicle_Count      17.0
+PCOS_Diagnosis              1.0
+Name: 1970, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -801,20 +775,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_dataframe.html"
+       href="3_dataframe_informacion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2. ¿Qué es un DataFrame?</p>
+        <p class="prev-next-title">Información sobre el DataFrame</p>
       </div>
     </a>
     <a class="right-next"
-       href="3_dataframe_informacion.html"
+       href="4_dataframe_manipulacion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Información sobre el DataFrame</p>
+        <p class="prev-next-title">Manipulación de DataFrames</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -835,9 +809,22 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">Ejercicio 1. Crear un dataframe <strong>manualmente</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">Ejercicio 2. Crear un dataframe <strong>importando un archivo</strong> CSV</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">Ejercicio 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">Ejercicio 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">Ejercicio 5</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">Ejercicio 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">Ejercicio 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">Ejercicio 8</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
