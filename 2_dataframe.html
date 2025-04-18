@@ -401,7 +401,12 @@
   <section class="tex2jax_ignore mathjax_ignore" id="que-es-un-dataframe">
 <h1>2. ¿Qué es un DataFrame?<a class="headerlink" href="#que-es-un-dataframe" title="Link to this heading">#</a></h1>
 <p>Una de sus principales características son los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, los cuales son muy <em>similares a las hojas de Excel</em>, pero permiten utilizar Python para manipularlos, lo que da mayor flexibilidad en la manipulación de datos, abre más posibilidades manipulación y permite la manipulación de un volumen de datos mucho mayor que en hojas de cálculo.</p>
-<a class="reference internal image-reference" href="_images/dataframe.svg"><img alt="Pandas" class="align-center" src="_images/dataframe.svg" style="width: 300px;" /></a>
+<figure class="align-default" id="dataframe">
+<a class="reference internal image-reference" href="_images/dataframe.svg"><img alt="_images/dataframe.svg" src="_images/dataframe.svg" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Estructura de un DataFrame de Pandas</span><a class="headerlink" href="#dataframe" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Hay varias formas de crear un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, como veremos más adelante, pero una de las más habituales es extraer los datos de un archivo de <strong>Excel</strong> (.xls) o un archivo <strong>CSV</strong> (.csv).
 La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <p><code class="docutils literal notranslate"><span class="pre">nombre_dataframe</span> <span class="pre">=</span> <span class="pre">pd.read_excel(&quot;archivo.xls&quot;)</span></code></p>
@@ -480,7 +485,11 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 </table>
 </div></div></div>
 </div>
-<p><img alt="picture" src="_images/dataframe.png" /></p>
+<figure class="margin align-default" id="id1">
+<img alt="_images/dataframe1.png" src="_images/dataframe1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">DataFrame</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<div class="legend">
 <p>La imagen muestra un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, que es una estructura de datos bidimensional, similar a una tabla de Excel. Sus elementos son:</p>
 <ul class="simple">
 <li><p><strong>Nombre de las columnas (axis=1)</strong>: Encima del DataFrame se muestra el nombre de las columnas, que son “<strong>Artista</strong>” y “<strong>Spotify streams (millones)</strong>”. Las columnas representan diferentes variables y cada una contiene datos de su respectiva categoría. La etiqueta ‘axis=1’ se refiere a la orientación horizontal de las columnas en el DataFrame.</p></li>
@@ -488,6 +497,9 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <li><p><strong>Datos</strong>: En el centro del DataFrame se encuentran los datos. Cada fila representa un conjunto de datos correspondientes a un artista y sus streams en Spotify expresados en millones.</p></li>
 <li><p><strong>Datos faltantes (NaN)</strong>: En la última fila de la columna “Spotify streams (millones)”, hay un valor “NaN”. Este es un acrónimo de “Not a Number” y es utilizado en Pandas para indicar datos que faltan o que son indefinidos.</p></li>
 </ul>
+</div>
+</figcaption>
+</figure>
 </section>
 <section id="crear-un-dataframe">
 <h2>2.2. Crear un DataFrame<a class="headerlink" href="#crear-un-dataframe" title="Link to this heading">#</a></h2>
