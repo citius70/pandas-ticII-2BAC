@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Manipulación de DataFrames &#8212; My sample book</title>
+    <title>4. Manipulación de DataFrames &#8212; My sample book</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualizacion de datos en pandas 📊" href="5_dataframe_graficos.html" />
-    <link rel="prev" title="Información sobre el DataFrame" href="3_dataframe_informacion.html" />
+    <link rel="prev" title="Ejercicio sobre obtención de información de una Dataframe" href="3_1_dataframe_informacion_ejercicios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -169,12 +169,24 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataframe_informacion.html">Información sobre el DataFrame</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Manipulación de DataFrames</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">Ejemplos prácticos de Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Manipulación de DataFrames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
 </ul>
 
@@ -358,7 +370,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Manipulación de DataFrames</h1>
+    <h1>4. Manipulación de DataFrames</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,28 +380,26 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliega-los-primeros-o-ultimos-datos">Despliega los primeros o últimos datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean"><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna">Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sumatorio-de-una-columna-sum"><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-numero-de-valores-de-una-columna-count">Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-por-tipo-value-counts">Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-primeros-o-ultimos-datos">4.1. Mostrar los primeros o últimos datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">4.3. Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean"><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna">Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumatorio-de-una-columna-sum"><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-numero-de-valores-de-una-columna-count">Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-por-tipo-value-counts">Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">Filtrar DataFrames con condiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordena-dataframes">Ordena DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">Gestión de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">4.4. Filtrar DataFrames con condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">4.5. Ordenar DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">4.6. Gestión de datos vacios</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificando-datos-vacios">Identificando datos vacíos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminando-datos-vacios">Eliminando datos vacíos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenando-datos-vacios">Llenando datos vacios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">Creando una columna usando una formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">Borrando una columna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">4.7. Creando una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">4.8. Borrando una columna</a></li>
 </ul>
             </nav>
         </div>
@@ -402,7 +412,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manipulacion-de-dataframes">
-<h1>Manipulación de DataFrames<a class="headerlink" href="#manipulacion-de-dataframes" title="Link to this heading">#</a></h1>
+<h1>4. Manipulación de DataFrames<a class="headerlink" href="#manipulacion-de-dataframes" title="Link to this heading">#</a></h1>
 <p>Ahora que sabemos como cargar nuestros archivos, es hora de usarlos. Comencemos configurando nuestro DataFrame inicial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -416,8 +426,8 @@
 </div>
 </div>
 </div>
-<section id="despliega-los-primeros-o-ultimos-datos">
-<h2>Despliega los primeros o últimos datos<a class="headerlink" href="#despliega-los-primeros-o-ultimos-datos" title="Link to this heading">#</a></h2>
+<section id="mostrar-los-primeros-o-ultimos-datos">
+<h2>4.1. Mostrar los primeros o últimos datos<a class="headerlink" href="#mostrar-los-primeros-o-ultimos-datos" title="Link to this heading">#</a></h2>
 <p>Para mostrar una parte del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> usarás el método <code class="docutils literal notranslate"><span class="pre">head(n)</span></code> o <code class="docutils literal notranslate"><span class="pre">tail(n)</span></code>, donde ‘n’ son los primeros o últimos n datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,7 +585,7 @@
 </div>
 </section>
 <section id="muestra-un-resumen-de-los-datos-describe">
-<h2>Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code><a class="headerlink" href="#muestra-un-resumen-de-los-datos-describe" title="Link to this heading">#</a></h2>
+<h2>4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code><a class="headerlink" href="#muestra-un-resumen-de-los-datos-describe" title="Link to this heading">#</a></h2>
 <p>Con <code class="docutils literal notranslate"><span class="pre">describe()</span></code> puedes obtener rápidamente algunas estadisticas descriptivas (conteo, media, desviación estándar, máximo, mínimo y cuartiles) sobre tus datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,10 +661,11 @@
 </table>
 </div></div></div>
 </div>
+</section>
 <section id="mas-funciones-de-estadistica-descriptiva">
-<h3>Más funciones de estadistica descriptiva<a class="headerlink" href="#mas-funciones-de-estadistica-descriptiva" title="Link to this heading">#</a></h3>
+<h2>4.3. Más funciones de estadistica descriptiva<a class="headerlink" href="#mas-funciones-de-estadistica-descriptiva" title="Link to this heading">#</a></h2>
 <section id="promedio-o-media-aritmetica-mean">
-<h4><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code><a class="headerlink" href="#promedio-o-media-aritmetica-mean" title="Link to this heading">#</a></h4>
+<h3><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code><a class="headerlink" href="#promedio-o-media-aritmetica-mean" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Promedio o media aritmética de la columna &quot;Precio&quot;</span>
@@ -706,7 +717,7 @@
 </div>
 </section>
 <section id="buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna">
-<h4>Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna<a class="headerlink" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna" title="Link to this heading">#</a></h4>
+<h3>Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna<a class="headerlink" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Busca el índice del valor máximo de la columna Precio y lo almacena en la variable id</span>
@@ -742,7 +753,7 @@
 </div>
 </section>
 <section id="sumatorio-de-una-columna-sum">
-<h4><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code><a class="headerlink" href="#sumatorio-de-una-columna-sum" title="Link to this heading">#</a></h4>
+<h3><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code><a class="headerlink" href="#sumatorio-de-una-columna-sum" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sumatorio de la columna Cantidad</span>
@@ -761,7 +772,7 @@
 </div>
 </section>
 <section id="contar-numero-de-valores-de-una-columna-count">
-<h4>Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#contar-numero-de-valores-de-una-columna-count" title="Link to this heading">#</a></h4>
+<h3>Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code><a class="headerlink" href="#contar-numero-de-valores-de-una-columna-count" title="Link to this heading">#</a></h3>
 <p>Este es un método que devuelve el número de valores no nulos en la columna especificada. Si hay algún valor NaN (Not a Number) en la columna, no serán contados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,7 +792,7 @@
 </div>
 </section>
 <section id="contar-por-tipo-value-counts">
-<h4>Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code><a class="headerlink" href="#contar-por-tipo-value-counts" title="Link to this heading">#</a></h4>
+<h3>Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code><a class="headerlink" href="#contar-por-tipo-value-counts" title="Link to this heading">#</a></h3>
 <p>Este método devuelve una Serie que contiene el conteo de valores únicos en orden descendente. También proporciona el número de veces que cada entrada única aparece en la columna Producto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -832,9 +843,8 @@ Name: count, dtype: int64
 </div>
 </section>
 </section>
-</section>
 <section id="filtrar-dataframes-con-condiciones">
-<h2>Filtrar DataFrames con condiciones<a class="headerlink" href="#filtrar-dataframes-con-condiciones" title="Link to this heading">#</a></h2>
+<h2>4.4. Filtrar DataFrames con condiciones<a class="headerlink" href="#filtrar-dataframes-con-condiciones" title="Link to this heading">#</a></h2>
 <p>Puedes seleccionar un set de datos que cumplen una condición utilizando esta estructura <code class="docutils literal notranslate"><span class="pre">df[condicion]</span></code>. Por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1483,8 +1493,8 @@ Name: count, dtype: int64
 </div></div>
 </div>
 </section>
-<section id="ordena-dataframes">
-<h2>Ordena DataFrames<a class="headerlink" href="#ordena-dataframes" title="Link to this heading">#</a></h2>
+<section id="ordenar-dataframes">
+<h2>4.5. Ordenar DataFrames<a class="headerlink" href="#ordenar-dataframes" title="Link to this heading">#</a></h2>
 <p>Para ordenar los datos en tu <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> puedes usar la siguiente estructura</p>
 <p><code class="docutils literal notranslate"><span class="pre">df.sort_values(by=nombre_columna,</span> <span class="pre">ascending=True/False)</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">ascending</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code> cuando los datos van de menor a mayor, y es <code class="docutils literal notranslate"><span class="pre">False</span></code> en el caso contrario.</p>
@@ -1773,7 +1783,7 @@ Name: count, dtype: int64
 </div>
 </section>
 <section id="gestion-de-datos-vacios">
-<h2>Gestión de datos vacios<a class="headerlink" href="#gestion-de-datos-vacios" title="Link to this heading">#</a></h2>
+<h2>4.6. Gestión de datos vacios<a class="headerlink" href="#gestion-de-datos-vacios" title="Link to this heading">#</a></h2>
 <p>Un problema común la hora de gestionar datos es que hay columnas que no tienen todos los datos. Miremos este ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2273,7 +2283,7 @@ dtype: int64
 </section>
 </section>
 <section id="creando-una-columna-usando-una-formula">
-<h2>Creando una columna usando una formula<a class="headerlink" href="#creando-una-columna-usando-una-formula" title="Link to this heading">#</a></h2>
+<h2>4.7. Creando una columna usando una formula<a class="headerlink" href="#creando-una-columna-usando-una-formula" title="Link to this heading">#</a></h2>
 <p>Puede añadir una nueva columna en base a cálculos.</p>
 <p>En el siguiente ejemplo tenemos un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> con la cantidad y precio de cada producto.</p>
 <div class="cell docutils container">
@@ -2828,7 +2838,7 @@ dtype: int64
 </div>
 </section>
 <section id="borrando-una-columna">
-<h2>Borrando una columna<a class="headerlink" href="#borrando-una-columna" title="Link to this heading">#</a></h2>
+<h2>4.8. Borrando una columna<a class="headerlink" href="#borrando-una-columna" title="Link to this heading">#</a></h2>
 <p>Para borrar una columna debe usar <code class="docutils literal notranslate"><span class="pre">drop</span></code>, y especificar <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, que es el indicador de columnas. En pandas <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> referencia a las filas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3138,12 +3148,12 @@ dtype: int64
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3_dataframe_informacion.html"
+       href="3_1_dataframe_informacion_ejercicios.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Información sobre el DataFrame</p>
+        <p class="prev-next-title">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</p>
       </div>
     </a>
     <a class="right-next"
@@ -3172,28 +3182,26 @@ dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#despliega-los-primeros-o-ultimos-datos">Despliega los primeros o últimos datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean"><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna">Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sumatorio-de-una-columna-sum"><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-numero-de-valores-de-una-columna-count">Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-por-tipo-value-counts">Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-primeros-o-ultimos-datos">4.1. Mostrar los primeros o últimos datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">4.3. Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean"><strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buscar-el-indice-de-la-fila-correspondiente-al-maximo-idxmax-o-minimo-idxmin-de-una-columna">Buscar el <strong>índice de la fila</strong> correspondiente al máximo <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> o mínimo <code class="docutils literal notranslate"><span class="pre">idxmin</span></code> de una columna</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumatorio-de-una-columna-sum"><strong>Sumatorio</strong> de una columna <code class="docutils literal notranslate"><span class="pre">sum</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-numero-de-valores-de-una-columna-count">Contar número de valores de una columna <code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contar-por-tipo-value-counts">Contar por tipo <code class="docutils literal notranslate"><span class="pre">value.counts</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">Filtrar DataFrames con condiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordena-dataframes">Ordena DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">Gestión de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">4.4. Filtrar DataFrames con condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">4.5. Ordenar DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">4.6. Gestión de datos vacios</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificando-datos-vacios">Identificando datos vacíos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminando-datos-vacios">Eliminando datos vacíos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenando-datos-vacios">Llenando datos vacios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">Creando una columna usando una formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">Borrando una columna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">4.7. Creando una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">4.8. Borrando una columna</a></li>
 </ul>
   </nav></div>
 

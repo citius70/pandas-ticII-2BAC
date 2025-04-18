@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Información sobre el DataFrame &#8212; My sample book</title>
+    <title>3. Información sobre el DataFrame &#8212; My sample book</title>
   
   
   
@@ -178,18 +178,15 @@
 <li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
 
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">Manipulación de DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">4. Manipulación de DataFrames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="6_resumen.html"><strong>1. Estructuras de datos principales</strong></a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
 </ul>
 
@@ -373,7 +370,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Información sobre el DataFrame</h1>
+    <h1>3. Información sobre el DataFrame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,14 +380,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">3.1. Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-shape">- Atributo: <strong>shape</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-columns">- Atributo: <strong>columns</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-dtypes">- Atributo: <strong>dtypes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-column-dtypes">- Atributo: <strong>column.dtypes</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">3.2. Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-una-columna">- Accediendo a todos los datos de una columna</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-varias-columnas">- Accediendo a todos los datos de varias columnas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-una-fila">- Accediendo a los datos de una fila</a></li>
@@ -411,8 +408,8 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="informacion-sobre-el-dataframe">
-<h1>Información sobre el DataFrame<a class="headerlink" href="#informacion-sobre-el-dataframe" title="Link to this heading">#</a></h1>
-<p>Puedes obtener información sobre la estructura del <strong>DataFrame</strong>, tales como sus columnas, dimensiones (nº filas x  nº columnas) tiene.</p>
+<h1>3. Información sobre el DataFrame<a class="headerlink" href="#informacion-sobre-el-dataframe" title="Link to this heading">#</a></h1>
+<p>Puedes obtener información sobre la estructura del <strong>DataFrame</strong>, tales como sus columnas, dimensiones (nº filas x  nº columnas), datos de filas…</p>
 <p>Creamos un Dataframe a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive. El link al archivo es el indicado a  <strong>https: <a class="reference external" href="//docs.google.com/uc?export=download&amp;amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN">//docs.google.com/uc?export=download&amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN</a></strong>.</p>
 <p>Vamos a llamar al Dataframe: <strong>df</strong> (por ejemplo)</p>
 <div class="cell docutils container">
@@ -664,7 +661,7 @@
 </div></div></div>
 </div>
 <section id="atributos-para-obtener-informacion-de-un-dataframe">
-<h2>Atributos para obtener información de un DataFrame<a class="headerlink" href="#atributos-para-obtener-informacion-de-un-dataframe" title="Link to this heading">#</a></h2>
+<h2>3.1. Atributos para obtener información de un DataFrame<a class="headerlink" href="#atributos-para-obtener-informacion-de-un-dataframe" title="Link to this heading">#</a></h2>
 <p>Existen varios comandos que nos permiten conocer cómo es el Dataframe cargado.</p>
 <section id="atributo-shape">
 <h3>- Atributo: <strong>shape</strong><a class="headerlink" href="#atributo-shape" title="Link to this heading">#</a></h3>
@@ -759,7 +756,7 @@ dtype: object
 </section>
 </section>
 <section id="accediendo-al-dataframe">
-<h2>Accediendo al DataFrame<a class="headerlink" href="#accediendo-al-dataframe" title="Link to this heading">#</a></h2>
+<h2>3.2. Accediendo al DataFrame<a class="headerlink" href="#accediendo-al-dataframe" title="Link to this heading">#</a></h2>
 <section id="accediendo-a-todos-los-datos-de-una-columna">
 <h3>- Accediendo a todos los datos de una columna<a class="headerlink" href="#accediendo-a-todos-los-datos-de-una-columna" title="Link to this heading">#</a></h3>
 <p>Puedes obterner rápidamente los datos de una columna usando <code class="docutils literal notranslate"><span class="pre">NombreDataframe.NombreColumna</span></code> o <code class="docutils literal notranslate"><span class="pre">NombreDataframe[&quot;NombreColumna&quot;]</span></code>. Recuerda que nuestro Dataframe se llama <strong>df</strong>.</p>
@@ -1444,14 +1441,14 @@ Name: 24, dtype: object
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">3.1. Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-shape">- Atributo: <strong>shape</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-columns">- Atributo: <strong>columns</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-dtypes">- Atributo: <strong>dtypes</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-column-dtypes">- Atributo: <strong>column.dtypes</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">3.2. Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-una-columna">- Accediendo a todos los datos de una columna</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-varias-columnas">- Accediendo a todos los datos de varias columnas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-una-fila">- Accediendo a los datos de una fila</a></li>
