@@ -180,10 +180,12 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
-
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">4. Manipulación de DataFrames</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
@@ -442,12 +444,12 @@
   <section class="tex2jax_ignore mathjax_ignore" id="informacion-sobre-el-dataframe">
 <h1>3. Información sobre el DataFrame<a class="headerlink" href="#informacion-sobre-el-dataframe" title="Link to this heading">#</a></h1>
 <p>Puedes obtener información sobre la estructura del <strong>DataFrame</strong>, tales como sus columnas, dimensiones (nº filas x  nº columnas), datos de filas…</p>
-<p>Creamos un Dataframe a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive. El link al archivo es el indicado a  <strong>https: <a class="reference external" href="//docs.google.com/uc?export=download&amp;amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN">//docs.google.com/uc?export=download&amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN</a></strong>.</p>
+<p>Creamos un Dataframe a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive en formato .csv. El link al archivo es el indicado a  <strong><a class="reference external" href="https://drive.google.com/uc?export=download&amp;amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6">https://drive.google.com/uc?export=download&amp;id=16SQQX0ly–l9UvNBr5-KGRWb6todE1u6</a></strong>.</p>
 <p>Vamos a llamar al Dataframe: <strong>df</strong> (por ejemplo)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6&quot;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -483,210 +485,210 @@
       <td>SKU1</td>
       <td>Xbox Series X</td>
       <td>65</td>
-      <td>500000</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>1</th>
       <td>SKU4</td>
       <td>Teclado mecánico Razer BlackWidow</td>
       <td>130</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>2</th>
       <td>SKU7</td>
       <td>Monitor Gaming Asus 27"</td>
       <td>45</td>
-      <td>750000</td>
+      <td>750</td>
     </tr>
     <tr>
       <th>3</th>
       <td>SKU11</td>
       <td>Robot aspirador Roomba 960</td>
       <td>30</td>
-      <td>450000</td>
+      <td>450</td>
     </tr>
     <tr>
       <th>4</th>
       <td>SKU26</td>
       <td>Kindle Paperwhite</td>
       <td>150</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>5</th>
       <td>SKU39</td>
       <td>Cámara de acción Insta360 One X2</td>
       <td>80</td>
-      <td>380000</td>
+      <td>380</td>
     </tr>
     <tr>
       <th>6</th>
       <td>SKU44</td>
       <td>Cafetera Nespresso Vertuo</td>
       <td>80</td>
-      <td>150000</td>
+      <td>150</td>
     </tr>
     <tr>
       <th>7</th>
       <td>SKU48</td>
       <td>Nintendo Switch</td>
       <td>50</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
     <tr>
       <th>8</th>
       <td>SKU62</td>
       <td>PlayStation 5</td>
       <td>75</td>
-      <td>480000</td>
+      <td>480</td>
     </tr>
     <tr>
       <th>9</th>
       <td>SKU63</td>
       <td>Reloj Inteligente Apple Watch Series 6</td>
       <td>90</td>
-      <td>600000</td>
+      <td>600</td>
     </tr>
     <tr>
       <th>10</th>
       <td>SKU97</td>
       <td>GoPro HERO9</td>
       <td>100</td>
-      <td>320000</td>
+      <td>320</td>
     </tr>
     <tr>
       <th>11</th>
       <td>SKU98</td>
       <td>AirPods Pro</td>
       <td>120</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>12</th>
       <td>SKU110</td>
       <td>Gafas de realidad virtual Oculus Quest 2</td>
       <td>50</td>
-      <td>300000</td>
+      <td>300</td>
     </tr>
     <tr>
       <th>13</th>
       <td>SKU115</td>
       <td>Garmin Fenix 6 Pro</td>
       <td>55</td>
-      <td>700000</td>
+      <td>700</td>
     </tr>
     <tr>
       <th>14</th>
       <td>SKU126</td>
       <td>Refrigerador Samsung Smart</td>
       <td>25</td>
-      <td>2000000</td>
+      <td>2000</td>
     </tr>
     <tr>
       <th>15</th>
       <td>SKU131</td>
       <td>Samsung Galaxy S21</td>
       <td>80</td>
-      <td>850000</td>
+      <td>850</td>
     </tr>
     <tr>
       <th>16</th>
       <td>SKU134</td>
       <td>Laptop Dell XPS 15</td>
       <td>40</td>
-      <td>1200000</td>
+      <td>1200</td>
     </tr>
     <tr>
       <th>17</th>
       <td>SKU154</td>
       <td>iPad Pro 12.9</td>
       <td>60</td>
-      <td>1050000</td>
+      <td>1050</td>
     </tr>
     <tr>
       <th>18</th>
       <td>SKU158</td>
       <td>Smartwatch Samsung Galaxy Watch 3</td>
       <td>85</td>
-      <td>550000</td>
+      <td>550</td>
     </tr>
     <tr>
       <th>19</th>
       <td>SKU162</td>
       <td>Mochila antirrobo XD Design</td>
       <td>150</td>
-      <td>180000</td>
+      <td>180</td>
     </tr>
     <tr>
       <th>20</th>
       <td>SKU163</td>
       <td>Auriculares Sony WH-1000XM4</td>
       <td>100</td>
-      <td>350000</td>
+      <td>350</td>
     </tr>
     <tr>
       <th>21</th>
       <td>SKU168</td>
       <td>Microondas inteligente Panasonic</td>
       <td>50</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>22</th>
       <td>SKU170</td>
       <td>Silla gaming DXRacer</td>
       <td>60</td>
-      <td>400000</td>
+      <td>400</td>
     </tr>
     <tr>
       <th>23</th>
       <td>SKU171</td>
       <td>Drone DJI Mavic Air 2</td>
       <td>20</td>
-      <td>900000</td>
+      <td>900</td>
     </tr>
     <tr>
       <th>24</th>
       <td>SKU172</td>
       <td>iPhone 13</td>
       <td>100</td>
-      <td>990000</td>
+      <td>990</td>
     </tr>
     <tr>
       <th>25</th>
       <td>SKU176</td>
       <td>Bose QuietComfort 35 II</td>
       <td>70</td>
-      <td>350000</td>
+      <td>350</td>
     </tr>
     <tr>
       <th>26</th>
       <td>SKU178</td>
       <td>Bicicleta eléctrica Xiaomi</td>
       <td>35</td>
-      <td>800000</td>
+      <td>800</td>
     </tr>
     <tr>
       <th>27</th>
       <td>SKU187</td>
       <td>Cámara Canon EOS Rebel T7</td>
       <td>50</td>
-      <td>550000</td>
+      <td>550</td>
     </tr>
     <tr>
       <th>28</th>
       <td>SKU191</td>
       <td>Smart TV LG OLED 55"</td>
       <td>40</td>
-      <td>1500000</td>
+      <td>1500</td>
     </tr>
     <tr>
       <th>29</th>
       <td>SKU196</td>
       <td>Consola Retro Sega Genesis</td>
       <td>110</td>
-      <td>120000</td>
+      <td>120</td>
     </tr>
   </tbody>
 </table>
@@ -1079,7 +1081,7 @@ Recuerda que las listas en Python se escriben, a su vez, entre corchetes <code c
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID_Producto       SKU172
 Producto       iPhone 13
 Cantidad             100
-Precio            990000
+Precio               990
 Name: 24, dtype: object
 </pre></div>
 </div>
@@ -1127,35 +1129,35 @@ Name: 24, dtype: object
       <td>SKU26</td>
       <td>Kindle Paperwhite</td>
       <td>150</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>5</th>
       <td>SKU39</td>
       <td>Cámara de acción Insta360 One X2</td>
       <td>80</td>
-      <td>380000</td>
+      <td>380</td>
     </tr>
     <tr>
       <th>6</th>
       <td>SKU44</td>
       <td>Cafetera Nespresso Vertuo</td>
       <td>80</td>
-      <td>150000</td>
+      <td>150</td>
     </tr>
     <tr>
       <th>7</th>
       <td>SKU48</td>
       <td>Nintendo Switch</td>
       <td>50</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
     <tr>
       <th>8</th>
       <td>SKU62</td>
       <td>PlayStation 5</td>
       <td>75</td>
-      <td>480000</td>
+      <td>480</td>
     </tr>
   </tbody>
 </table>
@@ -1202,21 +1204,21 @@ Name: 24, dtype: object
       <td>SKU1</td>
       <td>Xbox Series X</td>
       <td>65</td>
-      <td>500000</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>4</th>
       <td>SKU26</td>
       <td>Kindle Paperwhite</td>
       <td>150</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>7</th>
       <td>SKU48</td>
       <td>Nintendo Switch</td>
       <td>50</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
   </tbody>
 </table>
@@ -1265,13 +1267,13 @@ Name: 24, dtype: object
       <th>SKU97</th>
       <td>GoPro HERO9</td>
       <td>100</td>
-      <td>320000</td>
+      <td>320</td>
     </tr>
     <tr>
       <th>SKU154</th>
       <td>iPad Pro 12.9</td>
       <td>60</td>
-      <td>1050000</td>
+      <td>1050</td>
     </tr>
   </tbody>
 </table>
@@ -1315,17 +1317,17 @@ Name: 24, dtype: object
     <tr>
       <th>0</th>
       <td>Xbox Series X</td>
-      <td>500000</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Kindle Paperwhite</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Nintendo Switch</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
   </tbody>
 </table>
@@ -1364,17 +1366,17 @@ Name: 24, dtype: object
     <tr>
       <th>0</th>
       <td>Xbox Series X</td>
-      <td>500000</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Kindle Paperwhite</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Nintendo Switch</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
   </tbody>
 </table>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>🧪 Ejemplo interactivo con Thebe en .ipynb &#8212; My sample book</title>
+    <title>Ejercicio sobre obtención de información de una Dataframe &#8212; My sample book</title>
   
   
   
@@ -60,10 +60,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '7_ejemplo_thebe';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_1_dataframe_informacion_ejercicios_resuelto';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Resumen" href="6_resumen.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -114,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -167,7 +168,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">Ejemplos prácticos de Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">Ejemplo completo</a></li>
@@ -189,7 +190,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">🧪 Ejemplo interactivo con Thebe en .ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_ejemplo_thebe.html">🧪 Ejemplo interactivo con Thebe en .ipynb</a></li>
 </ul>
 
     </div>
@@ -297,7 +298,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F7_ejemplo_thebe.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3_1_dataframe_informacion_ejercicios_resuelto.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +328,7 @@
       
       
       
-      <li><a href="_sources/7_ejemplo_thebe.ipynb" target="_blank"
+      <li><a href="_sources/3_1_dataframe_informacion_ejercicios_resuelto.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +391,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -401,11 +404,34 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>🧪 Ejemplo interactivo con Thebe en .ipynb</h1>
+    <h1>Ejercicio sobre obtención de información de una Dataframe</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">Ejercicio 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">Ejercicio 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">Ejercicio 5</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">Ejercicio 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">Ejercicio 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">Ejercicio 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-9">Ejercicio 9</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -415,19 +441,128 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ejemplo-interactivo-con-thebe-en-ipynb">
-<h1>🧪 Ejemplo interactivo con Thebe en .ipynb<a class="headerlink" href="#ejemplo-interactivo-con-thebe-en-ipynb" title="Link to this heading">#</a></h1>
-<p>Este notebook forma parte de un Jupyter Book y puede ser ejecutado en vivo gracias a <a class="reference external" href="https://thebe.readthedocs.io">Thebe</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-sobre-obtencion-de-informacion-de-una-dataframe">
+<h1>Ejercicio sobre <strong>obtención de información</strong> de una Dataframe<a class="headerlink" href="#ejercicio-sobre-obtencion-de-informacion-de-una-dataframe" title="Link to this heading">#</a></h1>
+<p>Vamos a trabajar sobre un archivo CSV con datos de mujeres con <strong>síndrome de ovario poliquístico</strong> (SOP)</p>
+<p>Acerca del conjunto de datos:
+Se trata de un conjunto de datos sobre mujeres con síndrome de ovario poliquístico (SOP), generado según los criterios de Róterdam. Los Criterios de Róterdam, establecidos en 2003 por un consenso internacional de expertos, definen que, <strong>para que una mujer sea diagnosticada con el síndrome</strong>, debe cumplir al menos <strong>dos de los tres criterios</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Menstruación irregular</strong>: Sí (1) No(0)
+2.*<em>Nivel de testosterona</em>: Más de 50 ng/dL</p></li>
+<li><p>Folículos por ovario (detectados por ecografía pelviana): Más de 10</p></li>
+</ol>
+<p>Las columnas numéricas categóricas (Menstruación irregular y diagnóstico de SOP) se codifican en formato binario, donde [0] representa “no” y [1] representa “sí”.</p>
+<p>El archivo CSV se encuentra en la web <a class="reference external" href="http://Kaggle.com">Kaggle.com</a> especializada en análisis de datos. Exactamente lo encontrás en <strong><a class="reference external" href="https://www.kaggle.com/datasets/lucass0s0/polycystic-ovary-syndrome-pcos">https://www.kaggle.com/datasets/lucass0s0/polycystic-ovary-syndrome-pcos</a></strong></p>
+<ol class="arabic simple">
+<li><p>Descarga el archivo .zip y descomprímelo.</p></li>
+<li><p>Súbelo a tu Google Drive y consigue el link al archivo.</p></li>
+<li><p><strong>¡Muy importante!</strong> El archivo tiene una columna que se llama <strong>Testosterone_Level(ng/dL)</strong>. Este nombre tiene caracteres (<strong>los paréntesis</strong>) que van a dar problemas a la hora de utilizar esta columna. Por ello, cambia su nombre por <strong>Testosterone_Level</strong> .</p></li>
+</ol>
+<section id="ejercicio-1">
+<h2>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Link to this heading">#</a></h2>
+<p>Importa la librería Pandas y ponle el alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">&quot;Nombre&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;Edad&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 1</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-2">
+<h2>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Link to this heading">#</a></h2>
+<p>Carga el archivo <code class="docutils literal notranslate"><span class="pre">pcos_rotterdam_balanceado.csv</span></code>, que has guardado en tu Google Drive, utilizando su link.
+A su vez crea el Dataframe con el nombre <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/pcos_rotterdam_balanceado_v1.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3">
+<h2>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code> para ver la <strong>forma</strong> (nº columnas x nº filas). Verás que el archivo tiene 6 columnas y ¡¡¡3000 filas!!!.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3000, 6)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-4">
+<h2>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">columns</span></code> para ver el <strong>nombre de las columnas</strong>. Verás que las columnas se llaman: Age, BMI, …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 4</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Age&#39;, &#39;BMI&#39;, &#39;Menstrual_Irregularity&#39;, &#39;Testosterone_Level&#39;,
+       &#39;Antral_Follicle_Count&#39;, &#39;PCOS_Diagnosis&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-5">
+<h2>Ejercicio 5<a class="headerlink" href="#ejercicio-5" title="Link to this heading">#</a></h2>
+<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>para ver el <strong>tipo de columnas</strong>. Verás que hay 4 columnas de tipo número <strong>entero</strong> y 2 de tipo número <strong>decimal</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Ejercicio 5<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>data.dtypes</p>
+<section id="ejercicio-6">
+<h2>Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Link to this heading">#</a></h2>
+<p>Obtén todos los datos (filas) de la columna <code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
+<p>No te preocupes si solo ves los cinco primeros datos y los cinco últimos datos. Recuerda uq tiene 3000 filas. En el siguiente capítulo resolveremos cómo podemos ver todos los datos de archivos muy largos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
+<span class="n">data</span><span class="o">.</span><span class="n">Testosterone_Level</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       46.1
+1       59.4
+2       69.3
+3       77.7
+4       49.4
+        ... 
+2995    38.5
+2996    40.6
+2997    79.2
+2998    40.9
+2999    49.6
+Name: Testosterone_Level, Length: 3000, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-7">
+<h2>Ejercicio 7<a class="headerlink" href="#ejercicio-7" title="Link to this heading">#</a></h2>
+<p>Obtén todos los datos (filas) de las columnas <code class="docutils literal notranslate"><span class="pre">Age</span></code>y<code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Ejercicio 7</span>
+<span class="n">data</span><span class="p">[[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Testosterone_Level&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -450,44 +585,183 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Nombre</th>
-      <th>Edad</th>
+      <th>Age</th>
+      <th>Testosterone_Level</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Ana</td>
-      <td>23</td>
+      <td>29</td>
+      <td>46.1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Luis</td>
-      <td>34</td>
+      <td>20</td>
+      <td>59.4</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Carlos</td>
-      <td>29</td>
+      <td>23</td>
+      <td>69.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>19</td>
+      <td>77.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>19</td>
+      <td>49.4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2995</th>
+      <td>26</td>
+      <td>38.5</td>
+    </tr>
+    <tr>
+      <th>2996</th>
+      <td>42</td>
+      <td>40.6</td>
+    </tr>
+    <tr>
+      <th>2997</th>
+      <td>24</td>
+      <td>79.2</td>
+    </tr>
+    <tr>
+      <th>2998</th>
+      <td>35</td>
+      <td>40.9</td>
+    </tr>
+    <tr>
+      <th>2999</th>
+      <td>28</td>
+      <td>49.6</td>
+    </tr>
+  </tbody>
+</table>
+<p>3000 rows × 2 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="ejercicio-8">
+<h2>Ejercicio 8<a class="headerlink" href="#ejercicio-8" title="Link to this heading">#</a></h2>
+<p>Obtén los datos de las mujeres de las filas: 6, 27, 654, 1321 y 2567</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 8</span>
+<span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">1321</span><span class="p">,</span> <span class="mi">2567</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Menstrual_Irregularity</th>
+      <th>Testosterone_Level</th>
+      <th>Antral_Follicle_Count</th>
+      <th>PCOS_Diagnosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>21</td>
+      <td>25.3</td>
+      <td>0</td>
+      <td>44.2</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>55.7</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>42</td>
+      <td>26.9</td>
+      <td>0</td>
+      <td>38.9</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1321</th>
+      <td>38</td>
+      <td>17.7</td>
+      <td>0</td>
+      <td>39.8</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2567</th>
+      <td>21</td>
+      <td>26.9</td>
+      <td>0</td>
+      <td>45.0</td>
+      <td>10</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Puedes editar la celda y volver a ejecutar. ¡Funciona directamente desde el navegador!</p>
+</section>
+<section id="ejercicio-9">
+<h2>Ejercicio 9<a class="headerlink" href="#ejercicio-9" title="Link to this heading">#</a></h2>
+<p>Obtén los datos de la mujer de la fila: 1970</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculamos la media de edad</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1970</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.666666666666668
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Age                        28.0
+BMI                        27.3
+Menstrual_Irregularity      1.0
+Testosterone_Level        101.9
+Antral_Follicle_Count      17.0
+PCOS_Diagnosis              1.0
+Name: 1970, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -520,21 +794,43 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="6_resumen.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Resumen</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">Ejercicio 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">Ejercicio 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">Ejercicio 5</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio 5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">Ejercicio 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">Ejercicio 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">Ejercicio 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-9">Ejercicio 9</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
