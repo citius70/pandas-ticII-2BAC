@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ejercicicio sobre creación de dataframes &#8212; My sample book</title>
+    <title>Ejercicicio sobre creación de dataframes &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -146,8 +146,8 @@
       
     
     
-    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
   
   
 </a></div>
@@ -180,10 +180,12 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
-
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">4. Manipulación de DataFrames</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
@@ -248,6 +250,42 @@
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/2_1_dataframe_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/2_1_dataframe_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
       <li>
 <button onclick="initThebeSBT()"
   class="btn btn-sm btn-launch-thebe dropdown-item"
@@ -279,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +334,24 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2_1_dataframe_ejercicios_resuelto.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/2_1_dataframe_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F2_1_dataframe_ejercicios_resuelto.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -447,6 +502,58 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Calificación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ana</td>
+      <td>20</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Luis</td>
+      <td>21</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carlos</td>
+      <td>19</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>María</td>
+      <td>22</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="ejercicio-2-crear-un-dataframe-importando-un-archivo-excel">
@@ -487,13 +594,196 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">EScribe</span> <span class="n">el</span> <span class="n">código</span> <span class="n">aquí</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>spotify_track_uri</th>
+      <th>ts</th>
+      <th>platform</th>
+      <th>ms_played</th>
+      <th>track_name</th>
+      <th>artist_name</th>
+      <th>album_name</th>
+      <th>reason_start</th>
+      <th>reason_end</th>
+      <th>shuffle</th>
+      <th>skipped</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2J3n32GeLmMjwuAzyhcSNe</td>
+      <td>2013-07-08 02:44:34</td>
+      <td>web player</td>
+      <td>3185</td>
+      <td>Say It, Just Say It</td>
+      <td>The Mowgli's</td>
+      <td>Waiting For The Dawn</td>
+      <td>autoplay</td>
+      <td>clickrow</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1oHxIPqJyvAYHy0PVrDU98</td>
+      <td>2013-07-08 02:45:37</td>
+      <td>web player</td>
+      <td>61865</td>
+      <td>Drinking from the Bottle (feat. Tinie Tempah)</td>
+      <td>Calvin Harris</td>
+      <td>18 Months</td>
+      <td>clickrow</td>
+      <td>clickrow</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>487OPlneJNni3NWC8SYqhW</td>
+      <td>2013-07-08 02:50:24</td>
+      <td>web player</td>
+      <td>285386</td>
+      <td>Born To Die</td>
+      <td>Lana Del Rey</td>
+      <td>Born To Die - The Paradise Edition</td>
+      <td>clickrow</td>
+      <td>unknown</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5IyblF777jLZj1vGHG2UD3</td>
+      <td>2013-07-08 02:52:40</td>
+      <td>web player</td>
+      <td>134022</td>
+      <td>Off To The Races</td>
+      <td>Lana Del Rey</td>
+      <td>Born To Die - The Paradise Edition</td>
+      <td>trackdone</td>
+      <td>clickrow</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0GgAAB0ZMllFhbNc3mAodO</td>
+      <td>2013-07-08 03:17:52</td>
+      <td>web player</td>
+      <td>0</td>
+      <td>Half Mast</td>
+      <td>Empire Of The Sun</td>
+      <td>Walking On A Dream</td>
+      <td>clickrow</td>
+      <td>nextbtn</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>149855</th>
+      <td>4Fz1WWr5o0OrlIcZxcyZtK</td>
+      <td>2024-12-15 23:06:19</td>
+      <td>android</td>
+      <td>1247</td>
+      <td>On The Way Home</td>
+      <td>John Mayer</td>
+      <td>Paradise Valley</td>
+      <td>fwdbtn</td>
+      <td>fwdbtn</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>149856</th>
+      <td>0qHMhBZqYb99yhX9BHcIkV</td>
+      <td>2024-12-15 23:06:21</td>
+      <td>android</td>
+      <td>1515</td>
+      <td>Magical Mystery Tour - Remastered 2009</td>
+      <td>The Beatles</td>
+      <td>Magical Mystery Tour</td>
+      <td>fwdbtn</td>
+      <td>fwdbtn</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>149857</th>
+      <td>0HHdujGjOZChTrl8lJWEIq</td>
+      <td>2024-12-15 23:06:22</td>
+      <td>android</td>
+      <td>1283</td>
+      <td>Stop This Train - Live at the Nokia Theatre, L...</td>
+      <td>John Mayer</td>
+      <td>Where the Light Is: John Mayer Live In Los Ang...</td>
+      <td>fwdbtn</td>
+      <td>fwdbtn</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>149858</th>
+      <td>7peh6LUcdNPcMdrSH4JPsM</td>
+      <td>2024-12-15 23:06:23</td>
+      <td>android</td>
+      <td>1306</td>
+      <td>I Don't Trust Myself (With Loving You)</td>
+      <td>John Mayer</td>
+      <td>Continuum</td>
+      <td>fwdbtn</td>
+      <td>fwdbtn</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>149859</th>
+      <td>6iGU74CwXuT4XVepjc9Emf</td>
+      <td>2024-12-15 23:06:25</td>
+      <td>android</td>
+      <td>1893</td>
+      <td>God Only Knows - Mono</td>
+      <td>The Beach Boys</td>
+      <td>Pet Sounds</td>
+      <td>fwdbtn</td>
+      <td>fwdbtn</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>149860 rows × 11 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -502,8 +792,8 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -561,7 +851,7 @@
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ALberto Durán Pérez
 </p>
 
   </div>
@@ -584,6 +874,9 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
   </div>
   
 </div>

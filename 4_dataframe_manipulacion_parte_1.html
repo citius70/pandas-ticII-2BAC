@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Manipulación de DataFrames (1º Parte) &#8212; My sample book</title>
+    <title>4. Manipulación de DataFrames (1ª Parte) &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -146,8 +146,8 @@
       
     
     
-    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
   
   
 </a></div>
@@ -182,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Manipulación de DataFrames (1º Parte)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Manipulación de DataFrames (1ª Parte)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
 </ul>
 </details></li>
@@ -250,6 +250,42 @@
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/4_dataframe_manipulacion_parte_1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/4_dataframe_manipulacion_parte_1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
       <li>
 <button onclick="initThebeSBT()"
   class="btn btn-sm btn-launch-thebe dropdown-item"
@@ -281,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +334,24 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F4_dataframe_manipulacion_parte_1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/4_dataframe_manipulacion_parte_1.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F4_dataframe_manipulacion_parte_1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,7 +457,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Manipulación de DataFrames (1º Parte)</h1>
+    <h1>4. Manipulación de DataFrames (1ª Parte)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -415,7 +468,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-primeros-o-ultimos-datos">4.1. Mostrar los primeros o últimos datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos">4.2. Muestra un resumen de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">4.3. Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean">- <strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximo-max-y-minimo-min-de-una-columna">- <strong>Máximo</strong> <code class="docutils literal notranslate"><span class="pre">max</span></code> y <strong>mínimo</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> de una columna</a></li>
@@ -436,8 +489,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="manipulacion-de-dataframes-1o-parte">
-<h1>4. Manipulación de DataFrames (1º Parte)<a class="headerlink" href="#manipulacion-de-dataframes-1o-parte" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="manipulacion-de-dataframes-1a-parte">
+<h1>4. Manipulación de DataFrames (1ª Parte)<a class="headerlink" href="#manipulacion-de-dataframes-1a-parte" title="Link to this heading">#</a></h1>
 <p>Ahora que sabemos como cargar nuestros archivos, es hora de usarlos. Comencemos configurando nuestro DataFrame inicial.</p>
 <p>Creamos un Dataframe a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive en formato .csv. El link al archivo es el indicado a <a class="reference external" href="https://drive.google.com/uc?export=download&amp;amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6">https://drive.google.com/uc?export=download&amp;id=16SQQX0ly–l9UvNBr5-KGRWb6todE1u6</a>.</p>
 <p>Vamos a llamar al Dataframe: <strong>df</strong> (por ejemplo)</p>
@@ -613,8 +666,8 @@
 </div></div></div>
 </div>
 </section>
-<section id="muestra-un-resumen-de-los-datos-describe">
-<h2>4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code><a class="headerlink" href="#muestra-un-resumen-de-los-datos-describe" title="Link to this heading">#</a></h2>
+<section id="muestra-un-resumen-de-los-datos">
+<h2>4.2. Muestra un resumen de los datos<a class="headerlink" href="#muestra-un-resumen-de-los-datos" title="Link to this heading">#</a></h2>
 <p>Con <code class="docutils literal notranslate"><span class="pre">describe()</span></code> puedes obtener rápidamente algunas estadisticas descriptivas (conteo, media, desviación estándar, máximo, mínimo y cuartiles) de las columnas que tienen datos numéricos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,8 +947,8 @@ Name: count, dtype: int64
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -956,7 +1009,7 @@ Name: count, dtype: int64
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mostrar-los-primeros-o-ultimos-datos">4.1. Mostrar los primeros o últimos datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos-describe">4.2. Muestra un resumen de los datos <code class="docutils literal notranslate"><span class="pre">describe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#muestra-un-resumen-de-los-datos">4.2. Muestra un resumen de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-funciones-de-estadistica-descriptiva">4.3. Más funciones de estadistica descriptiva</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-o-media-aritmetica-mean">- <strong>Promedio</strong> o media aritmética <code class="docutils literal notranslate"><span class="pre">mean</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximo-max-y-minimo-min-de-una-columna">- <strong>Máximo</strong> <code class="docutils literal notranslate"><span class="pre">max</span></code> y <strong>mínimo</strong> <code class="docutils literal notranslate"><span class="pre">min</span></code> de una columna</a></li>
@@ -980,7 +1033,7 @@ Name: count, dtype: int64
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ALberto Durán Pérez
 </p>
 
   </div>
@@ -1003,6 +1056,9 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
   </div>
   
 </div>

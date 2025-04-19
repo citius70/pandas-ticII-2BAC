@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. ¿Qué es un DataFrame? &#8212; My sample book</title>
+    <title>2. ¿Qué es un DataFrame? &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -154,8 +154,8 @@ window.addEventListener("load", () => mermaid.run());
       
     
     
-    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
   
   
 </a></div>
@@ -190,7 +190,7 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
 </ul>
 </details></li>
@@ -258,6 +258,42 @@ window.addEventListener("load", () => mermaid.run());
       
       
       
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/2_dataframe.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/2_dataframe.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
       <li>
 <button onclick="initThebeSBT()"
   class="btn btn-sm btn-launch-thebe dropdown-item"
@@ -289,7 +325,7 @@ window.addEventListener("load", () => mermaid.run());
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +342,24 @@ window.addEventListener("load", () => mermaid.run());
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2_dataframe.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/2_dataframe.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F2_dataframe.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -535,7 +588,7 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
 <li><p><strong>Datos faltantes (NaN)</strong>: En la última fila de la columna “Spotify streams (millones)”, hay un valor “NaN”. Este es un acrónimo de “Not a Number” y es utilizado en Pandas para indicar datos que faltan o que son indefinidos.</p></li>
 </ul>
 <figure class="margin align-default" id="id1">
-<img alt="_images/dataframe1.png" src="_images/dataframe1.png" />
+<img alt="_images/dataframe.png" src="_images/dataframe.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">DataFrame</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
@@ -1196,8 +1249,8 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1278,7 +1331,7 @@ La forma de crear un dataframe a partir de un archivo de Excel es:</p>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ALberto Durán Pérez
 </p>
 
   </div>
@@ -1301,6 +1354,9 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
   </div>
   
 </div>
