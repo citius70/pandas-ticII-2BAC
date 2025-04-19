@@ -22,7 +22,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 :tags: [thebe-active]
 
 import pandas as pd
-
+```
 ------------------
 
 
