@@ -1,0 +1,1852 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Manipulación de DataFrames (2º Parte) &#8212; Análisis de datos con Pandas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_dataframe_manipulacion_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualizacion de datos en pandas 📊" href="5_dataframe_graficos.html" />
+    <link rel="prev" title="Ejercicios sobre manipulación de datos en Pandas" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción al curso de Pandas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">Ejemplos prácticos de Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Manipulación de DataFrames (2º Parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="7_ejemplo_thebe.html">🧪 Ejemplo interactivo con Thebe en .ipynb</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/5_dataframe_manipulacion_2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/5_dataframe_manipulacion_2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/5_dataframe_manipulacion_2.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F5_dataframe_manipulacion_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/5_dataframe_manipulacion_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>5. Manipulación de DataFrames (2º Parte)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">5.1. Filtrar DataFrames con condiciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicadores-and-y-or">5.1.1. Indicadores <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND) y <code class="docutils literal notranslate"><span class="pre">|</span></code> (OR)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">5.2. Ordenar DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestionar-de-datos-vacios">5.3. Gestionar de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-vacios">5.3.1. Identificar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-datos-vacios">5.3.2. Eliminar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenar-datos-vacios">5.3.3. Llenar datos vacios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-columna-usando-una-formula">5.4. Crear una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrar-una-columna">5.5. Borrar una columna</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="manipulacion-de-dataframes-2o-parte">
+<h1>5. Manipulación de DataFrames (2º Parte)<a class="headerlink" href="#manipulacion-de-dataframes-2o-parte" title="Link to this heading">#</a></h1>
+<p>Seguimos trabajando la manipulación de DataFrames. Para ello, utilizaremos de nuevo el archivo del apartado 4.</p>
+<p>Recuerda que creamos un DataFrame a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive en formato .csv. El link al archivo es el indicado a <a class="reference external" href="https://drive.google.com/uc?export=download&amp;amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6">https://drive.google.com/uc?export=download&amp;id=16SQQX0ly–l9UvNBr5-KGRWb6todE1u6</a>.</p>
+<p>Vamos a llamar al Dataframe: <strong><code class="docutils literal notranslate"><span class="pre">df</span></code></strong> (por ejemplo)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos la librería pandas</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Creamos un DataFrame a partir de un archivo de Excel.</span>
+<span class="c1"># Además, establecemos la columna &quot;ID_Producto&quot; como índice</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;ID_Producto&quot;</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+    </tr>
+    <tr>
+      <th>SKU11</th>
+      <td>Robot aspirador Roomba 960</td>
+      <td>30</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>SKU39</th>
+      <td>Cámara de acción Insta360 One X2</td>
+      <td>80</td>
+      <td>380</td>
+    </tr>
+    <tr>
+      <th>SKU44</th>
+      <td>Cafetera Nespresso Vertuo</td>
+      <td>80</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>SKU48</th>
+      <td>Nintendo Switch</td>
+      <td>50</td>
+      <td>280</td>
+    </tr>
+    <tr>
+      <th>SKU62</th>
+      <td>PlayStation 5</td>
+      <td>75</td>
+      <td>480</td>
+    </tr>
+    <tr>
+      <th>SKU63</th>
+      <td>Reloj Inteligente Apple Watch Series 6</td>
+      <td>90</td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <th>SKU97</th>
+      <td>GoPro HERO9</td>
+      <td>100</td>
+      <td>320</td>
+    </tr>
+    <tr>
+      <th>SKU98</th>
+      <td>AirPods Pro</td>
+      <td>120</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU110</th>
+      <td>Gafas de realidad virtual Oculus Quest 2</td>
+      <td>50</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <th>SKU115</th>
+      <td>Garmin Fenix 6 Pro</td>
+      <td>55</td>
+      <td>700</td>
+    </tr>
+    <tr>
+      <th>SKU126</th>
+      <td>Refrigerador Samsung Smart</td>
+      <td>25</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>SKU131</th>
+      <td>Samsung Galaxy S21</td>
+      <td>80</td>
+      <td>850</td>
+    </tr>
+    <tr>
+      <th>SKU134</th>
+      <td>Laptop Dell XPS 15</td>
+      <td>40</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>SKU154</th>
+      <td>iPad Pro 12.9</td>
+      <td>60</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>SKU158</th>
+      <td>Smartwatch Samsung Galaxy Watch 3</td>
+      <td>85</td>
+      <td>550</td>
+    </tr>
+    <tr>
+      <th>SKU162</th>
+      <td>Mochila antirrobo XD Design</td>
+      <td>150</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>SKU163</th>
+      <td>Auriculares Sony WH-1000XM4</td>
+      <td>100</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <th>SKU168</th>
+      <td>Microondas inteligente Panasonic</td>
+      <td>50</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU170</th>
+      <td>Silla gaming DXRacer</td>
+      <td>60</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <th>SKU171</th>
+      <td>Drone DJI Mavic Air 2</td>
+      <td>20</td>
+      <td>900</td>
+    </tr>
+    <tr>
+      <th>SKU172</th>
+      <td>iPhone 13</td>
+      <td>100</td>
+      <td>990</td>
+    </tr>
+    <tr>
+      <th>SKU176</th>
+      <td>Bose QuietComfort 35 II</td>
+      <td>70</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <th>SKU178</th>
+      <td>Bicicleta eléctrica Xiaomi</td>
+      <td>35</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th>SKU187</th>
+      <td>Cámara Canon EOS Rebel T7</td>
+      <td>50</td>
+      <td>550</td>
+    </tr>
+    <tr>
+      <th>SKU191</th>
+      <td>Smart TV LG OLED 55"</td>
+      <td>40</td>
+      <td>1500</td>
+    </tr>
+    <tr>
+      <th>SKU196</th>
+      <td>Consola Retro Sega Genesis</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="filtrar-dataframes-con-condiciones">
+<h2>5.1. Filtrar DataFrames con condiciones<a class="headerlink" href="#filtrar-dataframes-con-condiciones" title="Link to this heading">#</a></h2>
+<p>Puedes seleccionar un conjunto de datos que <strong>cumplan una condición</strong> utilizando esta estructura <code class="docutils literal notranslate"><span class="pre">nombreDataframe[condicion]</span></code>. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>SKU98</th>
+      <td>AirPods Pro</td>
+      <td>120</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU162</th>
+      <td>Mochila antirrobo XD Design</td>
+      <td>150</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>SKU196</th>
+      <td>Consola Retro Sega Genesis</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Si quieres crear un nuevo DataFrame filtrado.</span>
+<span class="c1"># De esta forma tendrás dos dataframe: el original (df) y el filtrado (df_filtrado)</span>
+<span class="n">df_filtrado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">df_filtrado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>SKU98</th>
+      <td>AirPods Pro</td>
+      <td>120</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU162</th>
+      <td>Mochila antirrobo XD Design</td>
+      <td>150</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>SKU196</th>
+      <td>Consola Retro Sega Genesis</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="indicadores-and-y-or">
+<h3>5.1.1. Indicadores <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND) y <code class="docutils literal notranslate"><span class="pre">|</span></code> (OR)<a class="headerlink" href="#indicadores-and-y-or" title="Link to this heading">#</a></h3>
+<p>Estas condiciones pueden ser complejas a través de usar indicadores <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND) y <code class="docutils literal notranslate"><span class="pre">|</span></code> (OR).</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></strong> (AND): las dos condiciones tiene que cumplirse: Por ejemplo:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tienen que cumplirse dos condiciones al mismo tiempo</span>
+<span class="n">df_filtrado_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Precio&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)]</span>
+<span class="n">df_filtrado_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU162</th>
+      <td>Mochila antirrobo XD Design</td>
+      <td>150</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>SKU196</th>
+      <td>Consola Retro Sega Genesis</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">|</span></code></strong> (OR): las dos condiciones tiene que cumplirse: Por ejemplo:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tienen que cumplirse una de las dos condiciones</span>
+<span class="n">df_filtrado_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Precio&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)]</span>
+<span class="n">df_filtrado_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>SKU44</th>
+      <td>Cafetera Nespresso Vertuo</td>
+      <td>80</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>SKU98</th>
+      <td>AirPods Pro</td>
+      <td>120</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU162</th>
+      <td>Mochila antirrobo XD Design</td>
+      <td>150</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>SKU196</th>
+      <td>Consola Retro Sega Genesis</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Para filtrar por aquellos que contienen un texto determinado, puedes usar <code class="docutils literal notranslate"><span class="pre">.str.contains()</span></code>. Nótese que es sensible a mayúsculas y tildes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtra los productos que contienen la palabra &quot;Cámara&quot; en la columna Producto</span>
+<span class="n">df_filtrado_3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Producto&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Cámara&quot;</span><span class="p">))]</span>
+<span class="n">df_filtrado_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU39</th>
+      <td>Cámara de acción Insta360 One X2</td>
+      <td>80</td>
+      <td>380</td>
+    </tr>
+    <tr>
+      <th>SKU187</th>
+      <td>Cámara Canon EOS Rebel T7</td>
+      <td>50</td>
+      <td>550</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="ordenar-dataframes">
+<h2>5.2. Ordenar DataFrames<a class="headerlink" href="#ordenar-dataframes" title="Link to this heading">#</a></h2>
+<p>Para ordenar los datos en tu <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> puedes usar el comando: <code class="docutils literal notranslate"><span class="pre">sort_values</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">nombreDataFrame.sort_values(by=nombre_columna,</span> <span class="pre">ascending=True/False)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ascending</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code> cuando los datos van de menor a mayor, y es <code class="docutils literal notranslate"><span class="pre">False</span></code> en el caso contrario.</p>
+<p>Puedes combinarlo con el método <code class="docutils literal notranslate"><span class="pre">head()</span></code> y así desplegar un top 5, top 10, o similar. Por ejemplo así puedes ver el top 5 productos por precio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ordenado</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Precio&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">df_ordenado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU126</th>
+      <td>Refrigerador Samsung Smart</td>
+      <td>25</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>SKU191</th>
+      <td>Smart TV LG OLED 55"</td>
+      <td>40</td>
+      <td>1500</td>
+    </tr>
+    <tr>
+      <th>SKU134</th>
+      <td>Laptop Dell XPS 15</td>
+      <td>40</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>SKU154</th>
+      <td>iPad Pro 12.9</td>
+      <td>60</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>SKU172</th>
+      <td>iPhone 13</td>
+      <td>100</td>
+      <td>990</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="gestionar-de-datos-vacios">
+<h2>5.3. Gestionar de datos vacios<a class="headerlink" href="#gestionar-de-datos-vacios" title="Link to this heading">#</a></h2>
+<p>Un problema común la hora de gestionar datos es que puede haber columnas que no tienen todos los datos. Miremos este ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1bqVTtpAF50QSlrtB6DjfeHx1w9UKT7O3&quot;</span><span class="p">)</span>
+<span class="n">df_artistas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Artista</th>
+      <th>Spotify streams (millones)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Taylor Swift</td>
+      <td>29100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bad Bunny</td>
+      <td>16370.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Weeknd</td>
+      <td>14140.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drake</td>
+      <td>14030.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peso Pluma</td>
+      <td>10540.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Feid</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="admonition-significado-de-nan admonition">
+<p class="admonition-title">Significado de NaN</p>
+<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> significa “<strong>Not a Number</strong>” (en inglés: “no es un número”) y se usa en Pandas para representar valores faltantes o nulos en los datos.</p>
+</div>
+<section id="identificar-datos-vacios">
+<h3>5.3.1. Identificar datos vacíos<a class="headerlink" href="#identificar-datos-vacios" title="Link to this heading">#</a></h3>
+<p>En un DataFrame pequeño, como el que acabamos de crear, es fácil ver donde y cuántos <code class="docutils literal notranslate"><span class="pre">NaN</span></code> hay. Pero cuando manipulamos grandes volúmenes de datos es mejor llamar el siguiente tipo de código para obtener un resumen de este problema</p>
+<p>Los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> aparecen cuando hay datos faltantes.</p>
+<p>Para ver cuántos y en cuáles columnas faltan daros, usamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Artista                       0
+Spotify streams (millones)    1
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puedes ver que en la columna <code class="docutils literal notranslate"><span class="pre">Spotify</span> <span class="pre">streams</span> <span class="pre">(millones)</span></code> tenemos 1 dato con <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, mientras que en las otras columnas no tenemos.</p>
+</section>
+<section id="eliminar-datos-vacios">
+<h3>5.3.2. Eliminar datos vacíos<a class="headerlink" href="#eliminar-datos-vacios" title="Link to this heading">#</a></h3>
+<p>La fila del artista Feid no tiene ningún dato, por lo que podría ser recomendable sacarlo del DataFrame, así podemos manipular los otros datos.</p>
+<p><strong>Advertencia</strong>: el método <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> elimina toda la fila si es que alguna columna es <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<p><strong>Nota</strong>: Tienes que crear otro DataFrame con la información filtrada. Esto es una protección para evitar que elimines fácilmente los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas_filtrado</span> <span class="o">=</span> <span class="n">df_artistas</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df_artistas_filtrado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Artista</th>
+      <th>Spotify streams (millones)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Taylor Swift</td>
+      <td>29100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bad Bunny</td>
+      <td>16370.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Weeknd</td>
+      <td>14140.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drake</td>
+      <td>14030.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peso Pluma</td>
+      <td>10540.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="llenar-datos-vacios">
+<h3>5.3.3. Llenar datos vacios<a class="headerlink" href="#llenar-datos-vacios" title="Link to this heading">#</a></h3>
+<p>Otra manera de gestionar estos datos es llenando el vacio que dejó. Vamos a reemplazar el <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en este caso por <code class="docutils literal notranslate"><span class="pre">7900</span></code>, que fue el número asociado a Feid para este año, usando <code class="docutils literal notranslate"><span class="pre">fillna</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas_llenado</span> <span class="o">=</span> <span class="n">df_artistas</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">7900</span><span class="p">)</span>
+<span class="n">df_artistas_llenado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Artista</th>
+      <th>Spotify streams (millones)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Taylor Swift</td>
+      <td>29100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bad Bunny</td>
+      <td>16370.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Weeknd</td>
+      <td>14140.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drake</td>
+      <td>14030.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peso Pluma</td>
+      <td>10540.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Feid</td>
+      <td>7900.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Si queremos ser específicos con como vamos a completar los datos, vamos a usar el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> para localizar esa fila, en este caso la 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7900</span>
+<span class="n">df_artistas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Artista</th>
+      <th>Spotify streams (millones)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Taylor Swift</td>
+      <td>29100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bad Bunny</td>
+      <td>16370.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Weeknd</td>
+      <td>14140.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drake</td>
+      <td>14030.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peso Pluma</td>
+      <td>10540.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Feid</td>
+      <td>7900.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="crear-una-columna-usando-una-formula">
+<h2>5.4. Crear una columna usando una formula<a class="headerlink" href="#crear-una-columna-usando-una-formula" title="Link to this heading">#</a></h2>
+<p>Puede añadir una nueva columna en base a cálculos.</p>
+<p>En el siguiente ejemplo tenemos un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> con la cantidad y precio de cada producto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vamos a visualizar los tres primeros datos.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Suponga que quiere saber cuáles son los productos que representan más valor en su inventario. Para ello le pide que cree una nueva columna llamada <code class="docutils literal notranslate"><span class="pre">&quot;ValorInventario&quot;</span></code> que contenga el valor de la <strong>cantidad multiplicada por el precio</strong> de cada producto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generamos la columna</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Cantidad</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">Precio</span>
+
+<span class="c1"># Desplegamos el cambio, con solo los 10 primeros productos</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>ValorInventario</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+      <td>32500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+      <td>32500</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+      <td>33750</td>
+    </tr>
+    <tr>
+      <th>SKU11</th>
+      <td>Robot aspirador Roomba 960</td>
+      <td>30</td>
+      <td>450</td>
+      <td>13500</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+      <td>30000</td>
+    </tr>
+    <tr>
+      <th>SKU39</th>
+      <td>Cámara de acción Insta360 One X2</td>
+      <td>80</td>
+      <td>380</td>
+      <td>30400</td>
+    </tr>
+    <tr>
+      <th>SKU44</th>
+      <td>Cafetera Nespresso Vertuo</td>
+      <td>80</td>
+      <td>150</td>
+      <td>12000</td>
+    </tr>
+    <tr>
+      <th>SKU48</th>
+      <td>Nintendo Switch</td>
+      <td>50</td>
+      <td>280</td>
+      <td>14000</td>
+    </tr>
+    <tr>
+      <th>SKU62</th>
+      <td>PlayStation 5</td>
+      <td>75</td>
+      <td>480</td>
+      <td>36000</td>
+    </tr>
+    <tr>
+      <th>SKU63</th>
+      <td>Reloj Inteligente Apple Watch Series 6</td>
+      <td>90</td>
+      <td>600</td>
+      <td>54000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="borrar-una-columna">
+<h2>5.5. Borrar una columna<a class="headerlink" href="#borrar-una-columna" title="Link to this heading">#</a></h2>
+<p>Para borrar una columna debe usar <code class="docutils literal notranslate"><span class="pre">drop</span></code>, y especificar <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code>, que es el indicador de columnas. En pandas <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> referencia a las filas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_productos_borrado</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Desplegamos el cambio, con solo los 5 primeros productos</span>
+<span class="n">df_productos_borrado</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+    </tr>
+    <tr>
+      <th>SKU11</th>
+      <td>Robot aspirador Roomba 960</td>
+      <td>30</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Nota</strong>: Tienes que crear otro DataFrame con la información borrada. Esto es una protección para evitar que elimines fácilmente los datos y no puedas recuperarlos.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4_1_dataframe_manipulacion_parte_1_ejercicios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="5_dataframe_graficos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualizacion de datos en pandas 📊</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrar-dataframes-con-condiciones">5.1. Filtrar DataFrames con condiciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicadores-and-y-or">5.1.1. Indicadores <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (AND) y <code class="docutils literal notranslate"><span class="pre">|</span></code> (OR)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">5.2. Ordenar DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestionar-de-datos-vacios">5.3. Gestionar de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-vacios">5.3.1. Identificar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-datos-vacios">5.3.2. Eliminar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenar-datos-vacios">5.3.3. Llenar datos vacios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-columna-usando-una-formula">5.4. Crear una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrar-una-columna">5.5. Borrar una columna</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alberto Durán Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
