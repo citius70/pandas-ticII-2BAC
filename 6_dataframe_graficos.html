@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Análisis de datos con Pandas</title>
+    <title>6. Visualizacion de datos en pandas 📊 &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -60,7 +60,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sandbox';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '6_dataframe_graficos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -249,7 +249,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/sandbox.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/6_dataframe_graficos.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +267,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/sandbox.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/6_dataframe_graficos.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/sandbox.ipynb" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/6_dataframe_graficos.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2Fsandbox.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F6_dataframe_graficos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +380,7 @@
       
       
       
-      <li><a href="_sources/sandbox.ipynb" target="_blank"
+      <li><a href="_sources/6_dataframe_graficos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -456,7 +456,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>6. Visualizacion de datos en pandas 📊</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,7 +465,19 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Visualizacion de datos en pandas 📊</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas">Tipos de gráficos que se pueden hacer con Pandas:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra">Gráfico de barra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra-horizontal">Grafico de barra horizontal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linea">Gráfico de línea</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">Grafico circular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Grafico de linea</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exportando-dataframes">Exportando DataFrames</a></li>
 </ul>
 
             </nav>
@@ -478,52 +490,193 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Card Title</div>
-<p class="sd-card-text">sdfdfsd dcsdsdfsds dfsdsdfsd</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-en-pandas">
+<h1>6. Visualizacion de datos en pandas 📊<a class="headerlink" href="#visualizacion-de-datos-en-pandas" title="Link to this heading">#</a></h1>
+<p>Aunque Pandas no es una biblioteca de visualización avanzada como <a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a> o <a class="reference external" href="https://plotly.com/">Plotly</a>, permite generar <strong>gráficos</strong> rápidamente para analizar datos de manera exploratoria.</p>
+<p>La biblioteca <strong>Pandas</strong> en Python tiene capacidades básicas de visualización mediante su integración con <a class="reference external" href="https://matplotlib.org/">Matplotlib</a>.</p>
+<section id="tipos-de-graficos-que-se-pueden-hacer-con-pandas">
+<h2>Tipos de gráficos que se pueden hacer con Pandas:<a class="headerlink" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas" title="Link to this heading">#</a></h2>
+<p>La función principal para graficar en Pandas es <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>, que se basa en Matplotlib. Algunos de los gráficos más comunes son los que se muestran después del siguiente bloque:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creamos el dataframe df_artistas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df_artistas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1bqVTtpAF50QSlrtB6DjfeHx1w9UKT7O3&quot;</span><span class="p">)</span>
+<span class="n">df_artistas</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-Label1</label><div class="sd-tab-content docutils">
-<p>dssdsddsd</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Artista</th>
+      <th>Spotify streams (millones)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Taylor Swift</td>
+      <td>29100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bad Bunny</td>
+      <td>16370.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Weeknd</td>
+      <td>14140.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Drake</td>
+      <td>14030.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Peso Pluma</td>
+      <td>10540.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Label2</label><div class="sd-tab-content docutils">
-<p>Content 2</p>
+<p><strong>Nota</strong>: En general, en el <code class="docutils literal notranslate"><span class="pre">eje</span></code> <strong>x</strong> suele ir la etiqueta, y en el <code class="docutils literal notranslate"><span class="pre">eje</span></code> <strong>y</strong> el dato.</p>
+</section>
+<section id="grafico-de-barra">
+<h2>Gráfico de barra<a class="headerlink" href="#grafico-de-barra" title="Link to this heading">#</a></h2>
+<p>La sintaxis para dibujar un gráfico de barras es: : <code class="docutils literal notranslate"><span class="pre">plot.bar(x,y)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<p><span class="sd-sphinx-override sd-badge">plain badge</span></p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap reference external" href="https://example.com"><span>https://example.com</span></a></p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap reference external" href="https://example.com"><span>Button text</span></a></p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary sd-shadow-sm reference external" href="https://example.com"><span>https://example.com</span></a></p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://example.com"><span>https://example.com</span></a></p>
-<p><span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary reference external" href="https://example.com"><span>https://example.com</span></a></span></p>
-<p>A coloured icon: <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-report sd-text-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>, some more text.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 sd-border-1 docutils">
-<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
-<div class="sd-col sd-d-flex-column docutils">
-<p>vsdsesef</p>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Artista&#39;&gt;
+</pre></div>
 </div>
-<div class="sd-col sd-d-flex-column docutils">
-<p>fsdfsfsdf</p>
-</div>
-<div class="sd-col sd-d-flex-column docutils">
-<p>C</p>
-</div>
-<div class="sd-col sd-d-flex-column docutils">
-<p>D</p>
+<img alt="_images/7cda613d1ffee20469717333144c3d1cf1cde606cf78a1f64349eb5424c57cb7.png" src="_images/7cda613d1ffee20469717333144c3d1cf1cde606cf78a1f64349eb5424c57cb7.png" />
 </div>
 </div>
+</section>
+<section id="grafico-de-barra-horizontal">
+<h2>Grafico de barra horizontal<a class="headerlink" href="#grafico-de-barra-horizontal" title="Link to this heading">#</a></h2>
+<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.barh(x,y)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<p><span class="badge badge-primary">Primary</span>
-<span class="badge badge-outline-primary">Primary Line</span></p>
-<p><span style="background-color:#0d6efd; color:white; padding:2px 8px; border-radius:8px;">primary</span>
-<span style="color:#0d6efd; padding:2px 8px; border:1px solid #0d6efd; border-radius:8px;">primary-line</span></p>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Artista&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/48bd5c69eac86edc81cbe026ffbee0f2398ffe4b9d551b3a069a2e113bb93705.png" src="_images/48bd5c69eac86edc81cbe026ffbee0f2398ffe4b9d551b3a069a2e113bb93705.png" />
+</div>
+</div>
+<section id="grafico-de-linea">
+<h3>Gráfico de línea<a class="headerlink" href="#grafico-de-linea" title="Link to this heading">#</a></h3>
+<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.bar(x,y,</span> <span class="pre">kind='line')</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Artista&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Spotify streams (millones)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Reproducciones anuales&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Reproducciones anuales&#39;}, xlabel=&#39;Artista&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/3ef274a7d3e483ba5ce48976b9fc00ea9a077e99dc9faccc3a0707156f9a6adc.png" src="_images/3ef274a7d3e483ba5ce48976b9fc00ea9a077e99dc9faccc3a0707156f9a6adc.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="grafico-circular">
+<h2>Grafico circular<a class="headerlink" href="#grafico-circular" title="Link to this heading">#</a></h2>
+<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.pie(x,</span> <span class="pre">y,</span> <span class="pre">labels,</span> <span class="pre">legend)</span></code></p>
+<p>Para este gráfico añadiremos dos argumentos</p>
+<ul class="simple">
+<li><p><strong>labels:</strong> Este argumento especifica las etiquetas que se mostrarán.</p></li>
+<li><p><strong>legend:</strong> Este argumento controla si se mostrará o no la leyenda en el gráfico. La leyenda generalmente proporciona información sobre el significado de los colores o las porciones en el gráfico. En este caso si la activas bloquea un poco la información.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">df_artistas</span><span class="o">.</span><span class="n">Artista</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Spotify streams (millones)&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/6b92e7c40c3bc4849b5653f76aed0b419b688615ff28f4d5065932269a01c14e.png" src="_images/6b92e7c40c3bc4849b5653f76aed0b419b688615ff28f4d5065932269a01c14e.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Grafico de linea<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dolar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1Uc7kM-jM0vqFlXfjdTPJSIWvniORiKIx&quot;</span><span class="p">)</span>
+<span class="n">df_dolar</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Dia&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Valor&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nota: la base de datos viene con fechas en blanco, y por ende el grafico se verá &quot;cortado&quot;.</span>
+<span class="c1"># Para corregir eso se puede hacer con dropna() (ver sección eliminando datos vacíos)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Dia&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/7a26850b3e661a5d5fa67a2cde21fd0fdc3eba25b4d796a100fddecd4f17c467.png" src="_images/7a26850b3e661a5d5fa67a2cde21fd0fdc3eba25b4d796a100fddecd4f17c467.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exportando-dataframes">
+<h1>Exportando DataFrames<a class="headerlink" href="#exportando-dataframes" title="Link to this heading">#</a></h1>
+<p>Una vez creados y manipulados, los datos se pueden escribir utilizando algunos de estos comandos</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_csv(...)</span></code>          # Archivo separado por comas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_sql(...)</span></code>          # Base de datos SQL</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_excel(...)</span></code>        # Libro de Excel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_json(...)</span></code>         # JSON</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_html(...)</span></code>         # Tabla para sitio web</p></li>
+</ul>
+<p>Entre otros.</p>
+<p>Por ejemplo, ejecuta este código y luego revisa los archivos de este colab haciendo click en el ícono de carpeta (📁) del menú lateral. Podrás descargar el archivo desde ahí y luego verlo directo en tu PC.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;artistas.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego en Excel, la información luce así</p>
+<p><img alt="picture" src="https://drive.google.com/uc?id=19CZN0PVeRh19LndAA8u34SFVCqVDKIWe" /></p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -571,7 +724,19 @@ Label2</label><div class="sd-tab-content docutils">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Visualizacion de datos en pandas 📊</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas">Tipos de gráficos que se pueden hacer con Pandas:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra">Gráfico de barra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra-horizontal">Grafico de barra horizontal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linea">Gráfico de línea</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">Grafico circular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Grafico de linea</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exportando-dataframes">Exportando DataFrames</a></li>
 </ul>
 
   </nav></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Ejercicios sobre manipulación de datos en Pandas &#8212; Análisis de datos con Pandas</title>
+    <title>Ejercicios sobre manipulación de datos en Pandas (Parte 1) &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '4_1_dataframe_manipulacion_parte_1_ejercicios';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Visualizacion de datos en pandas 📊" href="5_dataframe_graficos.html" />
+    <link rel="next" title="5. Manipulación de DataFrames (2º Parte)" href="5_dataframe_manipulacion_2.html" />
     <link rel="prev" title="4. Manipulación de DataFrames (1ª Parte)" href="4_dataframe_manipulacion_parte_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,11 +183,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="7_ejemplo_thebe.html">🧪 Ejemplo interactivo con Thebe en .ipynb</a></li>
@@ -457,7 +456,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ejercicios sobre manipulación de datos en Pandas</h1>
+    <h1>Ejercicios sobre manipulación de datos en Pandas (Parte 1)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -487,8 +486,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-sobre-manipulacion-de-datos-en-pandas">
-<h1>Ejercicios sobre <strong>manipulación de datos</strong> en Pandas<a class="headerlink" href="#ejercicios-sobre-manipulacion-de-datos-en-pandas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-sobre-manipulacion-de-datos-en-pandas-parte-1">
+<h1>Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)<a class="headerlink" href="#ejercicios-sobre-manipulacion-de-datos-en-pandas-parte-1" title="Link to this heading">#</a></h1>
 <section id="analisis-de-entregas-logisticas">
 <h2>🚚📦 Análisis de entregas logísticas<a class="headerlink" href="#analisis-de-entregas-logisticas" title="Link to this heading">#</a></h2>
 <p>En este ejercicio trabajaremos con un conjunto de datos que representa <strong>entregas de productos de una empresa de transportes</strong> .
@@ -607,68 +606,68 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
   <tbody>
     <tr>
       <th>ENT0001</th>
-      <td>Bilbao</td>
-      <td>38.86</td>
-      <td>0.546</td>
-      <td>377.19</td>
-      <td>Grupo Caballero S.Co</td>
-      <td>Furgoneta Pequeña</td>
+      <td>Zaragoza</td>
+      <td>6.18</td>
+      <td>1.513</td>
+      <td>419.67</td>
+      <td>Minería Figueroa S.L</td>
+      <td>Camión</td>
       <td>Entregado</td>
-      <td>2025-04-06</td>
-      <td>2025-04-15</td>
-      <td>9.0</td>
+      <td>2025-04-09</td>
+      <td>2025-04-12</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>ENT0002</th>
-      <td>Zaragoza</td>
-      <td>23.48</td>
-      <td>0.674</td>
-      <td>79.70</td>
-      <td>Gómez y Gallardo S.A</td>
-      <td>Motocicleta</td>
-      <td>Entregado</td>
-      <td>2025-03-28</td>
-      <td>2025-04-05</td>
-      <td>8.0</td>
+      <td>Bilbao</td>
+      <td>9.01</td>
+      <td>1.697</td>
+      <td>77.92</td>
+      <td>Fermín Vives Marquez</td>
+      <td>Furgoneta Grande</td>
+      <td>Tránsito</td>
+      <td>2025-04-09</td>
+      <td>None</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>ENT0003</th>
-      <td>Málaga</td>
-      <td>9.58</td>
-      <td>1.517</td>
-      <td>41.16</td>
-      <td>Distribuciones Prieg</td>
+      <td>Valencia</td>
+      <td>45.47</td>
+      <td>0.621</td>
+      <td>224.34</td>
+      <td>Familia Zorrilla S.L</td>
       <td>Camión</td>
       <td>Entregado</td>
-      <td>2025-04-06</td>
-      <td>2025-04-10</td>
-      <td>4.0</td>
+      <td>2025-04-05</td>
+      <td>2025-04-11</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>ENT0004</th>
       <td>Sevilla</td>
-      <td>25.20</td>
-      <td>0.397</td>
-      <td>231.75</td>
-      <td>Azorin &amp; Asociados S</td>
-      <td>Camión</td>
-      <td>Tránsito</td>
-      <td>2025-04-10</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>48.76</td>
+      <td>1.528</td>
+      <td>489.89</td>
+      <td>Consultoría OTNR S.A</td>
+      <td>Furgoneta Pequeña</td>
+      <td>Entregado</td>
+      <td>2025-03-23</td>
+      <td>2025-04-01</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <th>ENT0005</th>
-      <td>Zaragoza</td>
-      <td>30.39</td>
-      <td>0.607</td>
-      <td>171.75</td>
-      <td>Construcción GFEU S.</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Retrasado</td>
-      <td>2025-03-25</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>Sevilla</td>
+      <td>47.39</td>
+      <td>0.882</td>
+      <td>373.77</td>
+      <td>Cárdenas y Carbonell</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-04-03</td>
+      <td>2025-04-09</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -685,66 +684,66 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
     </tr>
     <tr>
       <th>ENT0091</th>
-      <td>Valencia</td>
-      <td>35.37</td>
-      <td>1.914</td>
-      <td>471.44</td>
-      <td>Minería Pineda y aso</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Cancelado</td>
-      <td>2025-04-02</td>
-      <td>None</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ENT0092</th>
-      <td>Valencia</td>
-      <td>45.05</td>
-      <td>0.627</td>
-      <td>292.86</td>
-      <td>Grupo Andrade S.L.L.</td>
-      <td>Motocicleta</td>
-      <td>Entregado</td>
-      <td>2025-04-10</td>
-      <td>2025-04-11</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>ENT0093</th>
-      <td>Barcelona</td>
-      <td>9.61</td>
-      <td>0.232</td>
-      <td>114.46</td>
-      <td>Segarra y asociados</td>
-      <td>Furgoneta Pequeña</td>
+      <td>Zaragoza</td>
+      <td>49.48</td>
+      <td>1.285</td>
+      <td>407.60</td>
+      <td>Hermanos Montalbán S</td>
+      <td>Camión</td>
       <td>Entregado</td>
       <td>2025-04-03</td>
       <td>2025-04-08</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>ENT0094</th>
+      <th>ENT0092</th>
       <td>Madrid</td>
-      <td>34.11</td>
-      <td>0.671</td>
-      <td>336.09</td>
-      <td>Hotel del Norte S.A.</td>
+      <td>1.09</td>
+      <td>1.303</td>
+      <td>388.51</td>
+      <td>Doménech y Acevedo S</td>
       <td>Furgoneta Pequeña</td>
       <td>Entregado</td>
-      <td>2025-03-25</td>
-      <td>2025-03-26</td>
-      <td>1.0</td>
+      <td>2025-03-31</td>
+      <td>2025-04-05</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>ENT0093</th>
+      <td>Sevilla</td>
+      <td>36.13</td>
+      <td>1.123</td>
+      <td>445.19</td>
+      <td>Grupo Morillo S.Com.</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-04-06</td>
+      <td>2025-04-10</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>ENT0094</th>
+      <td>Coruña</td>
+      <td>29.19</td>
+      <td>0.182</td>
+      <td>201.95</td>
+      <td>Hnos Rocamora S.L.</td>
+      <td>Motocicleta</td>
+      <td>Entregado</td>
+      <td>2025-04-07</td>
+      <td>2025-04-10</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>ENT0095</th>
-      <td>Sevilla</td>
-      <td>19.67</td>
-      <td>1.396</td>
-      <td>162.67</td>
-      <td>Industrias Córdoba y</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Cancelado</td>
-      <td>2025-04-05</td>
+      <td>Barcelona</td>
+      <td>17.35</td>
+      <td>1.451</td>
+      <td>112.10</td>
+      <td>Barranco y Fonseca S</td>
+      <td>Furgoneta Grande</td>
+      <td>Retrasado</td>
+      <td>2025-04-03</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
@@ -831,81 +830,81 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
   <tbody>
     <tr>
       <th>ENT0001</th>
-      <td>Bilbao</td>
-      <td>38.86</td>
-      <td>0.546</td>
-      <td>377.19</td>
-      <td>Grupo Caballero S.Co</td>
-      <td>Furgoneta Pequeña</td>
+      <td>Zaragoza</td>
+      <td>6.18</td>
+      <td>1.513</td>
+      <td>419.67</td>
+      <td>Minería Figueroa S.L</td>
+      <td>Camión</td>
       <td>Entregado</td>
-      <td>2025-04-06</td>
-      <td>2025-04-15</td>
-      <td>9.0</td>
+      <td>2025-04-09</td>
+      <td>2025-04-12</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>ENT0002</th>
-      <td>Zaragoza</td>
-      <td>23.48</td>
-      <td>0.674</td>
-      <td>79.70</td>
-      <td>Gómez y Gallardo S.A</td>
-      <td>Motocicleta</td>
-      <td>Entregado</td>
-      <td>2025-03-28</td>
-      <td>2025-04-05</td>
-      <td>8.0</td>
+      <td>Bilbao</td>
+      <td>9.01</td>
+      <td>1.697</td>
+      <td>77.92</td>
+      <td>Fermín Vives Marquez</td>
+      <td>Furgoneta Grande</td>
+      <td>Tránsito</td>
+      <td>2025-04-09</td>
+      <td>None</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>ENT0003</th>
-      <td>Málaga</td>
-      <td>9.58</td>
-      <td>1.517</td>
-      <td>41.16</td>
-      <td>Distribuciones Prieg</td>
+      <td>Valencia</td>
+      <td>45.47</td>
+      <td>0.621</td>
+      <td>224.34</td>
+      <td>Familia Zorrilla S.L</td>
       <td>Camión</td>
       <td>Entregado</td>
-      <td>2025-04-06</td>
-      <td>2025-04-10</td>
-      <td>4.0</td>
+      <td>2025-04-05</td>
+      <td>2025-04-11</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>ENT0004</th>
       <td>Sevilla</td>
-      <td>25.20</td>
-      <td>0.397</td>
-      <td>231.75</td>
-      <td>Azorin &amp; Asociados S</td>
-      <td>Camión</td>
-      <td>Tránsito</td>
-      <td>2025-04-10</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>48.76</td>
+      <td>1.528</td>
+      <td>489.89</td>
+      <td>Consultoría OTNR S.A</td>
+      <td>Furgoneta Pequeña</td>
+      <td>Entregado</td>
+      <td>2025-03-23</td>
+      <td>2025-04-01</td>
+      <td>9.0</td>
     </tr>
     <tr>
       <th>ENT0005</th>
-      <td>Zaragoza</td>
-      <td>30.39</td>
-      <td>0.607</td>
-      <td>171.75</td>
-      <td>Construcción GFEU S.</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Retrasado</td>
-      <td>2025-03-25</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>Sevilla</td>
+      <td>47.39</td>
+      <td>0.882</td>
+      <td>373.77</td>
+      <td>Cárdenas y Carbonell</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-04-03</td>
+      <td>2025-04-09</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>ENT0006</th>
-      <td>Barcelona</td>
-      <td>13.10</td>
-      <td>0.163</td>
-      <td>461.43</td>
-      <td>Javier Ferrero Puent</td>
-      <td>Camión</td>
+      <td>Málaga</td>
+      <td>43.25</td>
+      <td>0.208</td>
+      <td>394.20</td>
+      <td>Torrijos &amp; Asociados</td>
+      <td>Furgoneta Grande</td>
       <td>Entregado</td>
-      <td>2025-03-30</td>
-      <td>2025-04-01</td>
-      <td>2.0</td>
+      <td>2025-03-27</td>
+      <td>2025-03-28</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
@@ -965,144 +964,144 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
   <tbody>
     <tr>
       <th>ENT0085</th>
-      <td>Sevilla</td>
-      <td>2.01</td>
-      <td>0.701</td>
-      <td>41.67</td>
-      <td>Sosa y Verdugo S.Coo</td>
-      <td>Furgoneta Grande</td>
-      <td>Retrasado</td>
-      <td>2025-03-31</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>Málaga</td>
+      <td>48.00</td>
+      <td>0.817</td>
+      <td>284.05</td>
+      <td>Inversiones Española</td>
+      <td>Camión</td>
+      <td>Entregado</td>
+      <td>2025-04-04</td>
+      <td>2025-04-05</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>ENT0086</th>
-      <td>Coruña</td>
-      <td>37.12</td>
-      <td>1.036</td>
-      <td>392.61</td>
-      <td>Farmaceútica ILL S.L</td>
+      <td>Valencia</td>
+      <td>40.28</td>
+      <td>0.713</td>
+      <td>141.52</td>
+      <td>Hermanos Guerra S.L.</td>
       <td>Furgoneta Grande</td>
       <td>Entregado</td>
-      <td>2025-03-28</td>
-      <td>2025-03-29</td>
-      <td>1.0</td>
+      <td>2025-04-03</td>
+      <td>2025-04-10</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <th>ENT0087</th>
       <td>Madrid</td>
-      <td>8.01</td>
-      <td>1.002</td>
-      <td>339.64</td>
-      <td>Logística del Noroes</td>
-      <td>Camión</td>
-      <td>Tránsito</td>
-      <td>2025-04-07</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>21.98</td>
+      <td>0.979</td>
+      <td>18.76</td>
+      <td>Grupo Castañeda S.L.</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-04-09</td>
+      <td>2025-04-12</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>ENT0088</th>
-      <td>Bilbao</td>
-      <td>10.87</td>
-      <td>0.533</td>
-      <td>450.51</td>
-      <td>Servicios Peral &amp; As</td>
-      <td>Motocicleta</td>
+      <td>Málaga</td>
+      <td>17.01</td>
+      <td>0.313</td>
+      <td>177.99</td>
+      <td>Suministros del Nort</td>
+      <td>Camión</td>
       <td>Entregado</td>
-      <td>2025-04-08</td>
-      <td>2025-04-16</td>
-      <td>8.0</td>
+      <td>2025-04-06</td>
+      <td>2025-04-13</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <th>ENT0089</th>
-      <td>Barcelona</td>
-      <td>34.21</td>
-      <td>0.401</td>
-      <td>377.50</td>
-      <td>Servicios RFW S.Com.</td>
+      <td>Madrid</td>
+      <td>48.80</td>
+      <td>0.339</td>
+      <td>71.52</td>
+      <td>Mercedes Jaume Escol</td>
       <td>Furgoneta Pequeña</td>
-      <td>Tránsito</td>
-      <td>2025-04-08</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>Entregado</td>
+      <td>2025-03-30</td>
+      <td>2025-04-05</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>ENT0090</th>
-      <td>Zaragoza</td>
-      <td>25.14</td>
-      <td>1.251</td>
-      <td>478.04</td>
-      <td>Familia Conde S.A.</td>
-      <td>Furgoneta Grande</td>
+      <td>Sevilla</td>
+      <td>46.51</td>
+      <td>0.153</td>
+      <td>354.09</td>
+      <td>Neira y Prada S.L.</td>
+      <td>Motocicleta</td>
       <td>Entregado</td>
-      <td>2025-04-04</td>
-      <td>2025-04-08</td>
-      <td>4.0</td>
+      <td>2025-03-22</td>
+      <td>2025-03-28</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>ENT0091</th>
-      <td>Valencia</td>
-      <td>35.37</td>
-      <td>1.914</td>
-      <td>471.44</td>
-      <td>Minería Pineda y aso</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Cancelado</td>
-      <td>2025-04-02</td>
-      <td>None</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ENT0092</th>
-      <td>Valencia</td>
-      <td>45.05</td>
-      <td>0.627</td>
-      <td>292.86</td>
-      <td>Grupo Andrade S.L.L.</td>
-      <td>Motocicleta</td>
-      <td>Entregado</td>
-      <td>2025-04-10</td>
-      <td>2025-04-11</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>ENT0093</th>
-      <td>Barcelona</td>
-      <td>9.61</td>
-      <td>0.232</td>
-      <td>114.46</td>
-      <td>Segarra y asociados</td>
-      <td>Furgoneta Pequeña</td>
+      <td>Zaragoza</td>
+      <td>49.48</td>
+      <td>1.285</td>
+      <td>407.60</td>
+      <td>Hermanos Montalbán S</td>
+      <td>Camión</td>
       <td>Entregado</td>
       <td>2025-04-03</td>
       <td>2025-04-08</td>
       <td>5.0</td>
     </tr>
     <tr>
-      <th>ENT0094</th>
+      <th>ENT0092</th>
       <td>Madrid</td>
-      <td>34.11</td>
-      <td>0.671</td>
-      <td>336.09</td>
-      <td>Hotel del Norte S.A.</td>
+      <td>1.09</td>
+      <td>1.303</td>
+      <td>388.51</td>
+      <td>Doménech y Acevedo S</td>
       <td>Furgoneta Pequeña</td>
       <td>Entregado</td>
-      <td>2025-03-25</td>
-      <td>2025-03-26</td>
-      <td>1.0</td>
+      <td>2025-03-31</td>
+      <td>2025-04-05</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>ENT0093</th>
+      <td>Sevilla</td>
+      <td>36.13</td>
+      <td>1.123</td>
+      <td>445.19</td>
+      <td>Grupo Morillo S.Com.</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-04-06</td>
+      <td>2025-04-10</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>ENT0094</th>
+      <td>Coruña</td>
+      <td>29.19</td>
+      <td>0.182</td>
+      <td>201.95</td>
+      <td>Hnos Rocamora S.L.</td>
+      <td>Motocicleta</td>
+      <td>Entregado</td>
+      <td>2025-04-07</td>
+      <td>2025-04-10</td>
+      <td>3.0</td>
     </tr>
     <tr>
       <th>ENT0095</th>
-      <td>Sevilla</td>
-      <td>19.67</td>
-      <td>1.396</td>
-      <td>162.67</td>
-      <td>Industrias Córdoba y</td>
-      <td>Furgoneta Pequeña</td>
-      <td>Cancelado</td>
-      <td>2025-04-05</td>
+      <td>Barcelona</td>
+      <td>17.35</td>
+      <td>1.451</td>
+      <td>112.10</td>
+      <td>Barranco y Fonseca S</td>
+      <td>Furgoneta Grande</td>
+      <td>Retrasado</td>
+      <td>2025-04-03</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
@@ -1123,7 +1122,7 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.803571428571429
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.587301587301587
 </pre></div>
 </div>
 </div>
@@ -1167,7 +1166,7 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23622.579999999994
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24735.369999999995
 </pre></div>
 </div>
 </div>
@@ -1185,7 +1184,7 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ENT0035&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ENT0006&#39;
 </pre></div>
 </div>
 </div>
@@ -1198,7 +1197,7 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ENT0001&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ENT0004&#39;
 </pre></div>
 </div>
 </div>
@@ -1217,14 +1216,14 @@ Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Destino
-Valencia     18
-Madrid       17
+Málaga       18
+Zaragoza     15
 Sevilla      13
-Zaragoza     12
-Barcelona    10
+Bilbao       11
+Madrid       11
 Coruña       10
-Bilbao        8
-Málaga        7
+Barcelona    10
+Valencia      7
 Name: count, dtype: int64
 </pre></div>
 </div>
@@ -1239,10 +1238,10 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Medio_Entrega
-Furgoneta Pequeña    26
-Camión               25
-Furgoneta Grande     23
-Motocicleta          21
+Furgoneta Grande     29
+Motocicleta          29
+Furgoneta Pequeña    21
+Camión               16
 Name: count, dtype: int64
 </pre></div>
 </div>
@@ -1291,55 +1290,55 @@ Name: count, dtype: int64
       <td>95.000000</td>
       <td>95.000000</td>
       <td>95.000000</td>
-      <td>56.000000</td>
+      <td>63.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>25.857158</td>
-      <td>0.940368</td>
-      <td>248.658737</td>
-      <td>4.803571</td>
+      <td>27.714211</td>
+      <td>1.004874</td>
+      <td>260.372316</td>
+      <td>4.587302</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>14.021902</td>
-      <td>0.543482</td>
-      <td>139.182088</td>
-      <td>2.511209</td>
+      <td>14.901951</td>
+      <td>0.562759</td>
+      <td>146.553386</td>
+      <td>2.575536</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>1.080000</td>
-      <td>0.024000</td>
-      <td>13.860000</td>
+      <td>0.610000</td>
+      <td>0.019000</td>
+      <td>10.600000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>13.795000</td>
-      <td>0.499000</td>
-      <td>145.920000</td>
-      <td>2.000000</td>
+      <td>17.180000</td>
+      <td>0.535500</td>
+      <td>117.880000</td>
+      <td>2.500000</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>25.940000</td>
-      <td>0.850000</td>
-      <td>239.730000</td>
-      <td>5.000000</td>
+      <td>27.350000</td>
+      <td>0.995000</td>
+      <td>284.050000</td>
+      <td>4.000000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>35.540000</td>
-      <td>1.364500</td>
-      <td>363.035000</td>
-      <td>7.000000</td>
+      <td>41.085000</td>
+      <td>1.497000</td>
+      <td>390.350000</td>
+      <td>6.000000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>49.810000</td>
-      <td>1.995000</td>
-      <td>494.470000</td>
+      <td>49.480000</td>
+      <td>1.978000</td>
+      <td>497.630000</td>
       <td>9.000000</td>
     </tr>
   </tbody>
@@ -1407,11 +1406,11 @@ Name: count, dtype: int64
       </div>
     </a>
     <a class="right-next"
-       href="5_dataframe_graficos.html"
+       href="5_dataframe_manipulacion_2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizacion de datos en pandas 📊</p>
+        <p class="prev-next-title">5. Manipulación de DataFrames (2º Parte)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
