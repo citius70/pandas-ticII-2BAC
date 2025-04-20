@@ -473,14 +473,14 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">5.2. Ordenar DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">5.3. Gestión de datos vacios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificando-datos-vacios">Identificando datos vacíos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminando-datos-vacios">Eliminando datos vacíos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenando-datos-vacios">Llenando datos vacios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestionar-de-datos-vacios">5.3. Gestionar de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-vacios">5.3.1. Identificar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-datos-vacios">5.3.2. Eliminar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenar-datos-vacios">5.3.3. Llenar datos vacios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">5.4. Creando una columna usando una formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">5.5. Borrando una columna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-columna-usando-una-formula">5.4. Crear una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrar-una-columna">5.5. Borrar una columna</a></li>
 </ul>
             </nav>
         </div>
@@ -494,9 +494,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manipulacion-de-dataframes-2o-parte">
 <h1>5. Manipulación de DataFrames (2º Parte)<a class="headerlink" href="#manipulacion-de-dataframes-2o-parte" title="Link to this heading">#</a></h1>
-<p>Seguimos trabajando la manipulación de DataFrames. Para ello, utilizaremos de nuevo el archivo del apartado 4. .</p>
+<p>Seguimos trabajando la manipulación de DataFrames. Para ello, utilizaremos de nuevo el archivo del apartado 4.</p>
 <p>Recuerda que creamos un DataFrame a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive en formato .csv. El link al archivo es el indicado a <a class="reference external" href="https://drive.google.com/uc?export=download&amp;amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6">https://drive.google.com/uc?export=download&amp;id=16SQQX0ly–l9UvNBr5-KGRWb6todE1u6</a>.</p>
-<p>Vamos a llamar al Dataframe: <strong>df</strong> (por ejemplo)</p>
+<p>Vamos a llamar al Dataframe: <strong><code class="docutils literal notranslate"><span class="pre">df</span></code></strong> (por ejemplo)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos la librería pandas</span>
@@ -1155,8 +1155,8 @@
 </div></div></div>
 </div>
 </section>
-<section id="gestion-de-datos-vacios">
-<h2>5.3. Gestión de datos vacios<a class="headerlink" href="#gestion-de-datos-vacios" title="Link to this heading">#</a></h2>
+<section id="gestionar-de-datos-vacios">
+<h2>5.3. Gestionar de datos vacios<a class="headerlink" href="#gestionar-de-datos-vacios" title="Link to this heading">#</a></h2>
 <p>Un problema común la hora de gestionar datos es que puede haber columnas que no tienen todos los datos. Miremos este ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1223,10 +1223,15 @@
 </table>
 </div></div></div>
 </div>
-<section id="identificando-datos-vacios">
-<h3>Identificando datos vacíos<a class="headerlink" href="#identificando-datos-vacios" title="Link to this heading">#</a></h3>
+<div class="admonition-significado-de-nan admonition">
+<p class="admonition-title">Significado de NaN</p>
+<p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> significa “<strong>Not a Number</strong>” (en inglés: “no es un número”) y se usa en Pandas para representar valores faltantes o nulos en los datos.</p>
+</div>
+<section id="identificar-datos-vacios">
+<h3>5.3.1. Identificar datos vacíos<a class="headerlink" href="#identificar-datos-vacios" title="Link to this heading">#</a></h3>
 <p>En un DataFrame pequeño, como el que acabamos de crear, es fácil ver donde y cuántos <code class="docutils literal notranslate"><span class="pre">NaN</span></code> hay. Pero cuando manipulamos grandes volúmenes de datos es mejor llamar el siguiente tipo de código para obtener un resumen de este problema</p>
 <p>Los valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code> aparecen cuando hay datos faltantes.</p>
+<p>Para ver cuántos y en cuáles columnas faltan daros, usamos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1243,9 +1248,9 @@ dtype: int64
 </div>
 <p>Puedes ver que en la columna <code class="docutils literal notranslate"><span class="pre">Spotify</span> <span class="pre">streams</span> <span class="pre">(millones)</span></code> tenemos 1 dato con <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, mientras que en las otras columnas no tenemos.</p>
 </section>
-<section id="eliminando-datos-vacios">
-<h3>Eliminando datos vacíos<a class="headerlink" href="#eliminando-datos-vacios" title="Link to this heading">#</a></h3>
-<p>La fila de Feid no tiene ningún dato, por lo que podría ser recomendable sacarlo del DataFrame, así podemos manipular los otros datos.</p>
+<section id="eliminar-datos-vacios">
+<h3>5.3.2. Eliminar datos vacíos<a class="headerlink" href="#eliminar-datos-vacios" title="Link to this heading">#</a></h3>
+<p>La fila del artista Feid no tiene ningún dato, por lo que podría ser recomendable sacarlo del DataFrame, así podemos manipular los otros datos.</p>
 <p><strong>Advertencia</strong>: el método <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> elimina toda la fila si es que alguna columna es <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 <p><strong>Nota</strong>: Tienes que crear otro DataFrame con la información filtrada. Esto es una protección para evitar que elimines fácilmente los datos.</p>
 <div class="cell docutils container">
@@ -1309,8 +1314,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="llenando-datos-vacios">
-<h3>Llenando datos vacios<a class="headerlink" href="#llenando-datos-vacios" title="Link to this heading">#</a></h3>
+<section id="llenar-datos-vacios">
+<h3>5.3.3. Llenar datos vacios<a class="headerlink" href="#llenar-datos-vacios" title="Link to this heading">#</a></h3>
 <p>Otra manera de gestionar estos datos es llenando el vacio que dejó. Vamos a reemplazar el <code class="docutils literal notranslate"><span class="pre">NaN</span></code> en este caso por <code class="docutils literal notranslate"><span class="pre">7900</span></code>, que fue el número asociado a Feid para este año, usando <code class="docutils literal notranslate"><span class="pre">fillna</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,7 +1382,7 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>Si queremos ser super específicos con como vamos a completar los datos, vamos a usar el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> para específicamente localizar ese dato.</p>
+<p>Si queremos ser específicos con como vamos a completar los datos, vamos a usar el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> para localizar esa fila, en este caso la 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7900</span>
@@ -1445,52 +1450,265 @@ dtype: int64
 </div>
 </section>
 </section>
-<section id="creando-una-columna-usando-una-formula">
-<h2>5.4. Creando una columna usando una formula<a class="headerlink" href="#creando-una-columna-usando-una-formula" title="Link to this heading">#</a></h2>
+<section id="crear-una-columna-usando-una-formula">
+<h2>5.4. Crear una columna usando una formula<a class="headerlink" href="#crear-una-columna-usando-una-formula" title="Link to this heading">#</a></h2>
 <p>Puede añadir una nueva columna en base a cálculos.</p>
 <p>En el siguiente ejemplo tenemos un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> con la cantidad y precio de cada producto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_excel</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vamos a visualizar los tres primeros datos.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df_excel&#39; is not defined
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
-<p>Suponga que quiere saber cuáles son los productos que representan más valor en su inventario. Para ello le pide que cree una nueva columna llamada <code class="docutils literal notranslate"><span class="pre">&quot;ValorInventario&quot;</span></code> que contenga el valor de la cantidad multiplicada por el precio de cada producto.</p>
+<p>Suponga que quiere saber cuáles son los productos que representan más valor en su inventario. Para ello le pide que cree una nueva columna llamada <code class="docutils literal notranslate"><span class="pre">&quot;ValorInventario&quot;</span></code> que contenga el valor de la <strong>cantidad multiplicada por el precio</strong> de cada producto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generamos la columna</span>
-<span class="n">df_excel</span><span class="p">[</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">Cantidad</span> <span class="o">*</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">Precio</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Cantidad</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">Precio</span>
 
-<span class="c1"># Desplegamos el cambio, con solo los 3 primeros productos</span>
-<span class="n">df_excel</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Desplegamos el cambio, con solo los 10 primeros productos</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>ValorInventario</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+      <td>32500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+      <td>32500</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+      <td>33750</td>
+    </tr>
+    <tr>
+      <th>SKU11</th>
+      <td>Robot aspirador Roomba 960</td>
+      <td>30</td>
+      <td>450</td>
+      <td>13500</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+      <td>30000</td>
+    </tr>
+    <tr>
+      <th>SKU39</th>
+      <td>Cámara de acción Insta360 One X2</td>
+      <td>80</td>
+      <td>380</td>
+      <td>30400</td>
+    </tr>
+    <tr>
+      <th>SKU44</th>
+      <td>Cafetera Nespresso Vertuo</td>
+      <td>80</td>
+      <td>150</td>
+      <td>12000</td>
+    </tr>
+    <tr>
+      <th>SKU48</th>
+      <td>Nintendo Switch</td>
+      <td>50</td>
+      <td>280</td>
+      <td>14000</td>
+    </tr>
+    <tr>
+      <th>SKU62</th>
+      <td>PlayStation 5</td>
+      <td>75</td>
+      <td>480</td>
+      <td>36000</td>
+    </tr>
+    <tr>
+      <th>SKU63</th>
+      <td>Reloj Inteligente Apple Watch Series 6</td>
+      <td>90</td>
+      <td>600</td>
+      <td>54000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
-<section id="borrando-una-columna">
-<h2>5.5. Borrando una columna<a class="headerlink" href="#borrando-una-columna" title="Link to this heading">#</a></h2>
-<p>Para borrar una columna debe usar <code class="docutils literal notranslate"><span class="pre">drop</span></code>, y especificar <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, que es el indicador de columnas. En pandas <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> referencia a las filas.</p>
+<section id="borrar-una-columna">
+<h2>5.5. Borrar una columna<a class="headerlink" href="#borrar-una-columna" title="Link to this heading">#</a></h2>
+<p>Para borrar una columna debe usar <code class="docutils literal notranslate"><span class="pre">drop</span></code>, y especificar <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code>, que es el indicador de columnas. En pandas <code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">0</span></code> referencia a las filas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_productos_borrado</span> <span class="o">=</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_productos_borrado</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;ValorInventario&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Desplegamos el cambio, con solo los 3 primeros productos</span>
-<span class="n">df_productos_borrado</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Desplegamos el cambio, con solo los 5 primeros productos</span>
+<span class="n">df_productos_borrado</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SKU1</th>
+      <td>Xbox Series X</td>
+      <td>65</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>SKU4</th>
+      <td>Teclado mecánico Razer BlackWidow</td>
+      <td>130</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <th>SKU7</th>
+      <td>Monitor Gaming Asus 27"</td>
+      <td>45</td>
+      <td>750</td>
+    </tr>
+    <tr>
+      <th>SKU11</th>
+      <td>Robot aspirador Roomba 960</td>
+      <td>30</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <th>SKU26</th>
+      <td>Kindle Paperwhite</td>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><strong>Nota</strong>: Tienes que crear otro DataFrame con la información borrada. Esto es una protección para evitar que elimines fácilmente los datos y no puedas recuperarlos.</p>
 </section>
@@ -1566,14 +1784,14 @@ dtype: int64
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordenar-dataframes">5.2. Ordenar DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-datos-vacios">5.3. Gestión de datos vacios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificando-datos-vacios">Identificando datos vacíos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminando-datos-vacios">Eliminando datos vacíos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenando-datos-vacios">Llenando datos vacios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestionar-de-datos-vacios">5.3. Gestionar de datos vacios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-vacios">5.3.1. Identificar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminar-datos-vacios">5.3.2. Eliminar datos vacíos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llenar-datos-vacios">5.3.3. Llenar datos vacios</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creando-una-columna-usando-una-formula">5.4. Creando una columna usando una formula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrando-una-columna">5.5. Borrando una columna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-columna-usando-una-formula">5.4. Crear una columna usando una formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#borrar-una-columna">5.5. Borrar una columna</a></li>
 </ul>
   </nav></div>
 
