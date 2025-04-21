@@ -195,6 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="7_ejemplo_thebe.html">🧪 Ejemplo interactivo con Thebe en .ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sandbox.html">✅ 2. <strong>Incluir widgets interactivos con <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code></strong></a></li>
 </ul>
 
     </div>
@@ -471,8 +472,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">Ejercicio 1. Crear un DataFrame <strong>manualmente</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">🔍 Ejercicio 1. Crear un DataFrame <strong>manualmente</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">🔍 Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV</a></li>
 </ul>
             </nav>
         </div>
@@ -487,7 +488,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="ejercicicio-sobre-creacion-de-dataframes">
 <h1>📑 Ejercicicio sobre creación de DataFrames<a class="headerlink" href="#ejercicicio-sobre-creacion-de-dataframes" title="Link to this heading">#</a></h1>
 <section id="ejercicio-1-crear-un-dataframe-manualmente">
-<h2>Ejercicio 1. Crear un DataFrame <strong>manualmente</strong><a class="headerlink" href="#ejercicio-1-crear-un-dataframe-manualmente" title="Link to this heading">#</a></h2>
+<h2>🔍 Ejercicio 1. Crear un DataFrame <strong>manualmente</strong><a class="headerlink" href="#ejercicio-1-crear-un-dataframe-manualmente" title="Link to this heading">#</a></h2>
 <figure class="margin align-default" id="dataframe">
 <img alt="_images/ejercicio01_salida.png" src="_images/ejercicio01_salida.png" />
 <figcaption>
@@ -506,79 +507,19 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paso 1. Importa la biblioteca `pandas`</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Paso 2. Define los datos de los estudiantes en un diccionario que deseas incluir en el DataFrame</span>
-<span class="n">estudiantes</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Luis&#39;</span><span class="p">,</span> <span class="s1">&#39;Carlos&#39;</span><span class="p">,</span> <span class="s1">&#39;María&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Edad&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span>
-    <span class="s1">&#39;Calificación&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> 
-<span class="p">}</span>
 
 <span class="c1"># Paso 3. Crea el dataframe a partir de los datos del diccionario</span>
-<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">estudiantes</span><span class="p">)</span>
 
 <span class="c1"># Paso 4: Muestra el dataframe</span>
-<span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Nombre</th>
-      <th>Edad</th>
-      <th>Calificación</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Ana</td>
-      <td>20</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Luis</td>
-      <td>21</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Carlos</td>
-      <td>19</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>María</td>
-      <td>22</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">
-<h2>Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV<a class="headerlink" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv" title="Link to this heading">#</a></h2>
+<h2>🔍 Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV<a class="headerlink" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv" title="Link to this heading">#</a></h2>
 <figure class="margin align-default" id="id1">
 <img alt="_images/dataframe_spotify.png" src="_images/dataframe_spotify.png" />
 <figcaption>
@@ -591,7 +532,7 @@
 <p>Descargar el archivo:</p>
 <ol class="arabic simple">
 <li><p>Visita la siguiente web: https://mavenanalytics.io/data-playground</p></li>
-<li><p>Descarga el archivo zip de datos correspondiente a la “Video Game Sales” (Ventas de 64.012 videojuegos entre 1971-2024)</p></li>
+<li><p>Descarga el archivo zip de datos correspondiente a “Video Game Sales” (Ventas de 64.012 videojuegos entre 1971-2024)</p></li>
 <li><p>Descomprime el archivo. Una vez hecho esto, verás dos archivos csv. El que utilizarás es “<strong>vgchartz-2024.csv</strong>”</p></li>
 </ol>
 <p>Importar pandas:</p>
@@ -600,7 +541,7 @@
 </ol>
 <p>Crear el DataFrame:</p>
 <ol class="arabic simple" start="5">
-<li><p>Utiliza el método “read_csv” para crear el datafame. Puedes llamarlo “data”, “data_ventas”….</p>
+<li><p>Utiliza el método “read_csv” para crear el datafame. Puedes llamarlo “df”, “data”, “data_ventas”….</p>
 <ul class="simple">
 <li><p>¡Atención! Además del nombre del archivo “vgchartz-2024.csv”, tienes que indicar el path al mismo.</p>
 <ul>
@@ -615,7 +556,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paso 1: Visita la siguiente web: https://mavenanalytics.io/data-playground</span>
 <span class="c1"># Paso 2: Descarga el archivo zip de datos correspondiente a la &quot;Historia completa de streaming de un usuario de Spotify&quot; (Spotify Streaming History)</span>
-<span class="c1"># Paso 3: Descomprime el archivo. Una vez hecho esto, verás dos archivos csv. El que utilizarás es &quot;spotify_history.csv&quot;</span>
+<span class="c1"># Paso 3: Descomprime el archivo. Una vez hecho esto, verás dos archivos csv. El que utilizarás es &quot;vgchartz-2024.csv&quot;</span>
 <span class="c1"># --------------</span>
 <span class="c1"># Paso 4: Utiliza el método &quot;read_csv&quot; para crear el datafame. Puedes llamarlo &quot;data&quot;, &quot;data_spotify&quot;....</span>
 <span class="c1"># Paso 4.1. ¡Atención! Además del nombre del archivo &quot;spotify_history&quot;, tienes que indicar el path al mismo.</span>
@@ -625,239 +566,9 @@
 <span class="c1"># Paso 6: Visualiza el daframe</span>
 
 <span class="c1"># ESCRIBE EL CÓDIGO AQUÍ:</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/vgchartz-2024.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>img</th>
-      <th>title</th>
-      <th>console</th>
-      <th>genre</th>
-      <th>publisher</th>
-      <th>developer</th>
-      <th>critic_score</th>
-      <th>total_sales</th>
-      <th>na_sales</th>
-      <th>jp_sales</th>
-      <th>pal_sales</th>
-      <th>other_sales</th>
-      <th>release_date</th>
-      <th>last_update</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>/games/boxart/full_6510540AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>PS3</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.4</td>
-      <td>20.32</td>
-      <td>6.37</td>
-      <td>0.99</td>
-      <td>9.85</td>
-      <td>3.12</td>
-      <td>2013-09-17</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>/games/boxart/full_5563178AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>PS4</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.7</td>
-      <td>19.39</td>
-      <td>6.06</td>
-      <td>0.60</td>
-      <td>9.71</td>
-      <td>3.02</td>
-      <td>2014-11-18</td>
-      <td>2018-01-03</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>/games/boxart/827563ccc.jpg</td>
-      <td>Grand Theft Auto: Vice City</td>
-      <td>PS2</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>9.6</td>
-      <td>16.15</td>
-      <td>8.41</td>
-      <td>0.47</td>
-      <td>5.49</td>
-      <td>1.78</td>
-      <td>2002-10-28</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>/games/boxart/full_9218923AmericaFrontccc.jpg</td>
-      <td>Grand Theft Auto V</td>
-      <td>X360</td>
-      <td>Action</td>
-      <td>Rockstar Games</td>
-      <td>Rockstar North</td>
-      <td>NaN</td>
-      <td>15.86</td>
-      <td>9.06</td>
-      <td>0.06</td>
-      <td>5.33</td>
-      <td>1.42</td>
-      <td>2013-09-17</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>/games/boxart/full_4990510AmericaFrontccc.jpg</td>
-      <td>Call of Duty: Black Ops 3</td>
-      <td>PS4</td>
-      <td>Shooter</td>
-      <td>Activision</td>
-      <td>Treyarch</td>
-      <td>8.1</td>
-      <td>15.09</td>
-      <td>6.18</td>
-      <td>0.41</td>
-      <td>6.05</td>
-      <td>2.44</td>
-      <td>2015-11-06</td>
-      <td>2018-01-14</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>64011</th>
-      <td>/games/boxart/full_2779838AmericaFrontccc.jpg</td>
-      <td>XBlaze Lost: Memories</td>
-      <td>PC</td>
-      <td>Visual Novel</td>
-      <td>Aksys Games</td>
-      <td>Arc System Works</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2016-08-11</td>
-      <td>2019-01-28</td>
-    </tr>
-    <tr>
-      <th>64012</th>
-      <td>/games/boxart/full_8031506AmericaFrontccc.jpg</td>
-      <td>Yoru, Tomosu</td>
-      <td>PS4</td>
-      <td>Visual Novel</td>
-      <td>Nippon Ichi Software</td>
-      <td>Nippon Ichi Software</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2020-07-30</td>
-      <td>2020-05-09</td>
-    </tr>
-    <tr>
-      <th>64013</th>
-      <td>/games/boxart/full_6553045AmericaFrontccc.jpg</td>
-      <td>Yoru, Tomosu</td>
-      <td>NS</td>
-      <td>Visual Novel</td>
-      <td>Nippon Ichi Software</td>
-      <td>Nippon Ichi Software</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2020-07-30</td>
-      <td>2020-05-09</td>
-    </tr>
-    <tr>
-      <th>64014</th>
-      <td>/games/boxart/full_6012940JapanFrontccc.png</td>
-      <td>Yunohana SpRING! ~Mellow Times~</td>
-      <td>NS</td>
-      <td>Visual Novel</td>
-      <td>Idea Factory</td>
-      <td>Otomate</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2019-02-28</td>
-      <td>2019-02-24</td>
-    </tr>
-    <tr>
-      <th>64015</th>
-      <td>/games/boxart/default.jpg</td>
-      <td>Yurukill: The Calumniation Games</td>
-      <td>PS4</td>
-      <td>Visual Novel</td>
-      <td>Unknown</td>
-      <td>G.rev Ltd.</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2023-09-29</td>
-    </tr>
-  </tbody>
-</table>
-<p>64016 rows × 14 columns</p>
-</div></div></div>
 </div>
 <p><strong>¡Enhorabuena!</strong> Has convertido una hoja de cálculo de más de 60.000 filas en un <strong>Dataframe</strong> de Pandas. Este es el primer paso para aprovechar las funciones de esta librería de Python. Esto lo harás en los próximos capítulos.</p>
 </section>
@@ -928,8 +639,8 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">Ejercicio 1. Crear un DataFrame <strong>manualmente</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-crear-un-dataframe-manualmente">🔍 Ejercicio 1. Crear un DataFrame <strong>manualmente</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-crear-un-dataframe-importando-un-archivo-csv">🔍 Ejercicio 2. Crear un DataFrame <strong>importando un archivo</strong> CSV</a></li>
 </ul>
   </nav></div>
 

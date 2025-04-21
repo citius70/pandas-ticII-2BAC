@@ -56,7 +56,7 @@ A lo largo del curso, abordaremos los siguientes temas:
 
 ## Conclusión
 
-Pandas es una herramienta poderosa que te permitirá trabajar con datos de manera efectiva y te abrirá las puertas a muchas oportunidades en el campo del **análisis de datos** y la **ciencia de datos**. ¡Prepárense para sumergirse en el mundo de los datos!
+Pandas es una herramienta poderosa que te permitirá trabajar con datos de manera efectiva y te abrirá las puertas a muchas oportunidades en el campo del **análisis de datos** y la **ciencia de datos**. ¡Prepárate para sumergirte en el mundo de los datos!
 
 ¡Empezamos!
 
