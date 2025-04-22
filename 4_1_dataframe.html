@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>📑 Ejercicio sobre obtención de información de una Dataframe &#8212; Análisis de datos con Pandas</title>
+    <title>📑 Ejercicios sobre manipulación de datos en Pandas (Parte 1) &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -60,11 +60,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '3_1_dataframe_informacion_ejercicios';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_1_dataframe';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Manipulación de DataFrames (1ª Parte)" href="4_dataframe_manipulacion_parte_1.html" />
-    <link rel="prev" title="3. Información sobre el DataFrame" href="3_dataframe_informacion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -168,7 +168,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
@@ -178,8 +178,8 @@
 <li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">📑 Ejercicicio sobre creación de DataFrames</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -255,7 +255,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/3_1_dataframe_informacion_ejercicios.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/main?urlpath=lab/tree/4_1_dataframe.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +273,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/3_1_dataframe_informacion_ejercicios.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/main/4_1_dataframe.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +339,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/3_1_dataframe_informacion_ejercicios.ipynb" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/main/4_1_dataframe.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F3_1_dataframe_informacion_ejercicios.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F4_1_dataframe.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@
       
       
       
-      <li><a href="_sources/3_1_dataframe_informacion_ejercicios.ipynb" target="_blank"
+      <li><a href="_sources/4_1_dataframe.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +462,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📑 Ejercicio sobre obtención de información de una Dataframe</h1>
+    <h1>📑 Ejercicios sobre manipulación de datos en Pandas (Parte 1)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -472,15 +472,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">🔍 Ejercicio 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">🔍 Ejercicio 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">🔍 Ejercicio 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">🔍 Ejercicio 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">🔍 Ejercicio 5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">🔍 Ejercicio 6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">🔍 Ejercicio 7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">🔍 Ejercicio 8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-9">🔍 Ejercicio 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-entregas-logisticas">🚚📦 Análisis de entregas logísticas</a></li>
 </ul>
             </nav>
         </div>
@@ -492,122 +484,271 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-sobre-obtencion-de-informacion-de-una-dataframe">
-<h1>📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe<a class="headerlink" href="#ejercicio-sobre-obtencion-de-informacion-de-una-dataframe" title="Link to this heading">#</a></h1>
-<p>Vamos a trabajar sobre un archivo CSV con datos de mujeres con <strong>síndrome de ovario poliquístico</strong> (SOP)</p>
-<p>Acerca del conjunto de datos:
-Se trata de un conjunto de datos sobre mujeres con síndrome de ovario poliquístico (SOP), generado según los criterios de Róterdam. Los Criterios de Róterdam, establecidos en 2003 por un consenso internacional de expertos, definen que, <strong>para que una mujer sea diagnosticada con el síndrome</strong>, debe cumplir al menos <strong>dos de los tres criterios</strong>:</p>
-<ol class="arabic simple">
-<li><p><strong>Menstruación irregular</strong>: Sí</p></li>
-<li><p><strong>Nivel de testosterona</strong>: Más de 50 ng/dL</p></li>
-<li><p><strong>Folículos por ovario</strong> (detectados por ecografía pelviana): Más de 10</p></li>
-</ol>
-<p>Las columnas numéricas categóricas (Menstruación irregular y diagnóstico de SOP) se codifican en formato binario, donde [0] representa “no” y [1] representa “sí”.</p>
-<p>El archivo CSV se encuentra en la web Kaggle.com especializada en análisis de datos. Exactamente lo encontrás en <strong>https://www.kaggle.com/datasets/lucass0s0/polycystic-ovary-syndrome-pcos</strong></p>
-<ol class="arabic simple">
-<li><p>Descarga el archivo .zip y descomprímelo.</p></li>
-<li><p>Súbelo a tu Google Drive y consigue el link al archivo.</p></li>
-<li><p><strong>¡Muy importante!</strong> El archivo tiene una columna que se llama <strong>Testosterone_Level(ng/dL)</strong>. Este nombre tiene caracteres (<strong>los paréntesis</strong>) que van a dar problemas a la hora de utilizar esta columna. Por ello, cambia su nombre por <strong>Testosterone_Level</strong> .</p></li>
-</ol>
-<section id="ejercicio-1">
-<h2>🔍 Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Link to this heading">#</a></h2>
-<p>Importa la librería Pandas y ponle el alias <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-sobre-manipulacion-de-datos-en-pandas-parte-1">
+<h1>📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)<a class="headerlink" href="#ejercicios-sobre-manipulacion-de-datos-en-pandas-parte-1" title="Link to this heading">#</a></h1>
+<section id="analisis-de-entregas-logisticas">
+<h2>🚚📦 Análisis de entregas logísticas<a class="headerlink" href="#analisis-de-entregas-logisticas" title="Link to this heading">#</a></h2>
+<p>En este ejercicio trabajaremos con un conjunto de datos que representa <strong>entregas de productos de una empresa de transportes</strong> .
+Analizaremos los tiempos de entrega, costes y otros aspectos usando Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 1. Resuélvelo en esta celda</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+
+<span class="n">faker</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">()</span>
+<span class="n">fake</span> <span class="o">=</span> <span class="n">Faker</span><span class="p">(</span><span class="s1">&#39;es_ES&#39;</span><span class="p">)</span>
+
+<span class="n">ciudades</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Madrid&#39;</span><span class="p">,</span> <span class="s1">&#39;Barcelona&#39;</span><span class="p">,</span> <span class="s1">&#39;Valencia&#39;</span><span class="p">,</span> <span class="s1">&#39;Sevilla&#39;</span><span class="p">,</span> <span class="s1">&#39;Zaragoza&#39;</span><span class="p">,</span> <span class="s1">&#39;Bilbao&#39;</span><span class="p">,</span> <span class="s1">&#39;Málaga&#39;</span><span class="p">,</span> <span class="s1">&#39;Coruña&#39;</span><span class="p">]</span>
+<span class="n">transportes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Camión&#39;</span><span class="p">,</span> <span class="s1">&#39;Furgoneta Pequeña&#39;</span><span class="p">,</span> <span class="s1">&#39;Furgoneta Grande&#39;</span><span class="p">,</span> <span class="s1">&#39;Motocicleta&#39;</span><span class="p">]</span>
+<span class="n">estados</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Entregado&#39;</span><span class="p">,</span> <span class="s1">&#39;Tránsito&#39;</span><span class="p">,</span> <span class="s1">&#39;Retrasado&#39;</span><span class="p">,</span> <span class="s1">&#39;Cancelado&#39;</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">95</span>
+
+<span class="c1"># Estados con mayor probabilidad de &#39;Entregado&#39;</span>
+<span class="n">estados_generados</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">estados</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># Inicializamos listas</span>
+<span class="n">fechas_entrada</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">fechas_entrega</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dias_entrega</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">estado</span> <span class="ow">in</span> <span class="n">estados_generados</span><span class="p">:</span>
+    <span class="c1"># Fecha de entrada siempre presente</span>
+    <span class="n">fecha_entrada</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="n">fechas_entrada</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fecha_entrada</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">estado</span> <span class="o">==</span> <span class="s1">&#39;Entregado&#39;</span><span class="p">:</span>
+        <span class="c1"># Fecha de entrega posterior a la de entrada</span>
+        <span class="n">fecha_entrega</span> <span class="o">=</span> <span class="n">fecha_entrada</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">fechas_entrega</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fecha_entrega</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+        <span class="n">dias_entrega</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">fecha_entrega</span> <span class="o">-</span> <span class="n">fecha_entrada</span><span class="p">)</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fechas_entrega</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">dias_entrega</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Crear DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ID_Entrega&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ENT</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="s1">&#39;Destino&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ciudades</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span>
+    <span class="s1">&#39;Peso_kg&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="s1">&#39;Volumen_m3&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="s1">&#39;Costo_Envio&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">500.0</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="s1">&#39;Cliente&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">fake</span><span class="o">.</span><span class="n">company</span><span class="p">()[:</span><span class="mi">20</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span>
+    <span class="s1">&#39;Medio_Entrega&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">transportes</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span>
+    <span class="s1">&#39;Estado&#39;</span><span class="p">:</span> <span class="n">estados_generados</span><span class="p">,</span>
+    <span class="s1">&#39;Fecha_Entrada&#39;</span><span class="p">:</span> <span class="n">fechas_entrada</span><span class="p">,</span>
+    <span class="s1">&#39;Fecha_Entrega&#39;</span><span class="p">:</span> <span class="n">fechas_entrega</span><span class="p">,</span>
+    <span class="s1">&#39;Tiempo_Entrega_Dias&#39;</span><span class="p">:</span> <span class="n">dias_entrega</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="c1"># Crear el DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID_Entrega&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;datasets/entregas.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="ejercicio-2">
-<h2>🔍 Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Link to this heading">#</a></h2>
-<p>Carga el archivo <code class="docutils literal notranslate"><span class="pre">pcos_rotterdam_balanceado.csv</span></code>, que has guardado en tu Google Drive, utilizando su link.
-A su vez crea el Dataframe con el nombre <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-3">
-<h2>🔍 Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Link to this heading">#</a></h2>
-<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code> para ver la <strong>forma</strong> (nº columnas x nº filas). Verás que el archivo tiene 6 columnas y ¡¡¡3000 filas!!!.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-4">
-<h2>🔍 Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Link to this heading">#</a></h2>
-<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">columns</span></code> para ver el <strong>nombre de las columnas</strong>. Verás que las columnas se llaman: Age, BMI, …</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 4</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-5">
-<h2>🔍 Ejercicio 5<a class="headerlink" href="#ejercicio-5" title="Link to this heading">#</a></h2>
-<p>Utiliza el atributo <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>para ver el <strong>tipo de columnas</strong>. Verás que hay 4 columnas de tipo número <strong>entero</strong> y 2 de tipo número <strong>decimal</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 5</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-6">
-<h2>🔍 Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Link to this heading">#</a></h2>
-<p>Obtén todos los datos (filas) de la columna <code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
-<p>No te preocupes si solo ves los cinco primeros datos y los cinco últimos datos. Recuerda uq tiene 3000 filas. En el siguiente capítulo resolveremos cómo podemos ver todos los datos de archivos muy largos.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-7">
-<h2>🔍 Ejercicio 7<a class="headerlink" href="#ejercicio-7" title="Link to this heading">#</a></h2>
-<p>Obtén todos los datos (filas) de las columnas <code class="docutils literal notranslate"><span class="pre">Age</span></code>y<code class="docutils literal notranslate"><span class="pre">Testosterone_Level</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Ejercicio 7</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-8">
-<h2>🔍 Ejercicio 8<a class="headerlink" href="#ejercicio-8" title="Link to this heading">#</a></h2>
-<p>Obtén los datos de las mujeres de las filas: 6, 27, 654, 1321 y 2567</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 8</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-9">
-<h2>🔍 Ejercicio 9<a class="headerlink" href="#ejercicio-9" title="Link to this heading">#</a></h2>
-<p>Obtén los datos de la mujer de la fila: 1970</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 6</span>
-</pre></div>
-</div>
-</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Destino</th>
+      <th>Peso_kg</th>
+      <th>Volumen_m3</th>
+      <th>Costo_Envio</th>
+      <th>Cliente</th>
+      <th>Medio_Entrega</th>
+      <th>Estado</th>
+      <th>Fecha_Entrada</th>
+      <th>Fecha_Entrega</th>
+      <th>Tiempo_Entrega_Dias</th>
+    </tr>
+    <tr>
+      <th>ID_Entrega</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ENT0001</th>
+      <td>Coruña</td>
+      <td>25.66</td>
+      <td>0.727</td>
+      <td>488.92</td>
+      <td>Sanchez y Becerra S.</td>
+      <td>Camión</td>
+      <td>Entregado</td>
+      <td>2025-03-29</td>
+      <td>2025-04-02</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>ENT0002</th>
+      <td>Coruña</td>
+      <td>48.39</td>
+      <td>0.934</td>
+      <td>72.81</td>
+      <td>Agapito Puerta Domin</td>
+      <td>Furgoneta Pequeña</td>
+      <td>Entregado</td>
+      <td>2025-04-09</td>
+      <td>2025-04-17</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>ENT0003</th>
+      <td>Bilbao</td>
+      <td>35.75</td>
+      <td>1.162</td>
+      <td>352.55</td>
+      <td>Gomila y asociados S</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-03-26</td>
+      <td>2025-04-01</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>ENT0004</th>
+      <td>Sevilla</td>
+      <td>34.29</td>
+      <td>0.518</td>
+      <td>34.61</td>
+      <td>Arnaiz y Bayona S.L.</td>
+      <td>Furgoneta Pequeña</td>
+      <td>Entregado</td>
+      <td>2025-04-09</td>
+      <td>2025-04-16</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>ENT0005</th>
+      <td>Málaga</td>
+      <td>35.70</td>
+      <td>0.761</td>
+      <td>117.85</td>
+      <td>Quirós y Marcos S.L.</td>
+      <td>Furgoneta Grande</td>
+      <td>Tránsito</td>
+      <td>2025-03-30</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ENT0091</th>
+      <td>Valencia</td>
+      <td>21.69</td>
+      <td>1.842</td>
+      <td>58.89</td>
+      <td>Pelayo y Vergara S.C</td>
+      <td>Camión</td>
+      <td>Retrasado</td>
+      <td>2025-04-10</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ENT0092</th>
+      <td>Zaragoza</td>
+      <td>36.46</td>
+      <td>1.887</td>
+      <td>407.10</td>
+      <td>Inmobiliaria Nogués</td>
+      <td>Camión</td>
+      <td>Retrasado</td>
+      <td>2025-03-31</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ENT0093</th>
+      <td>Coruña</td>
+      <td>34.05</td>
+      <td>1.245</td>
+      <td>340.55</td>
+      <td>Restauración Anglada</td>
+      <td>Furgoneta Pequeña</td>
+      <td>Entregado</td>
+      <td>2025-04-11</td>
+      <td>2025-04-19</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>ENT0094</th>
+      <td>Barcelona</td>
+      <td>49.34</td>
+      <td>0.166</td>
+      <td>302.73</td>
+      <td>Modesto Hoyos Segarr</td>
+      <td>Motocicleta</td>
+      <td>Entregado</td>
+      <td>2025-04-01</td>
+      <td>2025-04-07</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>ENT0095</th>
+      <td>Bilbao</td>
+      <td>29.51</td>
+      <td>1.635</td>
+      <td>471.15</td>
+      <td>Coloma y asociados S</td>
+      <td>Furgoneta Grande</td>
+      <td>Entregado</td>
+      <td>2025-03-27</td>
+      <td>2025-04-04</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>95 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -642,24 +783,6 @@ A su vez crea el Dataframe con el nombre <code class="docutils literal notransla
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="3_dataframe_informacion.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. Información sobre el DataFrame</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="4_dataframe_manipulacion_parte_1.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4. Manipulación de DataFrames (1ª Parte)</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -677,15 +800,7 @@ A su vez crea el Dataframe con el nombre <code class="docutils literal notransla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">🔍 Ejercicio 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">🔍 Ejercicio 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3">🔍 Ejercicio 3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4">🔍 Ejercicio 4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5">🔍 Ejercicio 5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-6">🔍 Ejercicio 6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-7">🔍 Ejercicio 7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-8">🔍 Ejercicio 8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-9">🔍 Ejercicio 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-entregas-logisticas">🚚📦 Análisis de entregas logísticas</a></li>
 </ul>
   </nav></div>
 
