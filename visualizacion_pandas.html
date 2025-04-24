@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introducción al curso de Pandas &#8212; Análisis de datos con Pandas</title>
+    <title>Visualización de datos con Pandas &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -60,10 +60,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'visualizacion_pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. ¿Qué es Pandas?" href="1_introduccion.html" />
+    <link rel="prev" title="6. Visualizacion de datos en pandas 📊" href="6_dataframe_graficos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +115,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -136,7 +134,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -163,13 +161,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Introducción al curso de Pandas
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
@@ -192,8 +190,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="6_dataframe_graficos.html">6. Visualizacion de datos en pandas 📊</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
 </ul>
 
@@ -246,6 +242,73 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/visualizacion_pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/visualizacion_pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +334,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/intro.md" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/visualizacion_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +351,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2Fvisualizacion_pandas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +381,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/visualizacion_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -328,7 +391,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -394,7 +457,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introducción al curso de Pandas</h1>
+    <h1>Visualización de datos con Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,11 +467,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-pandas">¿Qué es Pandas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-del-curso">Objetivos del Curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temas-a-cubrir">Temas a Cubrir</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">Recursos Adicionales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-grafico-de-lineas">Ejercicio 1: Gráfico de líneas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-grafico-de-barras">Ejercicio 2: Gráfico de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-grafico-de-pastel">Ejercicio 3: Gráfico de pastel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-diagrama-de-dispersion">Ejercicio 4: Diagrama de dispersión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5-diagrama-de-caja">Ejercicio 5: Diagrama de caja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-final">Actividad final</a></li>
 </ul>
             </nav>
         </div>
@@ -420,87 +484,196 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-al-curso-de-pandas">
-<h1>Introducción al curso de Pandas<a class="headerlink" href="#introduccion-al-curso-de-pandas" title="Link to this heading">#</a></h1>
-<p><a class="reference internal" href="#YOUR%20URL%20HERE"><span class="xref myst"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></span></a>
-<img alt="Static Badge" src="https://img.shields.io/badge/Elaborado%20por-Alberto%20Dur%C3%A1n%20P%C3%A9rez-blue" /></p>
-<p>¡Bienvenidos al curso de Pandas en Python! Este curso está diseñado para estudiantes de 2º de Bachillerato que desean aprender a manejar y analizar datos utilizando una de las bibliotecas más poderosas y populares de Python: <strong>Pandas</strong>.</p>
-<section id="que-es-pandas">
-<h2>¿Qué es Pandas?<a class="headerlink" href="#que-es-pandas" title="Link to this heading">#</a></h2>
-<p>Pandas es una biblioteca de Python que proporciona estructuras de datos y herramientas de análisis de datos de alto rendimiento. Es especialmente útil para trabajar con datos tabulares, como hojas de cálculo y bases de datos, y permite realizar operaciones complejas de manera sencilla y eficiente.</p>
-</section>
-<section id="objetivos-del-curso">
-<h2>Objetivos del Curso<a class="headerlink" href="#objetivos-del-curso" title="Link to this heading">#</a></h2>
-<p>Al finalizar este curso, los estudiantes serán capaces de:</p>
-<ul class="simple">
-<li><p>Comprender los conceptos básicos de la manipulación de datos en Python.</p></li>
-<li><p>Utilizar Pandas para leer, escribir y manipular datos en diferentes formatos (CSV, Excel, etc.).</p></li>
-<li><p>Realizar análisis exploratorio de datos utilizando funciones y métodos de Pandas.</p></li>
-<li><p>Visualizar datos utilizando gráficos y diagramas.</p></li>
-<li><p>Aplicar técnicas de limpieza y transformación de datos.</p></li>
-</ul>
-</section>
-<section id="temas-a-cubrir">
-<h2>Temas a Cubrir<a class="headerlink" href="#temas-a-cubrir" title="Link to this heading">#</a></h2>
-<p>A lo largo del curso, abordaremos los siguientes temas:</p>
-<ol class="arabic simple">
-<li><p><strong>Introducción a Python y Pandas</strong></p>
-<ul class="simple">
-<li><p>Instalación y configuración del entorno.</p></li>
-<li><p>Estructuras de datos en Pandas: Series y DataFrames.</p></li>
-</ul>
-</li>
-<li><p><strong>Lectura y Escritura de Datos</strong></p>
-<ul class="simple">
-<li><p>Importar datos desde archivos CSV y Excel.</p></li>
-<li><p>Exportar DataFrames a diferentes formatos.</p></li>
-</ul>
-</li>
-<li><p><strong>Manipulación de Datos</strong></p>
-<ul class="simple">
-<li><p>Selección y filtrado de datos.</p></li>
-<li><p>Ordenación y agrupación de datos.</p></li>
-<li><p>Manejo de valores nulos y duplicados.</p></li>
-</ul>
-</li>
-<li><p><strong>Análisis Exploratorio de Datos</strong></p>
-<ul class="simple">
-<li><p>Estadísticas descriptivas.</p></li>
-<li><p>Visualización de datos con Matplotlib y Seaborn.</p></li>
-</ul>
-</li>
-<li><p><strong>Proyectos Prácticos</strong></p>
-<ul class="simple">
-<li><p>Aplicación de los conocimientos adquiridos en proyectos reales.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="recursos-adicionales">
-<h2>Recursos Adicionales<a class="headerlink" href="#recursos-adicionales" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/">Documentación Oficial de Pandas</a></p></li>
-<li><p><a class="reference external" href="https://www.w3schools.com/python/pandas/default.asp">Tutoriales de Pandas en W3Schools</a></p></li>
-<li><p><a class="reference external" href="https://www.kaggle.com/learn/pandas">Kaggle: Introducción a Pandas</a></p></li>
-</ul>
-</section>
-<section id="conclusion">
-<h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>Pandas es una herramienta poderosa que te permitirá trabajar con datos de manera efectiva y te abrirá las puertas a muchas oportunidades en el campo del <strong>análisis de datos</strong> y la <strong>ciencia de datos</strong>. ¡Prepárate para sumergirte en el mundo de los datos!</p>
-<p>¡Empezamos!</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_dataframe_graficos.html">6. Visualizacion de datos en pandas 📊</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_dataframe_graficos.html#exportando-dataframes">Exportando DataFrames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_resumen.html#borrar">Borrar</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-con-pandas">
+<h1>Visualización de datos con Pandas<a class="headerlink" href="#visualizacion-de-datos-con-pandas" title="Link to this heading">#</a></h1>
+<p>En este notebook aprenderás a crear diferentes tipos de gráficos utilizando solo <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. No necesitaremos importar bibliotecas adicionales como <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> o <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, ya que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> permite crear gráficos directamente desde DataFrames y Series.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Cargar datos de ejemplo</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1HbZ6KvPgjnGGwi74lkHUr8bwyHd_v_42&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Fecha</th>
+      <th>Maquina</th>
+      <th>Turno</th>
+      <th>Produccion</th>
+      <th>Horas_parada</th>
+      <th>Averia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>2025-04-14</td>
+      <td>Torno 1</td>
+      <td>Mañana</td>
+      <td>152.0</td>
+      <td>1.6</td>
+      <td>Sí</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2025-04-14</td>
+      <td>Torno 1</td>
+      <td>Tarde</td>
+      <td>121.0</td>
+      <td>1.2</td>
+      <td>Sí</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>2025-04-14</td>
+      <td>Torno 1</td>
+      <td>Noche</td>
+      <td>124.0</td>
+      <td>0.9</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2025-04-14</td>
+      <td>Torno 2</td>
+      <td>Mañana</td>
+      <td>153.0</td>
+      <td>1.4</td>
+      <td>Sí</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2025-04-14</td>
+      <td>Torno 2</td>
+      <td>Tarde</td>
+      <td>51.0</td>
+      <td>1.4</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="ejercicio-1-grafico-de-lineas">
+<h2>Ejercicio 1: Gráfico de líneas<a class="headerlink" href="#ejercicio-1-grafico-de-lineas" title="Link to this heading">#</a></h2>
+<p>Crea un gráfico de líneas con las columnas numéricas del DataFrame. Puedes usar <code class="docutils literal notranslate"><span class="pre">df.plot()</span></code> directamente.</p>
+<p>➡️ ¿Qué observas en la tendencia?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/076023fcd654f5ca20ae254c62d253563368ec0c08e8b2e3955014f626e7abf3.png" src="_images/076023fcd654f5ca20ae254c62d253563368ec0c08e8b2e3955014f626e7abf3.png" />
+</div>
+</div>
+</section>
+<section id="ejercicio-2-grafico-de-barras">
+<h2>Ejercicio 2: Gráfico de barras<a class="headerlink" href="#ejercicio-2-grafico-de-barras" title="Link to this heading">#</a></h2>
+<p>Selecciona una columna categórica (por ejemplo, una columna con regiones o nombres) y otra numérica.</p>
+<p>Crea un gráfico de barras usando <code class="docutils literal notranslate"><span class="pre">.plot(kind='bar')</span></code>.</p>
+<p>➡️ Tip: Usa <code class="docutils literal notranslate"><span class="pre">df.groupby(...).sum()</span></code> para preparar los datos si es necesario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de agrupamiento (modifica según tu dataset)</span>
+<span class="c1"># datos_bar = df.groupby(&#39;Categoria&#39;)[&#39;Ventas&#39;].sum()</span>
+<span class="n">datos_bar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Ejemplo de agrupamiento (modifica según tu dataset)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># datos_bar = df.groupby(&#39;Categoria&#39;)[&#39;Ventas&#39;].sum()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">datos_bar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;datos_bar&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3-grafico-de-pastel">
+<h2>Ejercicio 3: Gráfico de pastel<a class="headerlink" href="#ejercicio-3-grafico-de-pastel" title="Link to this heading">#</a></h2>
+<p>Usa <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> sobre una columna categórica y crea un gráfico tipo pastel con <code class="docutils literal notranslate"><span class="pre">.plot(kind='pie')</span></code>.</p>
+<p>➡️ Asegúrate de que el resultado sea una Serie, no un DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df[&#39;Categoria&#39;].value_counts().plot(kind=&#39;pie&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-4-diagrama-de-dispersion">
+<h2>Ejercicio 4: Diagrama de dispersión<a class="headerlink" href="#ejercicio-4-diagrama-de-dispersion" title="Link to this heading">#</a></h2>
+<p>Crea un gráfico de dispersión entre dos columnas numéricas, por ejemplo, <code class="docutils literal notranslate"><span class="pre">Edad</span></code> y <code class="docutils literal notranslate"><span class="pre">Ingresos</span></code>.</p>
+<p>Usa <code class="docutils literal notranslate"><span class="pre">.plot(kind='scatter',</span> <span class="pre">x='col1',</span> <span class="pre">y='col2')</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df.plot(kind=&#39;scatter&#39;, x=&#39;Edad&#39;, y=&#39;Ingresos&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-5-diagrama-de-caja">
+<h2>Ejercicio 5: Diagrama de caja<a class="headerlink" href="#ejercicio-5-diagrama-de-caja" title="Link to this heading">#</a></h2>
+<p>Visualiza la distribución de una o varias columnas numéricas con <code class="docutils literal notranslate"><span class="pre">.plot(kind='box')</span></code>.</p>
+<p>➡️ ¿Hay valores atípicos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df[[&#39;Edad&#39;, &#39;Ingresos&#39;]].plot(kind=&#39;box&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="actividad-final">
+<h2>Actividad final<a class="headerlink" href="#actividad-final" title="Link to this heading">#</a></h2>
+<p>Usa los tipos de gráficos aprendidos para responder a una de estas preguntas:</p>
+<ul class="simple">
+<li><p>¿Qué categoría tiene mayor representación?</p></li>
+<li><p>¿Cómo varían los valores a lo largo del tiempo?</p></li>
+<li><p>¿Existen correlaciones entre variables?</p></li>
+</ul>
+<p>Crea al menos <strong>dos visualizaciones distintas</strong> para apoyar tu respuesta.</p>
 </section>
 </section>
 
@@ -513,16 +686,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-env-ambiente_1-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-env-ambiente_1-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-env-ambiente_1-py'</script>
 
                 </article>
               
@@ -534,14 +707,14 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="1_introduccion.html"
-       title="next page">
+    <a class="left-prev"
+       href="6_dataframe_graficos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. ¿Qué es Pandas?</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">6. Visualizacion de datos en pandas 📊</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -560,11 +733,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-pandas">¿Qué es Pandas?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-del-curso">Objetivos del Curso</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temas-a-cubrir">Temas a Cubrir</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionales">Recursos Adicionales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-grafico-de-lineas">Ejercicio 1: Gráfico de líneas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-grafico-de-barras">Ejercicio 2: Gráfico de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-grafico-de-pastel">Ejercicio 3: Gráfico de pastel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-4-diagrama-de-dispersion">Ejercicio 4: Diagrama de dispersión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-5-diagrama-de-caja">Ejercicio 5: Diagrama de caja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-final">Actividad final</a></li>
 </ul>
   </nav></div>
 
