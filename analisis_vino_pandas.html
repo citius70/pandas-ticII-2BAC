@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Visualizacion de datos en Pandas &#8212; Análisis de datos con Pandas</title>
+    <title>🍷 Análisis de Calidad de Vinos (Red Wine Dataset) &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -60,11 +60,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '6_dataframe_graficos';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_vino_pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ejercicios de visualización de datos" href="v.html" />
-    <link rel="prev" title="📑 Ejercicios sobre manipulación de datos en Pandas (Parte 2)" href="5_1_dataframe_manipulacion_2_ejercicios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,6 +113,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -168,7 +168,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
@@ -190,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="5_1_dataframe_manipulacion_2_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Visualizacion de datos en Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_dataframe_graficos.html">6. Visualizacion de datos en Pandas</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="6_resumen.html">Resumen</a></li>
 
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/6_dataframe_graficos.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/analisis_vino_pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/6_dataframe_graficos.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/analisis_vino_pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/6_dataframe_graficos.ipynb" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/analisis_vino_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +354,7 @@
       
       
       
-      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F6_dataframe_graficos.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2Fanalisis_vino_pandas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +384,7 @@
       
       
       
-      <li><a href="_sources/6_dataframe_graficos.ipynb" target="_blank"
+      <li><a href="_sources/analisis_vino_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,7 +460,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>6. Visualizacion de datos en Pandas</h1>
+    <h1>🍷 Análisis de Calidad de Vinos (Red Wine Dataset)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -470,20 +470,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Visualizacion de datos en Pandas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas">Tipos de gráficos que se pueden hacer con Pandas:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra">Gráfico de barra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra-horizontal">Grafico de barra horizontal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linea">Gráfico de línea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-del-nivel-de-alcohol">1. Distribución del nivel de alcohol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcohol-por-nivel-de-calidad-boxplot">2. Alcohol por nivel de calidad (Boxplot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-de-ph-por-calidad">3. Promedio de pH por calidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-alcohol-y-calidad-dispersion">4. Relación entre alcohol y calidad (dispersión)</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">Grafico circular</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Grafico de linea</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exportando-dataframes">Exportando DataFrames</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -494,19 +485,20 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-en-pandas">
-<h1>6. Visualizacion de datos en Pandas<a class="headerlink" href="#visualizacion-de-datos-en-pandas" title="Link to this heading">#</a></h1>
-<p>Aunque Pandas no es una biblioteca de visualización avanzada como <a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a> o <a class="reference external" href="https://plotly.com/">Plotly</a>, permite generar <strong>gráficos</strong> rápidamente para analizar datos de manera exploratoria.</p>
-<p>La biblioteca <strong>Pandas</strong> en Python tiene capacidades básicas de visualización mediante su integración con <a class="reference external" href="https://matplotlib.org/">Matplotlib</a>.</p>
-<section id="tipos-de-graficos-que-se-pueden-hacer-con-pandas">
-<h2>Tipos de gráficos que se pueden hacer con Pandas:<a class="headerlink" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas" title="Link to this heading">#</a></h2>
-<p>La función principal para graficar en Pandas es <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>, que se basa en Matplotlib. Algunos de los gráficos más comunes son los que se muestran después del siguiente bloque:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-de-calidad-de-vinos-red-wine-dataset">
+<h1>🍷 Análisis de Calidad de Vinos (Red Wine Dataset)<a class="headerlink" href="#analisis-de-calidad-de-vinos-red-wine-dataset" title="Link to this heading">#</a></h1>
+<p>Este cuaderno usa únicamente <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para explorar visualmente el dataset de vinos tintos, que contiene información química de cada vino junto con su calidad numérica.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creamos el dataframe df_artistas</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df_artistas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1bqVTtpAF50QSlrtB6DjfeHx1w9UKT7O3&quot;</span><span class="p">)</span>
-<span class="n">df_artistas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Cargar el dataset (usa ; como separador)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/justmarkham/DAT8/master/data/winequality-red.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/winequality-red.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar primeras filas</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -529,164 +521,162 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Artista</th>
-      <th>Spotify streams (millones)</th>
+      <th>fixed acidity</th>
+      <th>volatile acidity</th>
+      <th>citric acid</th>
+      <th>residual sugar</th>
+      <th>chlorides</th>
+      <th>free sulfur dioxide</th>
+      <th>total sulfur dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Taylor Swift</td>
-      <td>29100.0</td>
+      <td>7.4</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>1.9</td>
+      <td>0.076</td>
+      <td>11.0</td>
+      <td>34.0</td>
+      <td>0.9978</td>
+      <td>3.51</td>
+      <td>0.56</td>
+      <td>9.4</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Bad Bunny</td>
-      <td>16370.0</td>
+      <td>7.8</td>
+      <td>0.88</td>
+      <td>0.00</td>
+      <td>2.6</td>
+      <td>0.098</td>
+      <td>25.0</td>
+      <td>67.0</td>
+      <td>0.9968</td>
+      <td>3.20</td>
+      <td>0.68</td>
+      <td>9.8</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>The Weeknd</td>
-      <td>14140.0</td>
+      <td>7.8</td>
+      <td>0.76</td>
+      <td>0.04</td>
+      <td>2.3</td>
+      <td>0.092</td>
+      <td>15.0</td>
+      <td>54.0</td>
+      <td>0.9970</td>
+      <td>3.26</td>
+      <td>0.65</td>
+      <td>9.8</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Drake</td>
-      <td>14030.0</td>
+      <td>11.2</td>
+      <td>0.28</td>
+      <td>0.56</td>
+      <td>1.9</td>
+      <td>0.075</td>
+      <td>17.0</td>
+      <td>60.0</td>
+      <td>0.9980</td>
+      <td>3.16</td>
+      <td>0.58</td>
+      <td>9.8</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Peso Pluma</td>
-      <td>10540.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Feid</td>
-      <td>NaN</td>
+      <td>7.4</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>1.9</td>
+      <td>0.076</td>
+      <td>11.0</td>
+      <td>34.0</td>
+      <td>0.9978</td>
+      <td>3.51</td>
+      <td>0.56</td>
+      <td>9.4</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p><strong>Nota</strong>: En general, en el <code class="docutils literal notranslate"><span class="pre">eje</span></code> <strong>x</strong> suele ir la etiqueta, y en el <code class="docutils literal notranslate"><span class="pre">eje</span></code> <strong>y</strong> el dato.</p>
-</section>
-<section id="grafico-de-barra">
-<h2>Gráfico de barra<a class="headerlink" href="#grafico-de-barra" title="Link to this heading">#</a></h2>
-<p>La sintaxis para dibujar un gráfico de barras es: : <code class="docutils literal notranslate"><span class="pre">plot.bar(x,y)</span></code></p>
+<section id="distribucion-del-nivel-de-alcohol">
+<h2>1. Distribución del nivel de alcohol<a class="headerlink" href="#distribucion-del-nivel-de-alcohol" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de Alcohol&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Alcohol (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Artista&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/7cda613d1ffee20469717333144c3d1cf1cde606cf78a1f64349eb5424c57cb7.png" src="_images/7cda613d1ffee20469717333144c3d1cf1cde606cf78a1f64349eb5424c57cb7.png" />
+<img alt="_images/f8f382ae1f54436eb64e10d7355b649b3db8dcacc1ca3500f2eb8930f96cdb1c.png" src="_images/f8f382ae1f54436eb64e10d7355b649b3db8dcacc1ca3500f2eb8930f96cdb1c.png" />
 </div>
 </div>
 </section>
-<section id="grafico-de-barra-horizontal">
-<h2>Grafico de barra horizontal<a class="headerlink" href="#grafico-de-barra-horizontal" title="Link to this heading">#</a></h2>
-<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.barh(x,y)</span></code></p>
+<section id="alcohol-por-nivel-de-calidad-boxplot">
+<h2>2. Alcohol por nivel de calidad (Boxplot)<a class="headerlink" href="#alcohol-por-nivel-de-calidad-boxplot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;alcohol&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;quality&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Alcohol por Nivel de Calidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Calidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Alcohol (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Artista&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/48bd5c69eac86edc81cbe026ffbee0f2398ffe4b9d551b3a069a2e113bb93705.png" src="_images/48bd5c69eac86edc81cbe026ffbee0f2398ffe4b9d551b3a069a2e113bb93705.png" />
+<img alt="_images/6541e56462d9706d8eb665873111bb31a85dd200d54dc9d6607ed5afcc62c740.png" src="_images/6541e56462d9706d8eb665873111bb31a85dd200d54dc9d6607ed5afcc62c740.png" />
 </div>
 </div>
-<section id="grafico-de-linea">
-<h3>Gráfico de línea<a class="headerlink" href="#grafico-de-linea" title="Link to this heading">#</a></h3>
-<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.bar(x,y,</span> <span class="pre">kind='line')</span></code></p>
+</section>
+<section id="promedio-de-ph-por-calidad">
+<h2>3. Promedio de pH por calidad<a class="headerlink" href="#promedio-de-ph-por-calidad" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Artista&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Spotify streams (millones)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Reproducciones anuales&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;quality&#39;</span><span class="p">)[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Promedio de pH por Calidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Reproducciones anuales&#39;}, xlabel=&#39;Artista&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/3ef274a7d3e483ba5ce48976b9fc00ea9a077e99dc9faccc3a0707156f9a6adc.png" src="_images/3ef274a7d3e483ba5ce48976b9fc00ea9a077e99dc9faccc3a0707156f9a6adc.png" />
+<img alt="_images/6eef495d76990b2e7a12c5b1a3b49480b768b2556e3bc44afd8d66043742e74e.png" src="_images/6eef495d76990b2e7a12c5b1a3b49480b768b2556e3bc44afd8d66043742e74e.png" />
 </div>
 </div>
 </section>
-</section>
-<section id="grafico-circular">
-<h2>Grafico circular<a class="headerlink" href="#grafico-circular" title="Link to this heading">#</a></h2>
-<p>Sintaxis: <code class="docutils literal notranslate"><span class="pre">plot.pie(x,</span> <span class="pre">y,</span> <span class="pre">labels,</span> <span class="pre">legend)</span></code></p>
-<p>Para este gráfico añadiremos dos argumentos</p>
-<ul class="simple">
-<li><p><strong>labels:</strong> Este argumento especifica las etiquetas que se mostrarán.</p></li>
-<li><p><strong>legend:</strong> Este argumento controla si se mostrará o no la leyenda en el gráfico. La leyenda generalmente proporciona información sobre el significado de los colores o las porciones en el gráfico. En este caso si la activas bloquea un poco la información.</p></li>
-</ul>
+<section id="relacion-entre-alcohol-y-calidad-dispersion">
+<h2>4. Relación entre alcohol y calidad (dispersión)<a class="headerlink" href="#relacion-entre-alcohol-y-calidad-dispersion" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Artista&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Spotify streams (millones)&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">df_artistas</span><span class="o">.</span><span class="n">Artista</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;alcohol&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;quality&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relación entre Alcohol y Calidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Spotify streams (millones)&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/6b92e7c40c3bc4849b5653f76aed0b419b688615ff28f4d5065932269a01c14e.png" src="_images/6b92e7c40c3bc4849b5653f76aed0b419b688615ff28f4d5065932269a01c14e.png" />
+<img alt="_images/b8925853196f921ffe8841f5149beb53f114620979e20ae5b9c013483f6890ce.png" src="_images/b8925853196f921ffe8841f5149beb53f114620979e20ae5b9c013483f6890ce.png" />
 </div>
 </div>
 </section>
-<section id="id1">
-<h2>Grafico de linea<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dolar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1Uc7kM-jM0vqFlXfjdTPJSIWvniORiKIx&quot;</span><span class="p">)</span>
-<span class="n">df_dolar</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Dia&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Valor&quot;</span><span class="p">)</span>
-
-<span class="c1"># Nota: la base de datos viene con fechas en blanco, y por ende el grafico se verá &quot;cortado&quot;.</span>
-<span class="c1"># Para corregir eso se puede hacer con dropna() (ver sección eliminando datos vacíos)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Dia&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/7a26850b3e661a5d5fa67a2cde21fd0fdc3eba25b4d796a100fddecd4f17c467.png" src="_images/7a26850b3e661a5d5fa67a2cde21fd0fdc3eba25b4d796a100fddecd4f17c467.png" />
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exportando-dataframes">
-<h1>Exportando DataFrames<a class="headerlink" href="#exportando-dataframes" title="Link to this heading">#</a></h1>
-<p>Una vez creados y manipulados, los datos se pueden escribir utilizando algunos de estos comandos</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df.to_csv(...)</span></code>          # Archivo separado por comas</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.to_sql(...)</span></code>          # Base de datos SQL</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.to_excel(...)</span></code>        # Libro de Excel</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.to_json(...)</span></code>         # JSON</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.to_html(...)</span></code>         # Tabla para sitio web</p></li>
-</ul>
-<p>Entre otros.</p>
-<p>Por ejemplo, ejecuta este código y luego revisa los archivos de este colab haciendo click en el ícono de carpeta (📁) del menú lateral. Podrás descargar el archivo desde ahí y luego verlo directo en tu PC.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_artistas</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;artistas.xlsx&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Luego en Excel, la información luce así</p>
-<p><img alt="picture" src="https://drive.google.com/uc?id=19CZN0PVeRh19LndAA8u34SFVCqVDKIWe" /></p>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -719,24 +709,6 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="5_1_dataframe_manipulacion_2_ejercicios.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="v.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ejercicios de visualización de datos</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -754,20 +726,11 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6. Visualizacion de datos en Pandas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-graficos-que-se-pueden-hacer-con-pandas">Tipos de gráficos que se pueden hacer con Pandas:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra">Gráfico de barra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barra-horizontal">Grafico de barra horizontal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linea">Gráfico de línea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-del-nivel-de-alcohol">1. Distribución del nivel de alcohol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcohol-por-nivel-de-calidad-boxplot">2. Alcohol por nivel de calidad (Boxplot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-de-ph-por-calidad">3. Promedio de pH por calidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-alcohol-y-calidad-dispersion">4. Relación entre alcohol y calidad (dispersión)</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">Grafico circular</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Grafico de linea</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exportando-dataframes">Exportando DataFrames</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
