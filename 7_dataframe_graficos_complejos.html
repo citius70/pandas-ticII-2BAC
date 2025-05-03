@@ -1,0 +1,1032 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7. Visualizacion de datos en Pandas: Otros gráficos &#8212; Análisis de datos con Pandas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=105783d5" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '7_dataframe_graficos_complejos';</script>
+    <link rel="icon" href="_static/pandas_logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="📑 Ejercicios de visualización de datos: Gráficos básicos" href="6_1_dataframe_graficos_basicos_ejercicios.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción al curso de Pandas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">📑 Ejercicicio sobre creación de DataFrames</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_1_dataframe_manipulacion_2_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6_dataframe_graficos_basicos.html">6. Visualizacion de datos en Pandas: Gráficos básicos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_1_dataframe_graficos_basicos_ejercicios.html">📑 Ejercicios de visualización de datos: Gráficos básicos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Visualizacion de datos en Pandas: Otros gráficos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/7_dataframe_graficos_complejos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/7_dataframe_graficos_complejos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/7_dataframe_graficos_complejos.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F7_dataframe_graficos_complejos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/7_dataframe_graficos_complejos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>7. Visualizacion de datos en Pandas: Otros gráficos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenario">7.1. Escenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-defectos-detectados">Análisis 1: Día contra Defectos detectados</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">Diagrama de caja (box plot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos-en-pandas-otros-graficos">
+<h1>7. Visualizacion de datos en Pandas: Otros gráficos<a class="headerlink" href="#visualizacion-de-datos-en-pandas-otros-graficos" title="Link to this heading">#</a></h1>
+<p>En el capítulo anterior vimos como podemos representar los datos de un DataFrame de forma gráfica. En este estudiaremos la forma de generar <strong>tres gráficos</strong> muy utilizados en anáisis de datos como son:</p>
+<ul class="simple">
+<li><p>Gráfico de dispersión (Scatter plot)</p></li>
+<li><p>Diagrama de caja (Boxplot)</p></li>
+<li><p>Histograma</p></li>
+</ul>
+<figure class="align-default" id="dataframe">
+<a class="reference internal image-reference" href="_images/plot_overview.svg"><img alt="_images/plot_overview.svg" src="_images/plot_overview.svg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Gráficos con Pandas</span><a class="headerlink" href="#dataframe" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="escenario">
+<h2>7.1. Escenario<a class="headerlink" href="#escenario" title="Link to this heading">#</a></h2>
+<p>Imagina que trabajas como <strong>ingeniero/a de calidad</strong> en una fábrica. <strong>Cada día</strong>, la fábrica registra <strong>cuántas piezas</strong> ha producido y cuántas de esas piezas han tenido <strong>defectos</strong>.</p>
+<p>Tu tarea es analizar los datos de <strong>30 días</strong> para ayudar a detectar:</p>
+<ul class="simple">
+<li><p>Posibles días con problemas de calidad.</p></li>
+<li><p>Relación entre producción y defectos.</p></li>
+<li><p>Comportamientos anómalos o tendencias.</p></li>
+</ul>
+<p>Usaremos <strong>solo <code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong> para cargar los datos y crear gráficos básicos: scatter plot, boxplot e histograma.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Datos de producción de la fábrica durante 30 días recopilados en un diccionario denominado &quot;data&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/calidad.csv&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Creamos el DataFrame &quot;df&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Visualizamos los cinco primeros datos</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dia</th>
+      <th>Piezas_producidas</th>
+      <th>Defectos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>D1</td>
+      <td>1001</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>D2</td>
+      <td>964</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>D3</td>
+      <td>950</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D4</td>
+      <td>1010</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>D5</td>
+      <td>970</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="grafico-de-dispersion-scatter-plot">
+<h3>- Gráfico de dispersión (scatter plot)<a class="headerlink" href="#grafico-de-dispersion-scatter-plot" title="Link to this heading">#</a></h3>
+<figure class="margin align-default" id="id1">
+<img alt="_images/scatter1.png" src="_images/scatter1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Gráfico de dispersión</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-que-es admonition">
+<p class="admonition-title">📊 ¿Qué es?</p>
+<p>Un gráfico de dispersión (o scatter plot, en inglés) es un tipo de gráfico que muestra la <strong>relación entre dos variables</strong> usando puntos en un plano cartesiano (eje X y eje Y).</p>
+<p>Cada punto representa un dato.</p>
+<ul class="simple">
+<li><p>El <strong>eje X (horizontal)</strong> suele ser la variable independiente (la que controlamos o medimos primero).</p></li>
+<li><p>El <strong>eje Y (vertical)</strong> suele ser la variable dependiente (la que queremos analizar en relación con X).</p></li>
+</ul>
+</div>
+<figure class="margin align-default" id="id2">
+<img alt="_images/scatter2.png" src="_images/scatter2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Análisis de dispersión</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-para-que-sirve admonition">
+<p class="admonition-title">🎯 ¿Para qué sirve?</p>
+<p>Se usa para responder preguntas como:</p>
+<ol class="arabic simple">
+<li><p><strong>¿Existe una relación entre las dos variables?</strong></p>
+<ul class="simple">
+<li><p>Ejemplo: “¿A más horas de estudio, mejores notas?”</p></li>
+</ul>
+</li>
+<li><p><strong>¿Es fuerte o débil esa relación?</strong></p>
+<ul class="simple">
+<li><p>Si los puntos están muy agrupados en una tendencia, la relación es fuerte.</p></li>
+</ul>
+</li>
+<li><p><strong>¿Qué tipo de relación es?</strong></p>
+<ul class="simple">
+<li><p>Positiva (cuando X aumenta, Y también).</p></li>
+<li><p>Negativa (cuando X aumenta, Y disminuye).</p></li>
+<li><p>Nula (no hay patrón claro).</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<section id="analisis-1-dia-contra-defectos-detectados">
+<h4>Análisis 1: Día contra Defectos detectados<a class="headerlink" href="#analisis-1-dia-contra-defectos-detectados" title="Link to this heading">#</a></h4>
+<p>Vamos a estudiar si hay relación entre el <strong>día de mes y los defectos detectados</strong>.</p>
+<p>En el eje X se colocan los <strong>días</strong>, y en el eje Y el número de <strong>defectos</strong>.</p>
+<p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">plot.scatter</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Defectos&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Día vs Defectos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Día vs Defectos&#39;}, xlabel=&#39;Dia&#39;, ylabel=&#39;Defectos&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/9c8302f878508f662d9a1b97e1fc3ad6afe34f98f7574528c8820a8daf0790ae.png" src="_images/9c8302f878508f662d9a1b97e1fc3ad6afe34f98f7574528c8820a8daf0790ae.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Análisis del gráfico de dispersión</p>
+<p>Puede observarse un <strong>correlación positiva</strong> (tendencia ascendente) entre los <strong>días del mes</strong> y los <strong>defectos</strong>. Esto significa que a medida que pasan los días, los defectos aumentan.</p>
+</div>
+<div class="danger admonition">
+<p class="admonition-title">Medidas correctoras</p>
+<ol class="arabic simple">
+<li><p>Causas Probables:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Fatiga de equipo/trabajadores (final de mes).</p></li>
+<li><p>Presión por alcanzar metas u objetivos (piezas producidas a final de mes)</p></li>
+<li><p>Mantenimiento delas máquinas defectuoso o postergado .</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Acciones Clave:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Mantenimiento preventivo antes de los picos de defectos (días 20-25).</p></li>
+<li><p>Ajustar turnos para evitar fatiga acumulada.</p></li>
+<li><p>Reforzar controles de calidad en la última semana.</p></li>
+<li><p>Balancear producción para evitar sobrecargas.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Monitoreo:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Usar gráficos de control (ej. Shewhart) y reuniones semanales.</p></li>
+<li><p>Visualizar datos con scatter plot + línea de tendencia (Excel).</p></li>
+</ul>
+</div>
+</section>
+<section id="analisis-2-dias-contra-piezas-fabricadas">
+<h4>Análisis 2: Días contra Piezas fabricadas<a class="headerlink" href="#analisis-2-dias-contra-piezas-fabricadas" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En este caso vamos a dar formato al gráfico con algunas propiedades (color, grid...)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dia&#39;</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Piezas_producidas&#39;</span><span class="p">,</span> 
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Día vs Piezas producidas&#39;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>  <span class="c1"># Tamaño del gráfico</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>      <span class="c1"># Color de los puntos</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>        <span class="c1"># Transparencia (0 a 1)</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Día vs Piezas producidas&#39;}, xlabel=&#39;Dia&#39;, ylabel=&#39;Piezas_producidas&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/b4b67a9d9038e58ec3e1deae27d8abaf5a5e247ecadff4576980648ac4047256.png" src="_images/b4b67a9d9038e58ec3e1deae27d8abaf5a5e247ecadff4576980648ac4047256.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Análisis del gráfico de dispersión</p>
+<p>Puede observarse un <strong>correlación positiva</strong> (tendencia ascendente) entre los los <strong>días mes</strong> y <strong>piezas producidas</strong>. Esto significa a medida que llega el fin de mes, la producción aumenta.</p>
+</div>
+<div class="danger admonition">
+<p class="admonition-title">Medidas correctoras (en el caso de que la empresa considere la correlación problemática)</p>
+<ol class="arabic simple">
+<li><p>Planificación equilibrada:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Distribuir metas diarias (evitar acumulación al final).</p></li>
+<li><p>Usar pronósticos de demanda para ajustar capacidad.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Ajustar incentivos:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Premiar producción consistente, no solo volumen mensual.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Monitoreo:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Alertas automáticas si producción diaria supera ±15% del promedio.</p></li>
+<li><p>Gráfico de control con:</p>
+<ul>
+<li><p>Línea de meta constante.</p></li>
+<li><p>Límites superior/inferior.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Riesgos si no se actúa:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Sobrecarga de máquinas/personal → más defectos.</p></li>
+<li><p>Estrés laboral → rotación de personal.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Resultado esperado:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Producción estable → Mejor calidad + eficiencia</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section id="diagrama-de-caja-box-plot">
+<h2>Diagrama de caja (box plot)<a class="headerlink" href="#diagrama-de-caja-box-plot" title="Link to this heading">#</a></h2>
+<div class="admonition-que-es admonition">
+<p class="admonition-title">📊 ¿Qué es?</p>
+<p>Un box plot (también llamado diagrama de caja y bigotes) es una gráfica que resume de forma muy visual cómo se distribuyen los datos estadísticos más importantes. Nos ayuda a ver:</p>
+<ul class="simple">
+<li><p>Valores mínimos y máximos.</p></li>
+<li><p>Media.</p></li>
+<li><p>Mediana.</p></li>
+<li><p>Cuartiles</p></li>
+<li><p>Posibles valores atípicos (outliers).</p></li>
+</ul>
+</div>
+<div class="admonition-para-que-sirve admonition">
+<p class="admonition-title">🧠 ¿Para qué sirve?</p>
+<ul class="simple">
+<li><p>Ver si los datos están centrados o desviados.</p></li>
+<li><p>Detectar si hay valores extremos o raros (outliers).</p></li>
+<li><p>Comparar varios grupos de datos fácilmente (por ejemplo, defectos en diferentes semanas).</p></li>
+<li><p>Ver cómo están repartidos los datos: ¿hay muchos valores bajos?, ¿altos?, ¿es simétrico?</p></li>
+</ul>
+</div>
+<div class="admonition-que-partes-tiene admonition">
+<p class="admonition-title">📊 ¿Qué partes tiene?</p>
+<p>Imagina que tienes una lista de números, como los defectos diarios en una fábrica. El box plot te muestra:</p>
+<ul class="simple">
+<li><p>Caja central: entre el 25% (Q1) y el 75% (Q3) de los datos. Aquí está la mitad de los valores.</p></li>
+<li><p>Línea dentro de la caja: es la mediana (el valor que queda justo en el medio).</p></li>
+<li><p>Bigotes: líneas que van desde los extremos de la caja hasta los valores mínimo y máximo normales.</p></li>
+<li><p>Puntos fuera de los bigotes: son valores extremos o atípicos.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># + tags=[&quot;remove-output&quot;]</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Defectos&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de defectos en el mes&#39;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxes</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">whiskers</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">medians</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">caps</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribución de defectos en el mes&#39;}&gt;
+</pre></div>
+</div>
+<img alt="_images/b5f69b2951340a8e16f612415868dae3583ef40967cfa2dd71add4bfc9901b52.png" src="_images/b5f69b2951340a8e16f612415868dae3583ef40967cfa2dd71add4bfc9901b52.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boxplot básico con pandas</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Defectos&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de defectos con puntos individuales&#39;</span><span class="p">,</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxes</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">whiskers</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">medians</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">caps</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">),</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Agregar puntos individuales (jitter manual para que no se solapen)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x_jitter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>  <span class="c1"># Simula separación en X</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_jitter</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Defectos&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ab7eba4920&gt;
+</pre></div>
+</div>
+<img alt="_images/154c14af737e0d94c973c106bb351fe2bac915cefcf5adc021d4ab6faf93085c.png" src="_images/154c14af737e0d94c973c106bb351fe2bac915cefcf5adc021d4ab6faf93085c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Explicación</span><span class="o">**</span><span class="p">:</span><span class="n">a</span><span class="err">🔹</span> <span class="n">Q1</span> <span class="p">(</span><span class="n">Primer</span> <span class="n">cuartil</span><span class="p">)</span>
+<span class="n">Es</span> <span class="n">el</span> <span class="n">borde</span> <span class="n">inferior</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span> <span class="n">azul</span><span class="o">.</span>
+
+<span class="n">Representa</span> <span class="n">el</span> <span class="n">valor</span> <span class="n">por</span> <span class="n">debajo</span> <span class="k">del</span> <span class="n">cual</span> <span class="n">está</span> <span class="n">el</span> <span class="mi">25</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span><span class="o">.</span>
+
+<span class="n">En</span> <span class="n">la</span> <span class="n">imagen</span><span class="p">,</span> <span class="n">Q1</span> <span class="n">parece</span> <span class="n">estar</span> <span class="n">en</span> <span class="mi">2</span> <span class="err">→</span> <span class="n">Esto</span> <span class="n">significa</span> <span class="n">que</span> <span class="n">un</span> <span class="n">cuarto</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tuvo</span> <span class="mi">2</span> <span class="n">defectos</span> <span class="n">o</span> <span class="n">menos</span><span class="o">.</span>
+
+<span class="err">🔸</span> <span class="n">Q2</span> <span class="p">(</span><span class="n">Mediana</span><span class="p">)</span>
+<span class="n">Es</span> <span class="n">la</span> <span class="n">línea</span> <span class="n">roja</span> <span class="n">dentro</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span><span class="o">.</span>
+
+<span class="n">Marca</span> <span class="n">el</span> <span class="n">valor</span> <span class="n">central</span><span class="p">:</span> <span class="n">el</span> <span class="mi">50</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">datos</span> <span class="n">están</span> <span class="n">por</span> <span class="n">debajo</span><span class="p">,</span> <span class="n">y</span> <span class="n">el</span> <span class="mi">50</span><span class="o">%</span> <span class="n">por</span> <span class="n">encima</span><span class="o">.</span>
+
+<span class="n">En</span> <span class="n">el</span> <span class="n">gráfico</span><span class="p">,</span> <span class="n">la</span> <span class="n">mediana</span> <span class="n">está</span> <span class="n">en</span> <span class="mi">3</span> <span class="err">→</span> <span class="n">Es</span> <span class="n">el</span> <span class="n">número</span> <span class="n">de</span> <span class="n">defectos</span> <span class="n">típico</span> <span class="n">de</span> <span class="n">un</span> <span class="n">día</span><span class="o">.</span>
+
+<span class="err">🔹</span> <span class="n">Q3</span> <span class="p">(</span><span class="n">Tercer</span> <span class="n">cuartil</span><span class="p">)</span>
+<span class="n">Es</span> <span class="n">el</span> <span class="n">borde</span> <span class="n">superior</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span><span class="o">.</span>
+
+<span class="n">Representa</span> <span class="n">el</span> <span class="n">punto</span> <span class="n">por</span> <span class="n">debajo</span> <span class="k">del</span> <span class="n">cual</span> <span class="n">está</span> <span class="n">el</span> <span class="mi">75</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">datos</span><span class="o">.</span>
+
+<span class="n">Aquí</span> <span class="n">parece</span> <span class="n">estar</span> <span class="n">en</span> <span class="mi">4</span> <span class="err">→</span> <span class="n">Es</span> <span class="n">decir</span><span class="p">,</span> <span class="n">el</span> <span class="mi">75</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tuvo</span> <span class="mi">4</span> <span class="n">defectos</span> <span class="n">o</span> <span class="n">menos</span><span class="o">.</span>
+
+<span class="err">🧠</span> <span class="err">¿</span><span class="n">Qué</span> aprendemos<span class="o">?</span>
+<span class="n">La</span> <span class="n">mayoría</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tienen</span> <span class="n">entre</span> <span class="mi">2</span> <span class="n">y</span> <span class="mi">4</span> <span class="n">defectos</span> <span class="p">(</span><span class="n">la</span> <span class="s2">&quot;caja&quot;</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Días</span> <span class="n">con</span> <span class="n">más</span> <span class="n">de</span> <span class="mi">4</span> <span class="n">ya</span> <span class="n">están</span> <span class="n">en</span> <span class="n">el</span> <span class="mi">25</span><span class="o">%</span> <span class="n">más</span> <span class="n">alto</span><span class="o">.</span>
+
+<span class="n">Algunos</span> <span class="n">puntos</span> <span class="n">más</span> <span class="n">arriba</span> <span class="p">(</span><span class="n">como</span> <span class="n">el</span> <span class="n">de</span> <span class="mi">8</span><span class="p">)</span> <span class="n">son</span> <span class="n">valores</span> <span class="n">inusuales</span><span class="p">,</span> <span class="n">y</span> <span class="n">podrían</span> <span class="n">indicar</span> <span class="n">fallos</span> <span class="n">importantes</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="o">**</span><span class="n">Explicación</span><span class="o">**</span><span class="p">:</span><span class="n">a</span><span class="err">🔹</span> <span class="n">Q1</span> <span class="p">(</span><span class="n">Primer</span> <span class="n">cuartil</span><span class="p">)</span>
+                     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid character &#39;🔹&#39; (U+1F539)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histograma">
+<h2>Histograma<a class="headerlink" href="#histograma" title="Link to this heading">#</a></h2>
+<p>El histograma nos muestra cómo se distribuye la producción diaria. Podemos ver si la mayoría de los días se producen más o menos piezas.</p>
+<p>En este caso, usamos <strong>10 grupos (bins)</strong> para agrupar los valores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Piezas_producidas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de piezas producidas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusiones">
+<h2>Conclusiones<a class="headerlink" href="#conclusiones" title="Link to this heading">#</a></h2>
+<p>A partir de los gráficos podemos hacernos preguntas como:</p>
+<ul class="simple">
+<li><p>¿Hay relación directa entre más producción y más defectos?</p></li>
+<li><p>¿Existen días con defectos especialmente altos o bajos?</p></li>
+<li><p>¿La producción es estable o varía mucho?</p></li>
+</ul>
+<p>Este tipo de análisis se usa en el mundo real para tomar decisiones que <strong>mejoran la calidad y la eficiencia de una empresa</strong>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="6_1_dataframe_graficos_basicos_ejercicios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">📑 Ejercicios de visualización de datos: Gráficos básicos</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenario">7.1. Escenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-defectos-detectados">Análisis 1: Día contra Defectos detectados</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">Diagrama de caja (box plot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alberto Durán Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
