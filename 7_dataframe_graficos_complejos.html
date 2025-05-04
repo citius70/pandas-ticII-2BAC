@@ -473,16 +473,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenario">7.1. Escenario</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-defectos-detectados">Análisis 1: Día contra Defectos detectados</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-minutos-parada-por-fallos">Análisis 1: Día contra Minutos parada por fallos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">- Diagrama de caja (box plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion"><strong>Explicación</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">Diagrama de caja (box plot)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">- Histograma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
 </ul>
             </nav>
@@ -500,7 +500,7 @@
 <p>En el capítulo anterior vimos como podemos representar los datos de un DataFrame de forma gráfica. En este estudiaremos la forma de generar <strong>tres gráficos</strong> muy utilizados en anáisis de datos como son:</p>
 <ul class="simple">
 <li><p>Gráfico de dispersión (Scatter plot)</p></li>
-<li><p>Diagrama de caja (Boxplot)</p></li>
+<li><p>Diagrama de caja (Box plot)</p></li>
 <li><p>Histograma</p></li>
 </ul>
 <figure class="align-default" id="dataframe">
@@ -509,23 +509,21 @@
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">Gráficos con Pandas</span><a class="headerlink" href="#dataframe" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<section id="escenario">
-<h2>7.1. Escenario<a class="headerlink" href="#escenario" title="Link to this heading">#</a></h2>
-<p>Imagina que trabajas como <strong>ingeniero/a de calidad</strong> en una fábrica. <strong>Cada día</strong>, la fábrica registra <strong>cuántas piezas</strong> ha producido y cuántas de esas piezas han tenido <strong>defectos</strong>.</p>
+<p>Imagina que trabajas como <strong>ingeniero/a de calidad</strong> en una fábrica. <strong>Cada día</strong>, la fábrica registra <strong>cuántas piezas</strong> ha producido y cuántos  <strong>minutos han estado paradas</strong> las máquinas por fallos en su funcionamiento.</p>
 <p>Tu tarea es analizar los datos de <strong>30 días</strong> para ayudar a detectar:</p>
 <ul class="simple">
 <li><p>Posibles días con problemas de calidad.</p></li>
-<li><p>Relación entre producción y defectos.</p></li>
+<li><p>Relación entre producción y minutos parada por fallo.</p></li>
 <li><p>Comportamientos anómalos o tendencias.</p></li>
 </ul>
-<p>Usaremos <strong>solo <code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong> para cargar los datos y crear gráficos básicos: scatter plot, boxplot e histograma.</p>
+<p>Usaremos <strong>solo <code class="docutils literal notranslate"><span class="pre">pandas</span></code></strong> para cargar los datos y crear gráficos básicos: <strong>scatter plot, boxplot e histograma</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Datos de producción de la fábrica durante 30 días recopilados en un diccionario denominado &quot;data&quot;</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/calidad.csv&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1qKKGYeqdc48KI4gwmHX6oQ9oN0ZIyYnh&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># Creamos el DataFrame &quot;df&quot;</span>
@@ -533,6 +531,8 @@
 
 <span class="c1"># Visualizamos los cinco primeros datos</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -555,48 +555,57 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Dia</th>
       <th>Piezas_producidas</th>
-      <th>Defectos</th>
+      <th>Minutos_parada</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>D1</td>
-      <td>1001</td>
-      <td>1</td>
+      <th>count</th>
+      <td>30.000000</td>
+      <td>30.000000</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>D2</td>
-      <td>964</td>
-      <td>1</td>
+      <th>mean</th>
+      <td>988.766667</td>
+      <td>37.233333</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>D3</td>
-      <td>950</td>
-      <td>1</td>
+      <th>std</th>
+      <td>24.187035</td>
+      <td>19.754848</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>D4</td>
-      <td>1010</td>
-      <td>3</td>
+      <th>min</th>
+      <td>950.000000</td>
+      <td>4.000000</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>D5</td>
-      <td>970</td>
-      <td>2</td>
+      <th>25%</th>
+      <td>970.000000</td>
+      <td>25.750000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>989.000000</td>
+      <td>35.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1009.000000</td>
+      <td>45.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1029.000000</td>
+      <td>98.000000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <section id="grafico-de-dispersion-scatter-plot">
-<h3>- Gráfico de dispersión (scatter plot)<a class="headerlink" href="#grafico-de-dispersion-scatter-plot" title="Link to this heading">#</a></h3>
+<h2>- Gráfico de dispersión (scatter plot)<a class="headerlink" href="#grafico-de-dispersion-scatter-plot" title="Link to this heading">#</a></h2>
 <figure class="margin align-default" id="id1">
 <img alt="_images/scatter1.png" src="_images/scatter1.png" />
 <figcaption>
@@ -641,58 +650,83 @@
 </li>
 </ol>
 </div>
-<section id="analisis-1-dia-contra-defectos-detectados">
-<h4>Análisis 1: Día contra Defectos detectados<a class="headerlink" href="#analisis-1-dia-contra-defectos-detectados" title="Link to this heading">#</a></h4>
-<p>Vamos a estudiar si hay relación entre el <strong>día de mes y los defectos detectados</strong>.</p>
-<p>En el eje X se colocan los <strong>días</strong>, y en el eje Y el número de <strong>defectos</strong>.</p>
+<section id="analisis-1-dia-contra-minutos-parada-por-fallos">
+<h3>Análisis 1: Día contra Minutos parada por fallos<a class="headerlink" href="#analisis-1-dia-contra-minutos-parada-por-fallos" title="Link to this heading">#</a></h3>
+<p>Vamos a estudiar si hay relación entre el <strong>día de mes y los minutos parada</strong>.</p>
+<p>En el eje X se colocan los <strong>días</strong>, y en el eje Y el número de <strong>minutos_parada</strong>.</p>
 <p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">plot.scatter</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Defectos&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Día vs Defectos&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dia&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Minutos_parada&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Día vs Minutos parada&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Día vs Defectos&#39;}, xlabel=&#39;Dia&#39;, ylabel=&#39;Defectos&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Día vs Minutos parada&#39;}, xlabel=&#39;Dia&#39;, ylabel=&#39;Minutos_parada&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/9c8302f878508f662d9a1b97e1fc3ad6afe34f98f7574528c8820a8daf0790ae.png" src="_images/9c8302f878508f662d9a1b97e1fc3ad6afe34f98f7574528c8820a8daf0790ae.png" />
+<img alt="_images/b78728b5f6b5b8f13449fbadabf5fb825b63be38ea0e402acd0619e6dfe75b53.png" src="_images/b78728b5f6b5b8f13449fbadabf5fb825b63be38ea0e402acd0619e6dfe75b53.png" />
 </div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Análisis del gráfico de dispersión</p>
-<p>Puede observarse un <strong>correlación positiva</strong> (tendencia ascendente) entre los <strong>días del mes</strong> y los <strong>defectos</strong>. Esto significa que a medida que pasan los días, los defectos aumentan.</p>
+<p>Puede observarse un <strong>correlación positiva</strong> (tendencia ascendente) entre los <strong>días del mes</strong> y los <strong>minutos parados</strong>. Esto significa que a medida que pasan los días, los minutos perdidos aumentan.</p>
 </div>
 <div class="danger admonition">
 <p class="admonition-title">Medidas correctoras</p>
 <ol class="arabic simple">
-<li><p>Causas Probables:</p></li>
+<li><p>Causas probables:</p></li>
 </ol>
 <ul class="simple">
-<li><p>Fatiga de equipo/trabajadores (final de mes).</p></li>
-<li><p>Presión por alcanzar metas u objetivos (piezas producidas a final de mes)</p></li>
-<li><p>Mantenimiento delas máquinas defectuoso o postergado .</p></li>
+<li><p>Fatiga de equipos: Mantenimiento insuficiente hacia fin de mes.</p></li>
+<li><p>Presión operativa: Mayor uso de máquinas para cumplir metas, generando sobrecarga.</p></li>
+<li><p>Fallas acumulativas: Pequeños problemas no resueltos que escalan con el tiempo.</p></li>
+<li><p>Factores humanos: Turnos extendidos o estrés del personal en cierre mensual.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Acciones Clave:</p></li>
+<li><p>Medidas Correctivas</p></li>
 </ol>
 <ul class="simple">
-<li><p>Mantenimiento preventivo antes de los picos de defectos (días 20-25).</p></li>
-<li><p>Ajustar turnos para evitar fatiga acumulada.</p></li>
-<li><p>Reforzar controles de calidad en la última semana.</p></li>
-<li><p>Balancear producción para evitar sobrecargas.</p></li>
+<li><p>Mantenimiento Preventivo</p>
+<ul>
+<li><p>Acción: Programar revisiones técnicas antes del día 20 (anticipándose al pico).</p></li>
+<li><p>Herramienta: Usar un calendario predictivo basado en datos históricos.</p></li>
+</ul>
+</li>
+<li><p>Balancear la Carga de Producción</p>
+<ul>
+<li><p>Acción: Distribuir metas semanales (evitar acumulación al final del mes).</p></li>
+</ul>
+</li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Monitoreo:</p></li>
+<li><p>Monitoreo en Tiempo Real</p></li>
 </ol>
 <ul class="simple">
-<li><p>Usar gráficos de control (ej. Shewhart) y reuniones semanales.</p></li>
-<li><p>Visualizar datos con scatter plot + línea de tendencia (Excel).</p></li>
+<li><p>Sistema: Implementar un dashboard con:</p>
+<ul>
+<li><p>Minutos de parada acumulados por día.</p></li>
+<li><p>Alertas al superar el 10% del tiempo operativo planeado.</p></li>
+<li><p>Tecnología: Sensores IoT para detectar fallos tempranos.</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Capacitación y Cultura Operativa</p></li>
+</ol>
+<ul class="simple">
+<li><p>Entrenamiento: Talleres mensuales sobre:</p>
+<ul>
+<li><p>Identificación temprana de fallas.</p></li>
+<li><p>Protocolos de parada rápida (Andon).</p></li>
+</ul>
+</li>
+<li><p>Incentivos: Recompensar equipos con menos tiempo de inactividad.</p></li>
 </ul>
 </div>
 </section>
 <section id="analisis-2-dias-contra-piezas-fabricadas">
-<h4>Análisis 2: Días contra Piezas fabricadas<a class="headerlink" href="#analisis-2-dias-contra-piezas-fabricadas" title="Link to this heading">#</a></h4>
+<h3>Análisis 2: Días contra Piezas fabricadas<a class="headerlink" href="#analisis-2-dias-contra-piezas-fabricadas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En este caso vamos a dar formato al gráfico con algunas propiedades (color, grid...)</span>
@@ -701,7 +735,7 @@
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Dia&#39;</span><span class="p">,</span> 
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Piezas_producidas&#39;</span><span class="p">,</span> 
     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Día vs Piezas producidas&#39;</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>  <span class="c1"># Tamaño del gráfico</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>  <span class="c1"># Tamaño del gráfico</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>      <span class="c1"># Color de los puntos</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>        <span class="c1"># Transparencia (0 a 1)</span>
     <span class="n">grid</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
@@ -712,7 +746,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Día vs Piezas producidas&#39;}, xlabel=&#39;Dia&#39;, ylabel=&#39;Piezas_producidas&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b4b67a9d9038e58ec3e1deae27d8abaf5a5e247ecadff4576980648ac4047256.png" src="_images/b4b67a9d9038e58ec3e1deae27d8abaf5a5e247ecadff4576980648ac4047256.png" />
+<img alt="_images/8b533d45ae9acc40c998f3d0afdab593392f69f73293825fc960150bb92db7f3.png" src="_images/8b533d45ae9acc40c998f3d0afdab593392f69f73293825fc960150bb92db7f3.png" />
 </div>
 </div>
 <div class="tip admonition">
@@ -762,9 +796,8 @@
 </div>
 </section>
 </section>
-</section>
 <section id="diagrama-de-caja-box-plot">
-<h2>Diagrama de caja (box plot)<a class="headerlink" href="#diagrama-de-caja-box-plot" title="Link to this heading">#</a></h2>
+<h2>- Diagrama de caja (box plot)<a class="headerlink" href="#diagrama-de-caja-box-plot" title="Link to this heading">#</a></h2>
 <div class="admonition-que-es admonition">
 <p class="admonition-title">📊 ¿Qué es?</p>
 <p>Un box plot (también llamado diagrama de caja y bigotes) es una gráfica que resume de forma muy visual cómo se distribuyen los datos estadísticos más importantes. Nos ayuda a ver:</p>
@@ -785,6 +818,12 @@
 <li><p>Ver cómo están repartidos los datos: ¿hay muchos valores bajos?, ¿altos?, ¿es simétrico?</p></li>
 </ul>
 </div>
+<figure class="margin align-default" id="id3">
+<img alt="_images/Cuartiles_del_diagrama_de_caja.png" src="_images/Cuartiles_del_diagrama_de_caja.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Diagrama de caja</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition-que-partes-tiene admonition">
 <p class="admonition-title">📊 ¿Qué partes tiene?</p>
 <p>Imagina que tienes una lista de números, como los defectos diarios en una fábrica. El box plot te muestra:</p>
@@ -795,10 +834,12 @@
 <li><p>Puntos fuera de los bigotes: son valores extremos o atípicos.</p></li>
 </ul>
 </div>
+<p>Vamos a ver como se distribuyen los <strong>minutos parados</strong> de nuestra fábrica.</p>
+<p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">plot.box</span></code></p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Defectos&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de defectos en el mes&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Minutos_parada&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de minutos de parada en el mes&#39;</span><span class="p">,</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxes</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">whiskers</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">medians</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">caps</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
@@ -809,64 +850,157 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2214a7fe780&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x26b93b83980&gt;
 </pre></div>
 </div>
-<img alt="_images/6f22b92a2e09e2de3efbc3526226a18f9bcec74e164158f32c54e23bb12754ab.png" src="_images/6f22b92a2e09e2de3efbc3526226a18f9bcec74e164158f32c54e23bb12754ab.png" />
+<img alt="_images/65be6ba62d7f2496538dfdafdf3858e36c7008cf9db5c126cbeb885e54819bf2.png" src="_images/65be6ba62d7f2496538dfdafdf3858e36c7008cf9db5c126cbeb885e54819bf2.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Explicación</span><span class="o">**</span><span class="p">:</span><span class="n">a</span><span class="err">🔹</span> <span class="n">Q1</span> <span class="p">(</span><span class="n">Primer</span> <span class="n">cuartil</span><span class="p">)</span>
-<span class="n">Es</span> <span class="n">el</span> <span class="n">borde</span> <span class="n">inferior</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span> <span class="n">azul</span><span class="o">.</span>
-
-<span class="n">Representa</span> <span class="n">el</span> <span class="n">valor</span> <span class="n">por</span> <span class="n">debajo</span> <span class="k">del</span> <span class="n">cual</span> <span class="n">está</span> <span class="n">el</span> <span class="mi">25</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span><span class="o">.</span>
-
-<span class="n">En</span> <span class="n">la</span> <span class="n">imagen</span><span class="p">,</span> <span class="n">Q1</span> <span class="n">parece</span> <span class="n">estar</span> <span class="n">en</span> <span class="mi">2</span> <span class="err">→</span> <span class="n">Esto</span> <span class="n">significa</span> <span class="n">que</span> <span class="n">un</span> <span class="n">cuarto</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tuvo</span> <span class="mi">2</span> <span class="n">defectos</span> <span class="n">o</span> <span class="n">menos</span><span class="o">.</span>
-
-<span class="err">🔸</span> <span class="n">Q2</span> <span class="p">(</span><span class="n">Mediana</span><span class="p">)</span>
-<span class="n">Es</span> <span class="n">la</span> <span class="n">línea</span> <span class="n">roja</span> <span class="n">dentro</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span><span class="o">.</span>
-
-<span class="n">Marca</span> <span class="n">el</span> <span class="n">valor</span> <span class="n">central</span><span class="p">:</span> <span class="n">el</span> <span class="mi">50</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">datos</span> <span class="n">están</span> <span class="n">por</span> <span class="n">debajo</span><span class="p">,</span> <span class="n">y</span> <span class="n">el</span> <span class="mi">50</span><span class="o">%</span> <span class="n">por</span> <span class="n">encima</span><span class="o">.</span>
-
-<span class="n">En</span> <span class="n">el</span> <span class="n">gráfico</span><span class="p">,</span> <span class="n">la</span> <span class="n">mediana</span> <span class="n">está</span> <span class="n">en</span> <span class="mi">3</span> <span class="err">→</span> <span class="n">Es</span> <span class="n">el</span> <span class="n">número</span> <span class="n">de</span> <span class="n">defectos</span> <span class="n">típico</span> <span class="n">de</span> <span class="n">un</span> <span class="n">día</span><span class="o">.</span>
-
-<span class="err">🔹</span> <span class="n">Q3</span> <span class="p">(</span><span class="n">Tercer</span> <span class="n">cuartil</span><span class="p">)</span>
-<span class="n">Es</span> <span class="n">el</span> <span class="n">borde</span> <span class="n">superior</span> <span class="n">de</span> <span class="n">la</span> <span class="n">caja</span><span class="o">.</span>
-
-<span class="n">Representa</span> <span class="n">el</span> <span class="n">punto</span> <span class="n">por</span> <span class="n">debajo</span> <span class="k">del</span> <span class="n">cual</span> <span class="n">está</span> <span class="n">el</span> <span class="mi">75</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">datos</span><span class="o">.</span>
-
-<span class="n">Aquí</span> <span class="n">parece</span> <span class="n">estar</span> <span class="n">en</span> <span class="mi">4</span> <span class="err">→</span> <span class="n">Es</span> <span class="n">decir</span><span class="p">,</span> <span class="n">el</span> <span class="mi">75</span><span class="o">%</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tuvo</span> <span class="mi">4</span> <span class="n">defectos</span> <span class="n">o</span> <span class="n">menos</span><span class="o">.</span>
-
-<span class="err">🧠</span> <span class="err">¿</span><span class="n">Qué</span> aprendemos<span class="o">?</span>
-<span class="n">La</span> <span class="n">mayoría</span> <span class="n">de</span> <span class="n">los</span> <span class="n">días</span> <span class="n">tienen</span> <span class="n">entre</span> <span class="mi">2</span> <span class="n">y</span> <span class="mi">4</span> <span class="n">defectos</span> <span class="p">(</span><span class="n">la</span> <span class="s2">&quot;caja&quot;</span><span class="p">)</span><span class="o">.</span>
-
-<span class="n">Días</span> <span class="n">con</span> <span class="n">más</span> <span class="n">de</span> <span class="mi">4</span> <span class="n">ya</span> <span class="n">están</span> <span class="n">en</span> <span class="n">el</span> <span class="mi">25</span><span class="o">%</span> <span class="n">más</span> <span class="n">alto</span><span class="o">.</span>
-
-<span class="n">Algunos</span> <span class="n">puntos</span> <span class="n">más</span> <span class="n">arriba</span> <span class="p">(</span><span class="n">como</span> <span class="n">el</span> <span class="n">de</span> <span class="mi">8</span><span class="p">)</span> <span class="n">son</span> <span class="n">valores</span> <span class="n">inusuales</span><span class="p">,</span> <span class="n">y</span> <span class="n">podrían</span> <span class="n">indicar</span> <span class="n">fallos</span> <span class="n">importantes</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="o">**</span><span class="n">Explicación</span><span class="o">**</span><span class="p">:</span><span class="n">a</span><span class="err">🔹</span> <span class="n">Q1</span> <span class="p">(</span><span class="n">Primer</span> <span class="n">cuartil</span><span class="p">)</span>
-                     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid character &#39;🔹&#39; (U+1F539)
-</pre></div>
-</div>
-</div>
-</div>
+<section id="explicacion">
+<h3><strong>Explicación</strong>:<a class="headerlink" href="#explicacion" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Mínimo: Es la línea roja inferior. Representa el mínimo de minutos parada en 30 días.</p>
+<ul class="simple">
+<li><p>En ese caso es de 4 minutos.</p></li>
+</ul>
+</li>
+<li><p>Q1 (Primer cuartil). Es el borde inferior de la caja azul.</p>
+<ul class="simple">
+<li><p>Representa el valor por debajo del cual está el 25% de los días.</p></li>
+<li><p>En la imagen, Q1 está en 26. <strong>Esto significa que un cuarto (25%) de los días estuvo 26 minutos, o menos, parada</strong>. Como hay 30 días, entonces, 30 días x 25/100 = 7,5 días (8 días) estuvo 26 minutos, o menos, parada.</p></li>
+</ul>
+</li>
+<li><p>Q2 (Mediana). Es la línea roja dentro de la caja.</p>
+<ul class="simple">
+<li><p>Marca el valor central: el 50% de los datos están por debajo, y el 50% por encima.</p></li>
+<li><p>En el gráfico, la mediana está en 37 → Es el número de mínutos típico de un día.</p></li>
+</ul>
+</li>
+<li><p>Q3 (Tercer cuartil) Es el borde superior de la caja.</p>
+<ul class="simple">
+<li><p>Representa el punto por debajo del cual está el 75% de los datos.</p></li>
+<li><p>Aquí parece estar en 45 → Es decir, el 75% de los días estuvo 45 minutos, o menos parada. 30 días x 75/100 = 22,5 días (23). 23 días estuvo parada 45 minutos o menos.</p></li>
+</ul>
+</li>
+<li><p>Máximo: Es la línea roja superior. Representa el máximo de minutos parada en 30 días.</p>
+<ul class="simple">
+<li><p>En ese caso es de 65 minutos.</p></li>
+</ul>
+</li>
+<li><p>Outliers (datos inusuales): Son datos que se salen de lo normal (por arriba o por abajo).</p>
+<ul class="simple">
+<li><p>Todos los datos que sean:</p></li>
+<li><ul>
+<li><p>menores a  L1 = Q1 -1,5*(Q3-Q1), o,</p></li>
+<li><p>mayores a L2 =Q 3 + 1,5*(Q3-Q1)</p></li>
+</ul>
+</li>
+</ul>
+<p>se consideran inusuales y , por lo general, se desechan.</p>
+<ul class="simple">
+<li><p>En este caso, el valor de 98 minutos parada está por encima de L2 y se considera outlier.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>🧠 ¿Qué aprendemos?</strong></p>
+<ul class="simple">
+<li><p>La mayoría de los días tienen paradas de entre 26 (Q1) y 45 (Q3) minuto (la “caja”).</p></li>
+<li><p>Días con más de 26 minutos ya están en el 25% más alto.</p></li>
+<li><p>Algunos puntos más arriba (como el de 98) son valores inusuales, y podrían indicar fallos puntuales importantes.</p></li>
+</ul>
+</section>
 </section>
 <section id="histograma">
-<h2>Histograma<a class="headerlink" href="#histograma" title="Link to this heading">#</a></h2>
-<p>El histograma nos muestra cómo se distribuye la producción diaria. Podemos ver si la mayoría de los días se producen más o menos piezas.</p>
-<p>En este caso, usamos <strong>10 grupos (bins)</strong> para agrupar los valores.</p>
+<h2>- Histograma<a class="headerlink" href="#histograma" title="Link to this heading">#</a></h2>
+<figure class="margin align-default" id="id4">
+<img alt="_images/histograma1.png" src="_images/histograma1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Histograma con puntos. Distribución de pesos de una exhibición de perros</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin align-default" id="id5">
+<img alt="_images/histograma2.png" src="_images/histograma2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Histograma con barras. Distribución de pesos de una exhibición de perros</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-{admonition}📊 notranslate"><div class="highlight"><pre><span></span>Un histograma es un tipo de gráfico de barras que muestra cómo se distribuyen los datos. En lugar de mostrar datos individuales, agrupa los valores en intervalos (también llamados “bins” o “clases”) y cuenta cuántos datos hay en cada uno.
+</pre></div>
+</div>
+<div class="admonition-como-se-lee admonition">
+<p class="admonition-title">🔎 ¿Cómo se lee?</p>
+<ul class="simple">
+<li><p>El eje X (horizontal) representa los intervalos de valores.</p></li>
+<li><p>El eje Y (vertical) muestra cuántos datos (conteo) caen dentro de cada intervalo.</p></li>
+</ul>
+<p>Cada barra representa la frecuencia (cantidad) de datos en un rango.</p>
+</div>
+<div class="admonition-para-que-sirve admonition">
+<p class="admonition-title">🧠 ¿Para qué sirve?</p>
+<p>Un histograma te ayuda a ver la forma general de los datos, por ejemplo:</p>
+<ul class="simple">
+<li><p>¿Los valores están concentrados en un rango?</p></li>
+<li><p>¿Hay muchos valores bajos y pocos altos?</p></li>
+<li><p>¿Es simétrica la distribución? ¿O hay valores extremos?</p></li>
+</ul>
+</div>
+<p>El histograma nos puede ayudar a mostrar cómo se distribuye la producción diaria. Podemos ver si la mayoría de los días se producen más o menos piezas.</p>
+<p>En este caso, usamos <strong>10 grupos (bins)</strong> para agrupar los valores.`</p>
+<p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">plot.hist</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Piezas_producidas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de piezas producidas&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribución de piezas producidas&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/e7b6041ca6b013561ac4c4aa718e00e0abba955a1313945c8dad8b80fc9d4da0.png" src="_images/e7b6041ca6b013561ac4c4aa718e00e0abba955a1313945c8dad8b80fc9d4da0.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Análisis del histograma</p>
+<ul class="simple">
+<li><p>El histograma muestra cuántas veces se produjeron ciertas cantidades de piezas.</p></li>
+<li><p>La mayoría de los valores se agrupan en dos zonas: cerca de 965 y cerca de 1010.</p></li>
+<li><p>Hay poca producción media, lo que sugiere variabilidad en los datos.</p></li>
+<li><p>Esto podría deberse a turnos diferentes, fallos técnicos o cambios en la organización del trabajo.</p></li>
+<li><p>La producción no es constante, lo que puede ser un punto a mejorar.</p></li>
+</ul>
+</div>
+<p>Podemos saber, por ejemplo, la distribución de minutos parados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Minutos_parada&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de minutos parados&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribución de minutos parados&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/052c21ae6c4264349f0b57852e62faab4676eec7ed669482bb87edbb55ec9ea6.png" src="_images/052c21ae6c4264349f0b57852e62faab4676eec7ed669482bb87edbb55ec9ea6.png" />
+</div>
+</div>
+<div class="admonition-analisis-del-histograma admonition">
+<p class="admonition-title">Análisis del histograma</p>
+<p>Muestra cuántas veces la máquina estuvo parada cierto tiempo.</p>
+<ul class="simple">
+<li><p>La mayoría de las paradas duraron entre 20 y 50 minutos.</p></li>
+<li><p>Hay pocas paradas muy cortas o muy largas.</p></li>
+<li><p>Esto indica que los fallos suelen ser de duración media.</p></li>
+<li><p>El histograma ayuda a detectar patrones y tomar decisiones para mejorar la producción.</p></li>
+</ul>
 </div>
 </section>
 <section id="conclusiones">
@@ -937,16 +1071,16 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escenario">7.1. Escenario</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-defectos-detectados">Análisis 1: Día contra Defectos detectados</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion-scatter-plot">- Gráfico de dispersión (scatter plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-1-dia-contra-minutos-parada-por-fallos">Análisis 1: Día contra Minutos parada por fallos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-2-dias-contra-piezas-fabricadas">Análisis 2: Días contra Piezas fabricadas</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">- Diagrama de caja (box plot)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion"><strong>Explicación</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-caja-box-plot">Diagrama de caja (box plot)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">- Histograma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
 </ul>
   </nav></div>
