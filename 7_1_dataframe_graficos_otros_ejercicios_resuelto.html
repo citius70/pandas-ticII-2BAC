@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>📑 Ejercicios de visualización de datos: Otros gráficos &#8212; Análisis de datos con Pandas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=105783d5" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '7_1_dataframe_graficos_otros_ejercicios_resuelto';</script>
+    <link rel="icon" href="_static/pandas_logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción al curso de Pandas
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">📑 Ejercicicio sobre creación de DataFrames</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_1_dataframe_manipulacion_2_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6_dataframe_graficos_basicos.html">6. Visualizacion de datos en Pandas: Gráficos básicos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_1_dataframe_graficos_basicos_ejercicios.html">📑 Ejercicios de visualización de datos: Gráficos básicos</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="7_dataframe_graficos_complejos.html">7. Visualizacion de datos en Pandas: Otros gráficos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="7_1_dataframe_graficos_otros_ejercicios.html">📑 Ejercicios de visualización de datos: Otros gráficos</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/7_1_dataframe_graficos_otros_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/7_1_dataframe_graficos_otros_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/7_1_dataframe_graficos_otros_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F7_1_dataframe_graficos_otros_ejercicios_resuelto.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/7_1_dataframe_graficos_otros_ejercicios_resuelto.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📑 Ejercicios de visualización de datos: Otros gráficos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-edad-de-todos-los-pacientes-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1: Edad (de todos los pacientes) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-1-edad-de-los-pacientes-con-tratamiento-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1.1: Edad (de los pacientes con tratamiento) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-2-edad-de-los-pacientes-con-placebo-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1.2: Edad (de los pacientes con placebo) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-comparacion-entre-tratamiento-y-placebo-con-box-plot">🔍 Ejercicio 2: Comparación entre tratamiento y placebo con Box plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-intensidad-inicial-de-sintomas-con-histograma">🔍 Ejercicio 3: Intensidad inicial de síntomas con Histograma</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-de-visualizacion-de-datos-otros-graficos">
+<h1>📑 Ejercicios de visualización de datos: Otros gráficos<a class="headerlink" href="#ejercicios-de-visualizacion-de-datos-otros-graficos" title="Link to this heading">#</a></h1>
+<aside class="margin sidebar">
+<p class="sidebar-title">Placebo</p>
+<p>Un placebo es un tratamiento falso (como una pastilla de azúcar o una inyección sin medicamento) que no tiene efecto médico real, pero se usa para:</p>
+<ul class="simple">
+<li><p>Comparar si un medicamento verdadero funciona.</p></li>
+<li><p>Medir el poder de la mente: si el paciente mejora solo por creer que recibió tratamiento (esto se llama efecto placebo).</p></li>
+</ul>
+<p>Ejemplo: En un estudio, a unos pacientes se les da el medicamento nuevo y a otros un placebo. Si ambos grupos mejoran igual, el fármaco podría no ser efectivo.</p>
+<p>¡Es como un “engaño controlado” para descubrir la verdad! 😊</p>
+</aside>
+<p>🧪 <strong>Estudio clínico</strong>: Efectividad de un tratamiento real frente a un placebo.</p>
+<p>Este cuaderno explora cómo representar datos médicos de un ensayo clínico utilizando gráficos básicos con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>El objetivo es analizar si un nuevo medicamento tiene mayor efectividad que un placebo, usando tres tipos de gráficos: <strong>scatter plot</strong>, <strong>box plot</strong> e <strong>histograma</strong>.</p>
+<p>Pare ello se han recogido los siguientes datos:</p>
+<ul class="simple">
+<li><p>Grupo: Si el paciente ha tomado el tratamiento o el placebo.</p></li>
+<li><p>Edad</p></li>
+<li><p>Días_mejora: Los días desde el principio de las tomas hasta que siente las primeras mejoras.</p></li>
+<li><p>Intensidad_síntomas: De 0 a 10 el paciente valora la intensidad de la enfermedad al principio del tratamiento.</p></li>
+<li><p>Reducción_síntoma: De 0 a 10 el paciente valora la intensidad de la enfermedad cuando comienza la mejoría.</p></li>
+</ul>
+<p>Los datos se encuntran en un archivo csv en: https://drive.google.com/uc?export=download&amp;id=19rhtMihR-gEZUdFlPfzRBqgBFWBdcxik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Importa pandas</span>
+
+<span class="c1"># 2. Crea un Dataframe llamado &quot;pacientes&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Visualiza los 10 primeros datos con head()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Haz un análisis estadístico con describe()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pacientes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/pacientes.csv&quot;</span><span class="p">)</span>
+
+
+
+<span class="n">pacientes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Grupo</th>
+      <th>Edad</th>
+      <th>Días_mejora</th>
+      <th>Intensidad_síntomas</th>
+      <th>Reducción_síntomas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tratamiento</td>
+      <td>64</td>
+      <td>4</td>
+      <td>6</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tratamiento</td>
+      <td>67</td>
+      <td>2</td>
+      <td>5</td>
+      <td>3.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Tratamiento</td>
+      <td>20</td>
+      <td>0</td>
+      <td>7</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Tratamiento</td>
+      <td>23</td>
+      <td>4</td>
+      <td>7</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Tratamiento</td>
+      <td>23</td>
+      <td>5</td>
+      <td>8</td>
+      <td>2.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Edad</th>
+      <th>Días_mejora</th>
+      <th>Intensidad_síntomas</th>
+      <th>Reducción_síntomas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>40.000000</td>
+      <td>40.000000</td>
+      <td>40.000000</td>
+      <td>40.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>42.150000</td>
+      <td>4.225000</td>
+      <td>6.925000</td>
+      <td>3.342500</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>14.400053</td>
+      <td>1.832576</td>
+      <td>1.248332</td>
+      <td>1.737946</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>20.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>31.250000</td>
+      <td>3.000000</td>
+      <td>6.000000</td>
+      <td>2.025000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>40.500000</td>
+      <td>4.000000</td>
+      <td>7.000000</td>
+      <td>3.450000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>55.250000</td>
+      <td>5.000000</td>
+      <td>8.000000</td>
+      <td>4.650000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>69.000000</td>
+      <td>9.000000</td>
+      <td>9.000000</td>
+      <td>7.700000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="ejercicio-1-edad-de-todos-los-pacientes-vs-dias-hasta-la-mejoria-con-scatter-plot">
+<h2>🔍 Ejercicio 1: Edad (de todos los pacientes) vs Días hasta la mejoría con Scatter plot<a class="headerlink" href="#ejercicio-1-edad-de-todos-los-pacientes-vs-dias-hasta-la-mejoria-con-scatter-plot" title="Link to this heading">#</a></h2>
+<p>Elabora un diagrama de dispersión (scatter plot) en el que en el <strong>eje <code class="docutils literal notranslate"><span class="pre">x</span></code> se muestren la edad</strong> de TODOS los pacientes y en el <strong>eje <code class="docutils literal notranslate"><span class="pre">y</span></code> los días hasta la mejoría</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Días_mejora&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Edad vs Días hasta la mejoría&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Edad vs Días hasta la mejoría&#39;}, xlabel=&#39;Edad&#39;, ylabel=&#39;Días_mejora&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/f93a058aeb48e66d6957ba8425511bcf71570c282741cc1e9dadb2018a1eec8b.png" src="_images/f93a058aeb48e66d6957ba8425511bcf71570c282741cc1e9dadb2018a1eec8b.png" />
+</div>
+</div>
+<p><strong>Análisis del diagrama</strong>: (Responde a las preguntas)</p>
+<ol class="arabic simple">
+<li><p>¿Hay alguna relación evidente entre la edad de los pacientes y los días que tardan en mejorar? ¿Crees que la edad influye en la velocidad de recuperación?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+<li><p>En este gráfico se muestran los datos de TODOS los pacientes. ¿Crees que sería mejor diferenciar los pacientes por alguna característica del tratamiento?</p>
+<ul class="simple">
+<li><p><strong>Respuesta</strong>:</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejercicio-1-1-edad-de-los-pacientes-con-tratamiento-vs-dias-hasta-la-mejoria-con-scatter-plot">
+<h2>🔍 Ejercicio 1.1: Edad (de los pacientes con tratamiento) vs Días hasta la mejoría con Scatter plot<a class="headerlink" href="#ejercicio-1-1-edad-de-los-pacientes-con-tratamiento-vs-dias-hasta-la-mejoria-con-scatter-plot" title="Link to this heading">#</a></h2>
+<p>Elabora un diagrama de dispersión (scatter plot) en el que en el <strong>eje <code class="docutils literal notranslate"><span class="pre">x</span></code> se muestren la edad</strong> de los pacientes con TRATAMIENTO y en el <strong>eje <code class="docutils literal notranslate"><span class="pre">y</span></code> los días hasta la mejoría</strong>.</p>
+<p>Pista: <code class="docutils literal notranslate"><span class="pre">pacientes[pacientes['Grupo']</span> <span class="pre">==</span> <span class="pre">'Tratamiento'].plot.scatter()</span></code></p>
+<p>Consejo: Haz que los puntos sean de color verde.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">[</span><span class="n">pacientes</span><span class="p">[</span><span class="s1">&#39;Grupo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Tratamiento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Días_mejora&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Edad vs Días hasta la mejoría (Solo Tratamiento)&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>  <span class="c1"># Color opcional</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Edad vs Días hasta la mejoría (Solo Tratamiento)&#39;}, xlabel=&#39;Edad&#39;, ylabel=&#39;Días_mejora&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/92ca092701034b2801dba3a35d12192a5b1cbe1a713dae9931bc8fb15a315baf.png" src="_images/92ca092701034b2801dba3a35d12192a5b1cbe1a713dae9931bc8fb15a315baf.png" />
+</div>
+</div>
+<p><strong>Análisis del diagrama</strong>: (Responde a las preguntas)</p>
+<ol class="arabic simple">
+<li><p>¿Hay alguna relación evidente entre la edad de los pacientes con tratamiento y los días que tardan en mejorar? ¿Crees que la edad influye en la velocidad de recuperación?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejercicio-1-2-edad-de-los-pacientes-con-placebo-vs-dias-hasta-la-mejoria-con-scatter-plot">
+<h2>🔍 Ejercicio 1.2: Edad (de los pacientes con placebo) vs Días hasta la mejoría con Scatter plot<a class="headerlink" href="#ejercicio-1-2-edad-de-los-pacientes-con-placebo-vs-dias-hasta-la-mejoria-con-scatter-plot" title="Link to this heading">#</a></h2>
+<p>Elabora un diagrama de dispersión (scatter plot) en el que en el <strong>eje <code class="docutils literal notranslate"><span class="pre">x</span></code> se muestren la edad</strong> de los pacientes con PLACEBO y en el <strong>eje <code class="docutils literal notranslate"><span class="pre">y</span></code> los días hasta la mejoría</strong>.</p>
+<p>Pista: <code class="docutils literal notranslate"><span class="pre">pacientes[pacientes['Grupo']</span> <span class="pre">==</span> <span class="pre">'Placebo'].plot.scatter()</span></code></p>
+<p>Consejo: Haz que los putos sean de color rojo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">[</span><span class="n">pacientes</span><span class="p">[</span><span class="s1">&#39;Grupo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Placebo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Días_mejora&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Edad vs Días hasta la mejoría (Solo Placebo)&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>  <span class="c1"># Color opcional</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Edad vs Días hasta la mejoría (Solo Placebo)&#39;}, xlabel=&#39;Edad&#39;, ylabel=&#39;Días_mejora&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/9b8e8b2d98e326228d245d48676418e023eb5001490bdb241258fce61148d31c.png" src="_images/9b8e8b2d98e326228d245d48676418e023eb5001490bdb241258fce61148d31c.png" />
+</div>
+</div>
+<p><strong>Análisis del diagrama</strong>: (Responde a las preguntas)</p>
+<ol class="arabic simple">
+<li><p>¿Hay alguna relación evidente entre la edad de los pacientes con placebo y los días que tardan en mejorar? ¿Crees que la edad influye en la velocidad de recuperación?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejercicio-2-comparacion-entre-tratamiento-y-placebo-con-box-plot">
+<h2>🔍 Ejercicio 2: Comparación entre tratamiento y placebo con Box plot<a class="headerlink" href="#ejercicio-2-comparacion-entre-tratamiento-y-placebo-con-box-plot" title="Link to this heading">#</a></h2>
+<p>Esta gráfico sí que nos va a aclarar mucho acerca del tratamiento.</p>
+<p>Escribe el código necesario para un gráfico de caja o box plot en el que se muestren distintas distribuciones en función del <strong>tratamiento</strong>. Para analizarlo mejor deben aparecer dos gráficos paralelos con los pacientes con tratamiento y con placebo.</p>
+<p>Pista: Escribe el código como sabes, añadiendo  <code class="docutils literal notranslate"><span class="pre">by</span> <span class="pre">=&quot;Grupo&quot;</span></code> en las opciones del gráfico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Reducción_síntomas&#39;</span><span class="p">,</span>
+    <span class="n">by</span><span class="o">=</span><span class="s1">&#39;Grupo&#39;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">patch_artist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">boxprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;navy&#39;</span><span class="p">},</span>
+    <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Reducción_síntomas&#39;}, xlabel=&#39;Grupo&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/52f6ea9c0fd23798096e648dd6a1736ec27a46fa8d2ab3d07ba1da0e3a5ea7fe.png" src="_images/52f6ea9c0fd23798096e648dd6a1736ec27a46fa8d2ab3d07ba1da0e3a5ea7fe.png" />
+</div>
+</div>
+<p><strong>Análisis del diagrama</strong>: (Responde a las preguntas)</p>
+<ol class="arabic simple">
+<li><p>¿Qué grupo (Tratamiento o Placebo) muestra mayor reducción de síntomas en promedio?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+<li><p>En qué grupo observas mayor variabilidad o amplitud en la reducción de síntomas?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+<li><p>¿Hay algún valor atípico (outlier) visible en los boxplots?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ejercicio-3-intensidad-inicial-de-sintomas-con-histograma">
+<h2>🔍 Ejercicio 3: Intensidad inicial de síntomas con Histograma<a class="headerlink" href="#ejercicio-3-intensidad-inicial-de-sintomas-con-histograma" title="Link to this heading">#</a></h2>
+<p>Escribe el código para un histograma en el que aparezca la distribución de la Intensidad de síntoma para TODOS los pacientes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pacientes</span><span class="p">[</span><span class="s1">&#39;Intensidad_síntomas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de intensidad inicial de síntomas&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribución de intensidad inicial de síntomas&#39;}, ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/fbd8f34f676f55474f54a6963a5cc2d8486669de45fa6cf450b195ec95b6310d.png" src="_images/fbd8f34f676f55474f54a6963a5cc2d8486669de45fa6cf450b195ec95b6310d.png" />
+</div>
+</div>
+<p><strong>Análisis del diagrama</strong>: (Responde a las preguntas)</p>
+<ol class="arabic simple">
+<li><p>¿Cuáles son los dos valores de intensidad que presentan mayor frecuencia en la distribución y cuántos pacientes se encuentran en cada uno de estos valores?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+<li><p>¿A qué crees que es debido ese falta de datos que hace que la gráfica se parta en dos?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+<li><p>¿Qué lado de la gráfica crees que definen mejor los pacientes con placebo?</p>
+<ul class="simple">
+<li><p><strong>Respuesta:</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-edad-de-todos-los-pacientes-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1: Edad (de todos los pacientes) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-1-edad-de-los-pacientes-con-tratamiento-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1.1: Edad (de los pacientes con tratamiento) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1-2-edad-de-los-pacientes-con-placebo-vs-dias-hasta-la-mejoria-con-scatter-plot">🔍 Ejercicio 1.2: Edad (de los pacientes con placebo) vs Días hasta la mejoría con Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2-comparacion-entre-tratamiento-y-placebo-con-box-plot">🔍 Ejercicio 2: Comparación entre tratamiento y placebo con Box plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-3-intensidad-inicial-de-sintomas-con-histograma">🔍 Ejercicio 3: Intensidad inicial de síntomas con Histograma</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alberto Durán Pérez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

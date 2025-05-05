@@ -66,6 +66,7 @@
     <link rel="icon" href="_static/pandas_logo.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="📑 Ejercicios de visualización de datos: Otros gráficos" href="7_1_dataframe_graficos_otros_ejercicios.html" />
     <link rel="prev" title="📑 Ejercicios de visualización de datos: Gráficos básicos" href="6_1_dataframe_graficos_basicos_ejercicios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -196,7 +197,10 @@
 <li class="toctree-l2"><a class="reference internal" href="6_1_dataframe_graficos_basicos_ejercicios.html">📑 Ejercicios de visualización de datos: Gráficos básicos</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Visualizacion de datos en Pandas: Otros gráficos</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">7. Visualizacion de datos en Pandas: Otros gráficos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="7_1_dataframe_graficos_otros_ejercicios.html">📑 Ejercicios de visualización de datos: Otros gráficos</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -499,9 +503,9 @@
 <h1>7. Visualizacion de datos en Pandas: Otros gráficos<a class="headerlink" href="#visualizacion-de-datos-en-pandas-otros-graficos" title="Link to this heading">#</a></h1>
 <p>En el capítulo anterior vimos como podemos representar los datos de un DataFrame de forma gráfica. En este estudiaremos la forma de generar <strong>tres gráficos</strong> muy utilizados en anáisis de datos como son:</p>
 <ul class="simple">
-<li><p>Gráfico de dispersión (Scatter plot)</p></li>
-<li><p>Diagrama de caja (Box plot)</p></li>
-<li><p>Histograma</p></li>
+<li><p>Gráfico de dispersión (Scatter plot) <a class="reference internal" href="_images/scatter.png"><img alt="_images/scatter.png" src="_images/scatter.png" style="width: 30px;" /></a></p></li>
+<li><p>Diagrama de caja (Box plot) <a class="reference internal" href="_images/chart.png"><img alt="_images/chart.png" src="_images/chart.png" style="width: 30px;" /></a></p></li>
+<li><p>Histograma <a class="reference internal" href="_images/histogram.png"><img alt="_images/histogram.png" src="_images/histogram.png" style="width: 30px;" /></a></p></li>
 </ul>
 <figure class="align-default" id="dataframe">
 <a class="reference internal image-reference" href="_images/plot_overview.svg"><img alt="_images/plot_overview.svg" src="_images/plot_overview.svg" style="width: 70%;" /></a>
@@ -528,10 +532,79 @@
 
 <span class="c1"># Creamos el DataFrame &quot;df&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1"># Visualizamos los cinco primeros datos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizamos los cinco primeros datos</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dia</th>
+      <th>Piezas_producidas</th>
+      <th>Minutos_parada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>D1</td>
+      <td>1001</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>D2</td>
+      <td>964</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>D3</td>
+      <td>950</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D4</td>
+      <td>1010</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>D5</td>
+      <td>970</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizamos los datos estadísticos más importantes</span>
 <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -835,31 +908,40 @@
 </ul>
 </div>
 <p>Vamos a ver como se distribuyen los <strong>minutos parados</strong> de nuestra fábrica.</p>
-<p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">plot.box</span></code></p>
-<div class="cell tag_remove-output docutils container">
+<p>Sintaxis básica: <code class="docutils literal notranslate"><span class="pre">boxplot</span></code></p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Minutos_parada&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribución de minutos de parada en el mes&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Minutos_parada&#39;</span><span class="p">,</span>
+    <span class="c1"># by=&#39;Grupo&#39;,</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">color</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxes</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">whiskers</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">medians</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">caps</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">patch_artist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">boxprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">},</span>
+    <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/562262eecb701b4391541c006b78ec2364a402147bc405da7ed3c20dfcb33e96.png" src="_images/562262eecb701b4391541c006b78ec2364a402147bc405da7ed3c20dfcb33e96.png" />
+</div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x26b93b83980&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x251f5775d00&gt;
 </pre></div>
 </div>
-<img alt="_images/65be6ba62d7f2496538dfdafdf3858e36c7008cf9db5c126cbeb885e54819bf2.png" src="_images/65be6ba62d7f2496538dfdafdf3858e36c7008cf9db5c126cbeb885e54819bf2.png" />
+<img alt="_images/4ce19ce2dc5906a8e1d825aec62c8ac2c17dde302f74cb59d797551794d17126.png" src="_images/4ce19ce2dc5906a8e1d825aec62c8ac2c17dde302f74cb59d797551794d17126.png" />
 </div>
 </div>
 <section id="explicacion">
 <h3><strong>Explicación</strong>:<a class="headerlink" href="#explicacion" title="Link to this heading">#</a></h3>
 <ul>
-<li><p>Mínimo: Es la línea roja inferior. Representa el mínimo de minutos parada en 30 días.</p>
+<li><p>Mínimo: Es la línea negra inferior. Representa el mínimo de minutos parada en 30 días.</p>
 <ul class="simple">
 <li><p>En ese caso es de 4 minutos.</p></li>
 </ul>
@@ -882,7 +964,7 @@
 <li><p>Aquí parece estar en 45 → Es decir, el 75% de los días estuvo 45 minutos, o menos parada. 30 días x 75/100 = 22,5 días (23). 23 días estuvo parada 45 minutos o menos.</p></li>
 </ul>
 </li>
-<li><p>Máximo: Es la línea roja superior. Representa el máximo de minutos parada en 30 días.</p>
+<li><p>Máximo: Es la línea negra superior. Representa el máximo de minutos parada en 30 días.</p>
 <ul class="simple">
 <li><p>En ese caso es de 65 minutos.</p></li>
 </ul>
@@ -906,7 +988,7 @@
 <ul class="simple">
 <li><p>La mayoría de los días tienen paradas de entre 26 (Q1) y 45 (Q3) minuto (la “caja”).</p></li>
 <li><p>Días con más de 26 minutos ya están en el 25% más alto.</p></li>
-<li><p>Algunos puntos más arriba (como el de 98) son valores inusuales, y podrían indicar fallos puntuales importantes.</p></li>
+<li><p>Algunos puntos más arriba (como el de 98) son valores inusuales, y podrían indicar fallos importantes.</p></li>
 </ul>
 </section>
 </section>
@@ -924,7 +1006,9 @@
 <p><span class="caption-number">Fig. 14 </span><span class="caption-text">Histograma con barras. Distribución de pesos de una exhibición de perros</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="highlight-{admonition}📊 notranslate"><div class="highlight"><pre><span></span>Un histograma es un tipo de gráfico de barras que muestra cómo se distribuyen los datos. En lugar de mostrar datos individuales, agrupa los valores en intervalos (también llamados “bins” o “clases”) y cuenta cuántos datos hay en cada uno.
+<div class="highlight-{admonition}📊 notranslate"><div class="highlight"><pre><span></span>
+Un histograma es un tipo de gráfico de barras que muestra cómo se distribuyen los datos. En lugar de mostrar datos individuales, agrupa los valores en intervalos (también llamados “bins” o “clases”) y cuenta cuántos datos hay en cada uno.
+
 </pre></div>
 </div>
 <div class="admonition-como-se-lee admonition">
@@ -1013,6 +1097,8 @@
 </ul>
 <p>Este tipo de análisis se usa en el mundo real para tomar decisiones que <strong>mejoran la calidad y la eficiencia de una empresa</strong>.</p>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1053,6 +1139,15 @@
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">📑 Ejercicios de visualización de datos: Gráficos básicos</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="7_1_dataframe_graficos_otros_ejercicios.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">📑 Ejercicios de visualización de datos: Otros gráficos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
