@@ -5,9 +5,24 @@ format: jb-book
 root: intro
 chapters:
   - file: 1_introduccion.ipynb
+    sections:
+    - file: 1_1_ejemplos.ipynb
+    - file: 1_2_ejemplo_completo.ipynb
   - file: 2_dataframe.ipynb
-  - file: 3_dataframe_info.ipynb
-  - file: 2_1_dataframe_ejercicios.ipynb
+    sections:
+    - file: 2_1_dataframe_ejercicios.ipynb
   - file: 3_dataframe_informacion.ipynb
-  - file: 4_dataframe_manipulacion.ipynb
-  - file: 5_dataframe_graficos.ipynb
+    sections:
+    - file: 3_1_dataframe_informacion_ejercicios.ipynb
+  - file: 4_dataframe_manipulacion_parte_1.ipynb
+    sections:
+    - file: 4_1_dataframe_manipulacion_parte_1_ejercicios.ipynb
+  - file: 5_dataframe_manipulacion_2.ipynb
+    sections:
+    - file: 5_1_dataframe_manipulacion_2_ejercicios.ipynb
+  - file: 6_dataframe_graficos_basicos.ipynb
+    sections:
+    - file: 6_1_dataframe_graficos_basicos_ejercicios.ipynb
+  - file: 7_dataframe_graficos_complejos.ipynb
+    sections:
+    - file: 7_1_dataframe_graficos_otros_ejercicios.ipynb

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Información sobre el DataFrame &#8212; My sample book</title>
+    <title>3. Información sobre el DataFrame &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -37,6 +37,8 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=105783d5" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -61,10 +63,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3_dataframe_informacion';</script>
+    <link rel="icon" href="_static/pandas_logo.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Manipulación de DataFrames" href="4_dataframe_manipulacion.html" />
-    <link rel="prev" title="Ejercicicio sobre creación de dataframes" href="2_1_dataframe_ejercicios.html" />
+    <link rel="next" title="📑 Ejercicio sobre obtención de información de una Dataframe" href="3_1_dataframe_informacion_ejercicios.html" />
+    <link rel="prev" title="📑 Ejercicicio sobre creación de DataFrames" href="2_1_dataframe_ejercicios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -146,8 +149,8 @@
       
     
     
-    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
   
   
 </a></div>
@@ -169,13 +172,31 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Información sobre el DataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">Manipulación de DataFrames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
-
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_introduccion.html">1. ¿Qué es Pandas?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">📑 Ejercicicio sobre creación de DataFrames</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Información sobre el DataFrame</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_1_dataframe_manipulacion_2_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6_dataframe_graficos_basicos.html">6. Visualizacion de datos en Pandas: Gráficos básicos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_1_dataframe_graficos_basicos_ejercicios.html">📑 Ejercicios de visualización de datos: Gráficos básicos</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -227,6 +248,73 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/3_dataframe_informacion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/3_dataframe_informacion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -235,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +340,24 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3_dataframe_informacion.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/3_dataframe_informacion.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F3_dataframe_informacion.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +463,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Información sobre el DataFrame</h1>
+    <h1>3. Información sobre el DataFrame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,20 +473,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">shape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columns">columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtypes">dtypes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#column-dtypes">column.dtypes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">3.1. Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-shape">- Atributo: <strong>shape</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-columns">- Atributo: <strong>columns</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-dtypes">- Atributo: <strong>dtypes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-column-dtypes">- Atributo: <strong>column.dtypes</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-una-columna">Accediendo a una columna</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-columnas">Accediendo a varias columnas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-las-filas">Accediendo a las filas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-filas-contiguas">Accediendo a varias filas contiguas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-filas-alternas">Accediendo a varias filas alternas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-un-set-especifico-de-filas-y-columnas">Accediendo a un set especifico de filas y columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">3.2. Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-una-columna">- Accediendo a todos los datos de una columna</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-varias-columnas">- Accediendo a todos los datos de varias columnas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-una-fila">- Accediendo a los datos de una fila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-varias-filas-contiguas">- Accediendo a los datos de varias filas contiguas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-varias-filas-alternas">- Accediendo a los datos de varias filas alternas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-un-grupo-especifico-de-filas-y-columnas">- Accediendo a un grupo especifico de filas y columnas</a></li>
 </ul>
 </li>
 </ul>
@@ -396,13 +501,14 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="informacion-sobre-el-dataframe">
-<h1>Información sobre el DataFrame<a class="headerlink" href="#informacion-sobre-el-dataframe" title="Link to this heading">#</a></h1>
-<p>Puedes obtener información sobre la estructura del <strong>DataFrame</strong>, tales como sus columnas, y dimensiones (cuantas filas, y cuantas columnas) tiene.</p>
-<p>Creamos el dataframe:</p>
+<h1>3. Información sobre el DataFrame<a class="headerlink" href="#informacion-sobre-el-dataframe" title="Link to this heading">#</a></h1>
+<p>Puedes obtener información sobre la estructura del <strong>DataFrame</strong>, tales como sus columnas, dimensiones (nº filas x  nº columnas), datos de filas…</p>
+<p>Creamos un Dataframe a partir de un archivo con datos de artículos electrónicos que el profesor tiene guardado en Google Drive en formato .csv. El link al archivo es el indicado a  <strong>https://drive.google.com/uc?export=download&amp;id=16SQQX0ly–l9UvNBr5-KGRWb6todE1u6</strong>.</p>
+<p>Vamos a llamar al Dataframe: <strong>df</strong> (por ejemplo)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/uc?export=download&amp;id=1RjyFp3seXXSwjJMVwT6FBs3lNniDxsNN&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=16SQQX0ly--l9UvNBr5-KGRWb6todE1u6&quot;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -438,219 +544,220 @@
       <td>SKU1</td>
       <td>Xbox Series X</td>
       <td>65</td>
-      <td>500000</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>1</th>
       <td>SKU4</td>
       <td>Teclado mecánico Razer BlackWidow</td>
       <td>130</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>2</th>
       <td>SKU7</td>
       <td>Monitor Gaming Asus 27"</td>
       <td>45</td>
-      <td>750000</td>
+      <td>750</td>
     </tr>
     <tr>
       <th>3</th>
       <td>SKU11</td>
       <td>Robot aspirador Roomba 960</td>
       <td>30</td>
-      <td>450000</td>
+      <td>450</td>
     </tr>
     <tr>
       <th>4</th>
       <td>SKU26</td>
       <td>Kindle Paperwhite</td>
       <td>150</td>
-      <td>200000</td>
+      <td>200</td>
     </tr>
     <tr>
       <th>5</th>
       <td>SKU39</td>
       <td>Cámara de acción Insta360 One X2</td>
       <td>80</td>
-      <td>380000</td>
+      <td>380</td>
     </tr>
     <tr>
       <th>6</th>
       <td>SKU44</td>
       <td>Cafetera Nespresso Vertuo</td>
       <td>80</td>
-      <td>150000</td>
+      <td>150</td>
     </tr>
     <tr>
       <th>7</th>
       <td>SKU48</td>
       <td>Nintendo Switch</td>
       <td>50</td>
-      <td>280000</td>
+      <td>280</td>
     </tr>
     <tr>
       <th>8</th>
       <td>SKU62</td>
       <td>PlayStation 5</td>
       <td>75</td>
-      <td>480000</td>
+      <td>480</td>
     </tr>
     <tr>
       <th>9</th>
       <td>SKU63</td>
       <td>Reloj Inteligente Apple Watch Series 6</td>
       <td>90</td>
-      <td>600000</td>
+      <td>600</td>
     </tr>
     <tr>
       <th>10</th>
       <td>SKU97</td>
       <td>GoPro HERO9</td>
       <td>100</td>
-      <td>320000</td>
+      <td>320</td>
     </tr>
     <tr>
       <th>11</th>
       <td>SKU98</td>
       <td>AirPods Pro</td>
       <td>120</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>12</th>
       <td>SKU110</td>
       <td>Gafas de realidad virtual Oculus Quest 2</td>
       <td>50</td>
-      <td>300000</td>
+      <td>300</td>
     </tr>
     <tr>
       <th>13</th>
       <td>SKU115</td>
       <td>Garmin Fenix 6 Pro</td>
       <td>55</td>
-      <td>700000</td>
+      <td>700</td>
     </tr>
     <tr>
       <th>14</th>
       <td>SKU126</td>
       <td>Refrigerador Samsung Smart</td>
       <td>25</td>
-      <td>2000000</td>
+      <td>2000</td>
     </tr>
     <tr>
       <th>15</th>
       <td>SKU131</td>
       <td>Samsung Galaxy S21</td>
       <td>80</td>
-      <td>850000</td>
+      <td>850</td>
     </tr>
     <tr>
       <th>16</th>
       <td>SKU134</td>
       <td>Laptop Dell XPS 15</td>
       <td>40</td>
-      <td>1200000</td>
+      <td>1200</td>
     </tr>
     <tr>
       <th>17</th>
       <td>SKU154</td>
       <td>iPad Pro 12.9</td>
       <td>60</td>
-      <td>1050000</td>
+      <td>1050</td>
     </tr>
     <tr>
       <th>18</th>
       <td>SKU158</td>
       <td>Smartwatch Samsung Galaxy Watch 3</td>
       <td>85</td>
-      <td>550000</td>
+      <td>550</td>
     </tr>
     <tr>
       <th>19</th>
       <td>SKU162</td>
       <td>Mochila antirrobo XD Design</td>
       <td>150</td>
-      <td>180000</td>
+      <td>180</td>
     </tr>
     <tr>
       <th>20</th>
       <td>SKU163</td>
       <td>Auriculares Sony WH-1000XM4</td>
       <td>100</td>
-      <td>350000</td>
+      <td>350</td>
     </tr>
     <tr>
       <th>21</th>
       <td>SKU168</td>
       <td>Microondas inteligente Panasonic</td>
       <td>50</td>
-      <td>250000</td>
+      <td>250</td>
     </tr>
     <tr>
       <th>22</th>
       <td>SKU170</td>
       <td>Silla gaming DXRacer</td>
       <td>60</td>
-      <td>400000</td>
+      <td>400</td>
     </tr>
     <tr>
       <th>23</th>
       <td>SKU171</td>
       <td>Drone DJI Mavic Air 2</td>
       <td>20</td>
-      <td>900000</td>
+      <td>900</td>
     </tr>
     <tr>
       <th>24</th>
       <td>SKU172</td>
       <td>iPhone 13</td>
       <td>100</td>
-      <td>990000</td>
+      <td>990</td>
     </tr>
     <tr>
       <th>25</th>
       <td>SKU176</td>
       <td>Bose QuietComfort 35 II</td>
       <td>70</td>
-      <td>350000</td>
+      <td>350</td>
     </tr>
     <tr>
       <th>26</th>
       <td>SKU178</td>
       <td>Bicicleta eléctrica Xiaomi</td>
       <td>35</td>
-      <td>800000</td>
+      <td>800</td>
     </tr>
     <tr>
       <th>27</th>
       <td>SKU187</td>
       <td>Cámara Canon EOS Rebel T7</td>
       <td>50</td>
-      <td>550000</td>
+      <td>550</td>
     </tr>
     <tr>
       <th>28</th>
       <td>SKU191</td>
       <td>Smart TV LG OLED 55"</td>
       <td>40</td>
-      <td>1500000</td>
+      <td>1500</td>
     </tr>
     <tr>
       <th>29</th>
       <td>SKU196</td>
       <td>Consola Retro Sega Genesis</td>
       <td>110</td>
-      <td>120000</td>
+      <td>120</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <section id="atributos-para-obtener-informacion-de-un-dataframe">
-<h2>Atributos para obtener información de un DataFrame<a class="headerlink" href="#atributos-para-obtener-informacion-de-un-dataframe" title="Link to this heading">#</a></h2>
-<section id="shape">
-<h3>shape<a class="headerlink" href="#shape" title="Link to this heading">#</a></h3>
+<h2>3.1. Atributos para obtener información de un DataFrame<a class="headerlink" href="#atributos-para-obtener-informacion-de-un-dataframe" title="Link to this heading">#</a></h2>
+<p>Existen varios comandos que nos permiten conocer cómo es el Dataframe cargado.</p>
+<section id="atributo-shape">
+<h3>- Atributo: <strong>shape</strong><a class="headerlink" href="#atributo-shape" title="Link to this heading">#</a></h3>
 <p>El atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code> en un DataFrame de pandas es una propiedad muy útil que te permite conocer las <strong>dimensiones</strong> (nº filas, nº columnas) del DataFrame. Específicamente, shape devuelve una tupla que contiene dos elementos: <code class="docutils literal notranslate"><span class="pre">(filas,</span> <span class="pre">columnas)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,8 +773,8 @@
 </div>
 </div>
 </section>
-<section id="columns">
-<h3>columns<a class="headerlink" href="#columns" title="Link to this heading">#</a></h3>
+<section id="atributo-columns">
+<h3>- Atributo: <strong>columns</strong><a class="headerlink" href="#atributo-columns" title="Link to this heading">#</a></h3>
 <p>El atributo<code class="docutils literal notranslate"><span class="pre">columns</span></code> devuelve un objeto Index() que contiene los <strong>nombres de las columnas</strong>, lo que te permite ver rápidamente qué columnas están disponibles en tu DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,12 +789,20 @@
 </div>
 </div>
 </section>
-<section id="dtypes">
-<h3>dtypes<a class="headerlink" href="#dtypes" title="Link to this heading">#</a></h3>
-<p>Con <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> puedes acceder a los tipos de columnas de tu <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<section id="atributo-dtypes">
+<h3>- Atributo: <strong>dtypes</strong><a class="headerlink" href="#atributo-dtypes" title="Link to this heading">#</a></h3>
+<p>Con <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> puedes acceder a los <strong>tipos</strong> de columnas de tu <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Los tipos con los que trabaja Pandas son:</p>
+<ul class="simple">
+<li><p><strong>object</strong>: generalmente texto (strings)</p></li>
+<li><p><strong>int64</strong>: números enteros</p></li>
+<li><p><strong>float64</strong>: números decimales</p></li>
+<li><p><strong>bool</strong>: valores booleanos (True/False)</p></li>
+<li><p><strong>datetime64</strong>: fechas y horas</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="c1"># Nuestro Dataframe dará los siguientes resultados:</span>
 </pre></div>
 </div>
 </div>
@@ -702,12 +817,13 @@ dtype: object
 </div>
 </div>
 </section>
-<section id="column-dtypes">
-<h3>column.dtypes<a class="headerlink" href="#column-dtypes" title="Link to this heading">#</a></h3>
+<section id="atributo-column-dtypes">
+<h3>- Atributo: <strong>column.dtypes</strong><a class="headerlink" href="#atributo-column-dtypes" title="Link to this heading">#</a></h3>
 <p>También puedes usarlo en columnas especificas de dos formas equivalentes <code class="docutils literal notranslate"><span class="pre">NombreColumna.dtypes</span></code>o <code class="docutils literal notranslate"><span class="pre">[&quot;NombreColumna&quot;].dtypes</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Precio</span><span class="o">.</span><span class="n">dtypes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para conocer el tipo de columna &quot;Precio&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Precio</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
@@ -733,52 +849,10 @@ dtype: object
 </section>
 </section>
 <section id="accediendo-al-dataframe">
-<h2>Accediendo al DataFrame<a class="headerlink" href="#accediendo-al-dataframe" title="Link to this heading">#</a></h2>
-<section id="accediendo-a-una-columna">
-<h3>Accediendo a una columna<a class="headerlink" href="#accediendo-a-una-columna" title="Link to this heading">#</a></h3>
-<p>Puedes llamar rápidamente los datos de una columna usando <code class="docutils literal notranslate"><span class="pre">df[&quot;NombreColumna&quot;]</span></code> o <code class="docutils literal notranslate"><span class="pre">df.NombreColumna</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      65
-1     130
-2      45
-3      30
-4     150
-5      80
-6      80
-7      50
-8      75
-9      90
-10    100
-11    120
-12     50
-13     55
-14     25
-15     80
-16     40
-17     60
-18     85
-19    150
-20    100
-21     50
-22     60
-23     20
-24    100
-25     70
-26     35
-27     50
-28     40
-29    110
-Name: Cantidad, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
+<h2>3.2. Accediendo al DataFrame<a class="headerlink" href="#accediendo-al-dataframe" title="Link to this heading">#</a></h2>
+<section id="accediendo-a-todos-los-datos-de-una-columna">
+<h3>- Accediendo a todos los datos de una columna<a class="headerlink" href="#accediendo-a-todos-los-datos-de-una-columna" title="Link to this heading">#</a></h3>
+<p>Puedes obterner rápidamente los datos de una columna usando <code class="docutils literal notranslate"><span class="pre">NombreDataframe.NombreColumna</span></code> o <code class="docutils literal notranslate"><span class="pre">NombreDataframe[&quot;NombreColumna&quot;]</span></code>. Recuerda que nuestro Dataframe se llama <strong>df</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Cantidad</span>
@@ -821,11 +895,52 @@ Name: Cantidad, dtype: int64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      65
+1     130
+2      45
+3      30
+4     150
+5      80
+6      80
+7      50
+8      75
+9      90
+10    100
+11    120
+12     50
+13     55
+14     25
+15     80
+16     40
+17     60
+18     85
+19    150
+20    100
+21     50
+22     60
+23     20
+24    100
+25     70
+26     35
+27     50
+28     40
+29    110
+Name: Cantidad, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="accediendo-a-varias-columnas">
-<h3>Accediendo a varias columnas<a class="headerlink" href="#accediendo-a-varias-columnas" title="Link to this heading">#</a></h3>
-<p>También puedes llamar a varias columnas usando la siguiente estructura
-<code class="docutils literal notranslate"><span class="pre">df[lista</span> <span class="pre">con</span> <span class="pre">nombre</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">columnas]</span></code>
+<section id="accediendo-a-todos-los-datos-de-varias-columnas">
+<h3>- Accediendo a todos los datos de varias columnas<a class="headerlink" href="#accediendo-a-todos-los-datos-de-varias-columnas" title="Link to this heading">#</a></h3>
+<p>También puedes llamar a varias columnas usando la siguiente estructura <code class="docutils literal notranslate"><span class="pre">NombreDataframe[lista</span> <span class="pre">con</span> <span class="pre">nombre</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">columnas]</span></code>
 Recuerda que las listas en Python se escriben, a su vez, entre corchetes <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1012,9 +1127,9 @@ Recuerda que las listas en Python se escriben, a su vez, entre corchetes <code c
 </div></div></div>
 </div>
 </section>
-<section id="accediendo-a-las-filas">
-<h3>Accediendo a las filas<a class="headerlink" href="#accediendo-a-las-filas" title="Link to this heading">#</a></h3>
-<p>Puedes encontrar las filas usando <code class="docutils literal notranslate"><span class="pre">loc</span></code> y como argumento el indice. Si el indice es un texto, debes especificarlo como tal.</p>
+<section id="accediendo-a-los-datos-de-una-fila">
+<h3>- Accediendo a los datos de una fila<a class="headerlink" href="#accediendo-a-los-datos-de-una-fila" title="Link to this heading">#</a></h3>
+<p>Puedes encontrar una filas usando <code class="docutils literal notranslate"><span class="pre">loc</span></code> y como argumento el indice. Si el indice es un texto, debes especificarlo como tal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span>
@@ -1032,12 +1147,13 @@ Name: 24, dtype: object
 </div>
 </div>
 </section>
-<section id="accediendo-a-varias-filas-contiguas">
-<h3>Accediendo a varias filas contiguas<a class="headerlink" href="#accediendo-a-varias-filas-contiguas" title="Link to this heading">#</a></h3>
-<p>Si quieres seleccionar un conjunto de filas <code class="docutils literal notranslate"><span class="pre">contiguas</span></code> unas a las otras puedas usar esta estructura <code class="docutils literal notranslate"><span class="pre">iloc[filaN,</span> <span class="pre">filaN+1]</span></code>.</p>
+<section id="accediendo-a-los-datos-de-varias-filas-contiguas">
+<h3>- Accediendo a los datos de varias filas contiguas<a class="headerlink" href="#accediendo-a-los-datos-de-varias-filas-contiguas" title="Link to this heading">#</a></h3>
+<p>Si quieres seleccionar un conjunto de filas <code class="docutils literal notranslate"><span class="pre">contiguas</span></code> unas a las otras puedas usar <code class="docutils literal notranslate"><span class="pre">ìloc</span></code>con esta estructura <code class="docutils literal notranslate"><span class="pre">NombreDataframe.iloc[filaN,</span> <span class="pre">filaN+1]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para acceder a los datos de las filas 4 a la 8</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1107,9 +1223,9 @@ Name: 24, dtype: object
 </div></div></div>
 </div>
 </section>
-<section id="accediendo-a-varias-filas-alternas">
-<h3>Accediendo a varias filas alternas<a class="headerlink" href="#accediendo-a-varias-filas-alternas" title="Link to this heading">#</a></h3>
-<p>Si quieres acceder a filas especificas, puedes entregar como parametro una lista de las filas</p>
+<section id="accediendo-a-los-datos-de-varias-filas-alternas">
+<h3>- Accediendo a los datos de varias filas alternas<a class="headerlink" href="#accediendo-a-los-datos-de-varias-filas-alternas" title="Link to this heading">#</a></h3>
+<p>Si quieres acceder a filas especificas, puedes entregar como atributo <code class="docutils literal notranslate"><span class="pre">iloc</span></code> y parámetros los índices de filas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
@@ -1167,31 +1283,11 @@ Name: 24, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Si el <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> tiene indice, también puedes entregarle una lista de indices en los parámetros de <code class="docutils literal notranslate"><span class="pre">loc</span></code></p>
+<p>Si el <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> tiene índice expresamente indicado, también puedes entregarle una lista de indices en los parámetros de <code class="docutils literal notranslate"><span class="pre">loc</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_excel</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;SKU97&quot;</span><span class="p">,</span> <span class="s2">&quot;SKU154&quot;</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;SKU97&quot;</span><span class="p">,</span> <span class="s2">&quot;SKU154&quot;</span><span class="p">]]</span>
-
-<span class="ne">NameError</span>: name &#39;df_excel&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="accediendo-a-un-set-especifico-de-filas-y-columnas">
-<h3>Accediendo a un set especifico de filas y columnas<a class="headerlink" href="#accediendo-a-un-set-especifico-de-filas-y-columnas" title="Link to this heading">#</a></h3>
-<p>Puedes especificar una lista de filas, seguido por una lista de Columnas, y así obtener un conjunto muy especifico de datos</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID_Producto&#39;</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;SKU97&quot;</span><span class="p">,</span> <span class="s2">&quot;SKU154&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1216,32 +1312,40 @@ Name: 24, dtype: object
       <th></th>
       <th>Producto</th>
       <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+    <tr>
+      <th>ID_Producto</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>Xbox Series X</td>
-      <td>65</td>
+      <th>SKU97</th>
+      <td>GoPro HERO9</td>
+      <td>100</td>
+      <td>320000</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Kindle Paperwhite</td>
-      <td>150</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Nintendo Switch</td>
-      <td>50</td>
+      <th>SKU154</th>
+      <td>iPad Pro 12.9</td>
+      <td>60</td>
+      <td>1050000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Si quieres llamar a las columnas por su nombre, puedes usar una estructura como esta:</p>
+</section>
+<section id="accediendo-a-un-grupo-especifico-de-filas-y-columnas">
+<h3>- Accediendo a un grupo especifico de filas y columnas<a class="headerlink" href="#accediendo-a-un-grupo-especifico-de-filas-y-columnas" title="Link to this heading">#</a></h3>
+<p>Puedes especificar una lista de filas, seguido por una lista de columnas, y así obtener un conjunto muy especifico de datos</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Producto&quot;</span><span class="p">,</span> <span class="s2">&quot;Cantidad&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para obtener los datos de las filas con índices: 0, 4 y 7, y solo las columnas: Producto [1] y Precio [3]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1265,24 +1369,73 @@ Name: 24, dtype: object
     <tr style="text-align: right;">
       <th></th>
       <th>Producto</th>
-      <th>Cantidad</th>
+      <th>Precio</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>Xbox Series X</td>
-      <td>65</td>
+      <td>500000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Kindle Paperwhite</td>
-      <td>150</td>
+      <td>200000</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Nintendo Switch</td>
-      <td>50</td>
+      <td>280000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Producto&quot;</span><span class="p">,</span> <span class="s2">&quot;Precio&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Producto</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Xbox Series X</td>
+      <td>500000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Kindle Paperwhite</td>
+      <td>200000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Nintendo Switch</td>
+      <td>280000</td>
     </tr>
   </tbody>
 </table>
@@ -1312,14 +1465,16 @@ Name: 24, dtype: object
 [2: ] Selecciona desde la posición 2 hasta el final de la lista.</p>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1350,15 +1505,15 @@ Name: 24, dtype: object
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ejercicicio sobre creación de dataframes</p>
+        <p class="prev-next-title">📑 Ejercicicio sobre creación de DataFrames</p>
       </div>
     </a>
     <a class="right-next"
-       href="4_dataframe_manipulacion.html"
+       href="3_1_dataframe_informacion_ejercicios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Manipulación de DataFrames</p>
+        <p class="prev-next-title">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1379,20 +1534,20 @@ Name: 24, dtype: object
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">shape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columns">columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtypes">dtypes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#column-dtypes">column.dtypes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-para-obtener-informacion-de-un-dataframe">3.1. Atributos para obtener información de un DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-shape">- Atributo: <strong>shape</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-columns">- Atributo: <strong>columns</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-dtypes">- Atributo: <strong>dtypes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributo-column-dtypes">- Atributo: <strong>column.dtypes</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-una-columna">Accediendo a una columna</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-columnas">Accediendo a varias columnas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-las-filas">Accediendo a las filas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-filas-contiguas">Accediendo a varias filas contiguas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-varias-filas-alternas">Accediendo a varias filas alternas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-un-set-especifico-de-filas-y-columnas">Accediendo a un set especifico de filas y columnas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-al-dataframe">3.2. Accediendo al DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-una-columna">- Accediendo a todos los datos de una columna</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-todos-los-datos-de-varias-columnas">- Accediendo a todos los datos de varias columnas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-una-fila">- Accediendo a los datos de una fila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-varias-filas-contiguas">- Accediendo a los datos de varias filas contiguas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-los-datos-de-varias-filas-alternas">- Accediendo a los datos de varias filas alternas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accediendo-a-un-grupo-especifico-de-filas-y-columnas">- Accediendo a un grupo especifico de filas y columnas</a></li>
 </ul>
 </li>
 </ul>
@@ -1409,7 +1564,7 @@ Name: 24, dtype: object
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Alberto Durán Pérez
 </p>
 
   </div>
@@ -1432,6 +1587,9 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
   </div>
   
 </div>

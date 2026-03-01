@@ -1,5 +1,8 @@
 # Introducción al curso de Pandas
 
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<YOUR URL HERE>) 
+![Static Badge](https://img.shields.io/badge/Elaborado%20por-Alberto%20Dur%C3%A1n%20P%C3%A9rez-blue)
+
 ¡Bienvenidos al curso de Pandas en Python! Este curso está diseñado para estudiantes de 2º de Bachillerato que desean aprender a manejar y analizar datos utilizando una de las bibliotecas más poderosas y populares de Python: **Pandas**.
 
 ## ¿Qué es Pandas?
@@ -53,9 +56,9 @@ A lo largo del curso, abordaremos los siguientes temas:
 
 ## Conclusión
 
-Estamos emocionados de comenzar este viaje de aprendizaje con ustedes. Pandas es una herramienta poderosa que les permitirá trabajar con datos de manera efectiva y les abrirá las puertas a muchas oportunidades en el campo del análisis de datos y la ciencia de datos. ¡Prepárense para sumergirse en el mundo de los datos!
+Pandas es una herramienta poderosa que te permitirá trabajar con datos de manera efectiva y te abrirá las puertas a muchas oportunidades en el campo del **análisis de datos** y la **ciencia de datos**. ¡Prepárate para sumergirte en el mundo de los datos!
 
-¡Nos vemos en clase!
+¡Empezamos!
 
 ```{tableofcontents}
 

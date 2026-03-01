@@ -1,0 +1,15 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: fa911fc1-9051-4df2-8cdf-163e649780c7
+  # title:
+  # description:
+  # keywords: []
+  # authors: []
+  github: https://github.com/citius70/pandas-ticII-2BAC
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  options:
+    favicon: imagenes/panda_favicon.ico
+    logo: imagenes/pandas_logo.svg

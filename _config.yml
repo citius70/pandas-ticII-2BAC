@@ -1,14 +1,18 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Análisis de datos con Pandas
+author: Alberto Durán Pérez
 logo: imagenes/pandas_logo.svg
+language: "es"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
+  timeout: 60
+  allow_errors: false
+  raise_on_error: false  
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -21,16 +25,52 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book # Online location of your book
-  path_to_book: docs # Optional path to your book, relative to the repository root
-  branch: master # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/citius70/pandas-ticII-2BAC # Online location of your book
+  path_to_book: "" # Optional path to your book, relative to the repository root
+  branch: gh-pages # Which branch of the repository should be used when creating links (optional)
+  provider: github
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
+  use_edit_page_button: true
+  extra_js:
+    - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  theme: sphinx_book_theme
+  extra_navbar: "TIC II"
+  extra_footer: "Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento"
+  favicon: imagenes/pandas_logo.svg
+  extra_css:
+    - _static/custom.css
+  
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
+    
+sphinx:
+  config:
+    myst_enable_extensions:
+      - colon_fence
+      - dollarmath
+      - amsmath
+      - html_admonition
+      - html_image
 
+launch_buttons:
+  thebe: true
+  binderhub_url: "https://mybinder.org"
+  notebook_interface: "jupyterlab"
+  colab_url: "https://colab.research.google.com"
+  
+thebe:
+  binder_options:
+ #   repo: tu_usuario/tu_repositorio  # si usas Binder (opcional)
+  selector: "div.cell"  
+  codemirror-config:
+  theme: "abcdef"
+  
 parse:
   myst_enable_extensions:
     - html_admonition
@@ -41,6 +81,7 @@ parse:
     - html_image
     - linkify
     - tasklist
+    - attrs_block
 
   myst_nb:
     execute_notebooks: "auto" # o "force"

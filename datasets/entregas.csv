@@ -1,0 +1,96 @@
+ID_Entrega,Destino,Peso_kg,Volumen_m3,Costo_Envio,Cliente,Medio_Entrega,Estado,Fecha_Entrada,Fecha_Entrega,Tiempo_Entrega_Dias
+ENT0001,Madrid,12.24,0.424,337.48,Talleres SL S.L.N.E,Motocicleta,Entregado,2025-04-05,2025-04-13,8.0
+ENT0002,Madrid,25.05,0.329,17.99,Erasmo Mir Badía S.C,Furgoneta Grande,Tránsito,2025-03-24,,
+ENT0003,Bilbao,35.43,1.927,449.21,Campo y Mate S.L.,Camión,Entregado,2025-04-03,2025-04-10,7.0
+ENT0004,Valencia,14.92,1.407,192.29,Supermercados Larrañ,Furgoneta Pequeña,Retrasado,2025-04-08,,
+ENT0005,Sevilla,38.98,1.311,226.63,Desarrollo Ibéricos ,Furgoneta Grande,Tránsito,2025-03-31,,
+ENT0006,Sevilla,21.7,1.299,156.11,Águila y asociados S,Motocicleta,Tránsito,2025-04-05,,
+ENT0007,Zaragoza,1.78,1.095,472.8,Jennifer Casas Lasa ,Furgoneta Grande,Entregado,2025-03-28,2025-04-03,6.0
+ENT0008,Madrid,15.83,1.456,180.42,Simó y Gutierrez S.L,Motocicleta,Tránsito,2025-03-31,,
+ENT0009,Málaga,13.26,0.355,177.68,Industrias Inteligen,Camión,Entregado,2025-03-28,2025-04-05,8.0
+ENT0010,Barcelona,40.98,0.485,143.17,Industrias Internaci,Motocicleta,Entregado,2025-04-01,2025-04-08,7.0
+ENT0011,Coruña,13.08,1.695,114.16,Losada y asociados S,Camión,Tránsito,2025-04-02,,
+ENT0012,Málaga,31.47,0.296,387.04,Ruth Pareja Dávila S,Motocicleta,Entregado,2025-04-11,2025-04-12,1.0
+ENT0013,Madrid,5.36,1.301,33.39,Minería Alvarado y a,Motocicleta,Entregado,2025-04-01,2025-04-03,2.0
+ENT0014,Madrid,11.08,0.771,312.21,Despacho Avilés & As,Motocicleta,Entregado,2025-04-07,2025-04-09,2.0
+ENT0015,Bilbao,3.66,1.618,305.24,Federico Mata Martin,Motocicleta,Entregado,2025-03-29,2025-03-30,1.0
+ENT0016,Coruña,19.17,0.904,490.14,Restauración del Lev,Camión,Entregado,2025-04-03,2025-04-04,1.0
+ENT0017,Zaragoza,34.16,1.25,75.38,Octavio Jaume Españo,Camión,Tránsito,2025-03-28,,
+ENT0018,Barcelona,48.88,0.981,318.37,Tecnologías Mayoral ,Camión,Entregado,2025-03-29,2025-04-01,3.0
+ENT0019,Valencia,26.03,1.636,280.87,Infraestructuras NN ,Camión,Entregado,2025-04-07,2025-04-16,9.0
+ENT0020,Málaga,30.52,1.788,490.54,Jordán y asociados S,Furgoneta Pequeña,Retrasado,2025-04-08,,
+ENT0021,Coruña,22.73,0.771,343.45,Compañía Pareja S.L.,Furgoneta Pequeña,Retrasado,2025-04-04,,
+ENT0022,Madrid,20.33,0.73,393.58,Restauración Español,Motocicleta,Entregado,2025-04-09,2025-04-17,8.0
+ENT0023,Bilbao,17.11,1.837,493.68,Instalaciones PH S.L,Furgoneta Pequeña,Entregado,2025-04-10,2025-04-17,7.0
+ENT0024,Bilbao,15.3,0.511,336.46,Finanzas del Levante,Furgoneta Grande,Entregado,2025-04-10,2025-04-14,4.0
+ENT0025,Sevilla,33.03,1.336,458.53,Guerra & Asociados S,Furgoneta Grande,Entregado,2025-04-08,2025-04-13,5.0
+ENT0026,Bilbao,47.74,1.775,121.08,Despacho Españolas S,Motocicleta,Entregado,2025-04-10,2025-04-17,7.0
+ENT0027,Madrid,39.94,0.437,453.91,Distribuciones Tomé ,Motocicleta,Entregado,2025-04-03,2025-04-11,8.0
+ENT0028,Coruña,48.46,0.057,361.32,Dolores Monreal Suar,Motocicleta,Entregado,2025-04-03,2025-04-09,6.0
+ENT0029,Madrid,34.6,0.742,430.41,Cipriano Arnal Barri,Camión,Retrasado,2025-04-08,,
+ENT0030,Málaga,34.81,1.843,256.21,Bartolomé & Asociado,Camión,Entregado,2025-03-28,2025-03-30,2.0
+ENT0031,Bilbao,5.34,0.374,179.33,Comercial RO S.Com.,Motocicleta,Entregado,2025-04-10,2025-04-11,1.0
+ENT0032,Málaga,10.09,1.46,438.31,Construcción Bertrán,Camión,Entregado,2025-03-27,2025-04-02,6.0
+ENT0033,Sevilla,23.61,0.136,468.27,Compañía Avanzadas S,Motocicleta,Entregado,2025-04-09,2025-04-12,3.0
+ENT0034,Zaragoza,3.86,1.525,84.67,Fábrica Francisco y ,Furgoneta Pequeña,Entregado,2025-04-12,2025-04-21,9.0
+ENT0035,Valencia,13.24,1.037,450.91,Saez y asociados S.C,Furgoneta Grande,Retrasado,2025-04-12,,
+ENT0036,Zaragoza,16.65,0.107,150.95,Inversiones Roldán y,Furgoneta Pequeña,Entregado,2025-03-24,2025-03-26,2.0
+ENT0037,Madrid,27.48,0.697,233.21,Ramírez y Gargallo S,Furgoneta Pequeña,Entregado,2025-04-12,2025-04-21,9.0
+ENT0038,Coruña,3.48,0.935,160.31,Amado Martinez River,Furgoneta Pequeña,Entregado,2025-04-06,2025-04-14,8.0
+ENT0039,Bilbao,9.89,0.801,254.17,Minería Castellana S,Furgoneta Grande,Retrasado,2025-03-25,,
+ENT0040,Barcelona,47.83,1.618,94.06,Fábrica Pombo y asoc,Furgoneta Pequeña,Entregado,2025-04-03,2025-04-10,7.0
+ENT0041,Zaragoza,23.55,0.743,365.16,Fábrica Guzman & Aso,Furgoneta Grande,Entregado,2025-03-29,2025-04-02,4.0
+ENT0042,Madrid,14.68,0.891,40.28,Farmaceútica Molins ,Furgoneta Pequeña,Entregado,2025-04-04,2025-04-09,5.0
+ENT0043,Sevilla,8.44,1.757,45.99,Finanzas Mora y asoc,Camión,Entregado,2025-04-06,2025-04-13,7.0
+ENT0044,Sevilla,49.94,1.351,315.43,Grupo Roman S.L.L.,Camión,Entregado,2025-04-07,2025-04-12,5.0
+ENT0045,Zaragoza,35.0,1.432,140.13,Palomares & Asociado,Furgoneta Grande,Entregado,2025-03-26,2025-03-27,1.0
+ENT0046,Valencia,46.84,1.647,365.54,Menéndez y Lladó S.L,Furgoneta Grande,Entregado,2025-03-28,2025-03-30,2.0
+ENT0047,Sevilla,41.96,1.028,172.76,Montoya y asociados ,Camión,Tránsito,2025-03-25,,
+ENT0048,Coruña,42.53,1.007,461.02,Hermanos Torrijos S.,Furgoneta Pequeña,Entregado,2025-04-11,2025-04-15,4.0
+ENT0049,Sevilla,30.45,1.012,468.22,Transportes DJA S.A.,Furgoneta Grande,Retrasado,2025-04-04,,
+ENT0050,Madrid,25.65,1.119,34.24,Logística XUNO S.L.,Furgoneta Pequeña,Retrasado,2025-03-31,,
+ENT0051,Madrid,8.42,1.825,441.18,Bibiana Tudela Rodri,Motocicleta,Entregado,2025-04-02,2025-04-05,3.0
+ENT0052,Valencia,45.4,1.178,484.7,Compañía BCPT S.A.,Furgoneta Grande,Retrasado,2025-03-31,,
+ENT0053,Málaga,5.14,1.777,371.59,Alexandra Solera Her,Camión,Tránsito,2025-04-01,,
+ENT0054,Coruña,34.24,1.707,207.29,Manufacturas Español,Furgoneta Grande,Entregado,2025-04-10,2025-04-12,2.0
+ENT0055,Sevilla,45.49,0.899,481.51,Alimentación ALZ S.C,Camión,Entregado,2025-04-12,2025-04-21,9.0
+ENT0056,Madrid,10.15,0.85,376.92,Minería Ibérica S.Co,Motocicleta,Tránsito,2025-03-30,,
+ENT0057,Bilbao,7.73,0.239,462.53,Hermanos Puga S.L.L.,Furgoneta Pequeña,Entregado,2025-04-03,2025-04-04,1.0
+ENT0058,Barcelona,7.37,1.405,406.75,Hnos Sastre S.L.N.E,Motocicleta,Retrasado,2025-04-01,,
+ENT0059,Sevilla,11.04,0.311,79.71,Ayllón & Asociados S,Furgoneta Grande,Entregado,2025-04-06,2025-04-11,5.0
+ENT0060,Madrid,7.67,0.043,430.99,Consultoría LM S.Com,Camión,Entregado,2025-03-27,2025-03-28,1.0
+ENT0061,Bilbao,30.42,0.279,287.15,Hnos Pinedo S.L.N.E,Furgoneta Pequeña,Tránsito,2025-03-26,,
+ENT0062,Zaragoza,24.23,1.515,97.41,Nazaret Iglesia Cabr,Motocicleta,Entregado,2025-04-02,2025-04-09,7.0
+ENT0063,Bilbao,8.56,0.415,226.14,Cabrera y Rueda S.L.,Furgoneta Pequeña,Entregado,2025-03-27,2025-04-01,5.0
+ENT0064,Málaga,42.87,0.179,299.99,Jacobo Ferrándiz Fra,Motocicleta,Tránsito,2025-03-28,,
+ENT0065,Valencia,9.94,0.925,440.43,Hermanos Cantón S.Co,Furgoneta Grande,Retrasado,2025-03-31,,
+ENT0066,Barcelona,49.82,1.594,465.87,Berenguer y Hernando,Furgoneta Pequeña,Cancelado,2025-03-30,,
+ENT0067,Coruña,15.9,1.002,36.86,Gelabert y Tomé S.Co,Camión,Entregado,2025-04-03,2025-04-10,7.0
+ENT0068,Sevilla,38.36,1.464,234.35,Manufacturas Intelig,Motocicleta,Entregado,2025-04-12,2025-04-19,7.0
+ENT0069,Zaragoza,10.09,0.439,188.82,Grupo Grau S.A.,Camión,Entregado,2025-03-31,2025-04-04,4.0
+ENT0070,Valencia,15.69,1.597,447.51,Servicios PKY S.L.U.,Furgoneta Pequeña,Retrasado,2025-03-25,,
+ENT0071,Bilbao,31.89,1.402,67.31,Farmaceútica Melénde,Motocicleta,Retrasado,2025-03-25,,
+ENT0072,Valencia,29.73,0.026,318.66,Elena Quintana Recio,Furgoneta Pequeña,Entregado,2025-03-25,2025-03-30,5.0
+ENT0073,Sevilla,39.41,1.647,265.17,Distribuciones EXC S,Furgoneta Pequeña,Entregado,2025-03-29,2025-04-07,9.0
+ENT0074,Sevilla,48.27,1.283,350.22,Industrias SL S.A.,Furgoneta Grande,Entregado,2025-04-06,2025-04-15,9.0
+ENT0075,Zaragoza,15.05,0.054,414.53,Fábrica GJ S.L.,Motocicleta,Entregado,2025-03-28,2025-03-30,2.0
+ENT0076,Valencia,14.12,0.046,170.33,Compañía Ibéricos S.,Furgoneta Pequeña,Entregado,2025-04-05,2025-04-09,4.0
+ENT0077,Zaragoza,12.98,0.219,401.16,Nicolás y asociados ,Camión,Retrasado,2025-04-12,,
+ENT0078,Bilbao,40.2,0.677,19.96,Hnos Vizcaíno S.Com.,Motocicleta,Entregado,2025-03-25,2025-04-02,8.0
+ENT0079,Madrid,8.65,1.798,85.13,Cabello & Asociados ,Camión,Tránsito,2025-04-07,,
+ENT0080,Bilbao,12.62,0.555,127.03,Tecnologías Globales,Camión,Entregado,2025-03-30,2025-03-31,1.0
+ENT0081,Barcelona,6.99,1.596,27.61,Consultoría SZW S.Co,Furgoneta Pequeña,Entregado,2025-04-09,2025-04-12,3.0
+ENT0082,Madrid,4.09,0.762,411.99,Talleres Integrales ,Furgoneta Grande,Entregado,2025-03-25,2025-03-28,3.0
+ENT0083,Bilbao,22.82,1.766,263.05,Talleres Inteligente,Camión,Entregado,2025-03-24,2025-03-27,3.0
+ENT0084,Bilbao,25.92,0.905,354.69,Crescencia Esparza G,Motocicleta,Entregado,2025-04-09,2025-04-14,5.0
+ENT0085,Barcelona,13.45,1.798,17.77,Hermanos Campo S.C.P,Camión,Entregado,2025-04-03,2025-04-11,8.0
+ENT0086,Málaga,15.6,0.232,167.19,Inmobiliaria Coronad,Motocicleta,Tránsito,2025-04-06,,
+ENT0087,Barcelona,28.41,0.339,148.95,Distribuciones del L,Furgoneta Pequeña,Entregado,2025-04-06,2025-04-14,8.0
+ENT0088,Valencia,3.18,0.098,382.35,Minería LJA S.Coop.,Motocicleta,Entregado,2025-03-26,2025-04-02,7.0
+ENT0089,Coruña,19.6,1.329,289.57,Banca Privada Nevado,Furgoneta Grande,Cancelado,2025-03-26,,
+ENT0090,Málaga,41.27,0.642,306.08,Industrias XWSO S.L.,Camión,Cancelado,2025-03-26,,
+ENT0091,Madrid,21.37,0.723,323.91,Hermanos Gallardo S.,Motocicleta,Entregado,2025-03-30,2025-04-05,6.0
+ENT0092,Sevilla,49.41,0.963,245.63,Industrias TM S.A.,Furgoneta Grande,Retrasado,2025-04-10,,
+ENT0093,Coruña,6.68,0.329,47.56,Soluciones Internaci,Furgoneta Pequeña,Entregado,2025-04-06,2025-04-12,6.0
+ENT0094,Sevilla,13.95,1.075,138.39,Hermanos Barón S.L.,Furgoneta Pequeña,Retrasado,2025-03-31,,
+ENT0095,Valencia,44.84,0.147,420.44,Distribuciones Peral,Motocicleta,Entregado,2025-03-25,2025-04-01,7.0

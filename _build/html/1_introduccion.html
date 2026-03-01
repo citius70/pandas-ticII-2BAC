@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. ¿Qué es Pandas? &#8212; My sample book</title>
+    <title>1. ¿Qué es Pandas? &#8212; Análisis de datos con Pandas</title>
   
   
   
@@ -37,6 +37,8 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=105783d5" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -61,9 +63,10 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_introduccion';</script>
+    <link rel="icon" href="_static/pandas_logo.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. ¿Qué es un DataFrame?" href="2_dataframe.html" />
+    <link rel="next" title="🪄 Ejemplos prácticos" href="1_1_ejemplos.html" />
     <link rel="prev" title="Introducción al curso de Pandas" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,8 +149,8 @@
       
     
     
-    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-light" alt="Análisis de datos con Pandas - Home"/>
+    <img src="_static/pandas_logo.svg" class="logo__image only-dark pst-js-only" alt="Análisis de datos con Pandas - Home"/>
   
   
 </a></div>
@@ -169,13 +172,31 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. ¿Qué es Pandas?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_1_dataframe_ejercicios.html">Ejercicicio sobre creación de dataframes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dataframe_informacion.html">Información sobre el DataFrame</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_dataframe_manipulacion.html">Manipulación de DataFrames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_dataframe_graficos.html">Visualizacion de datos en pandas 📊</a></li>
-
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. ¿Qué es Pandas?</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_ejemplos.html">🪄 Ejemplos prácticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_ejemplo_completo.html">🪄 Ejemplo completo</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_dataframe.html">2. ¿Qué es un DataFrame?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_1_dataframe_ejercicios.html">📑 Ejercicicio sobre creación de DataFrames</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_dataframe_informacion.html">3. Información sobre el DataFrame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_1_dataframe_informacion_ejercicios.html">📑 Ejercicio sobre <strong>obtención de información</strong> de una Dataframe</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_dataframe_manipulacion_parte_1.html">4. Manipulación de DataFrames (1ª Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_1_dataframe_manipulacion_parte_1_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 1)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="5_dataframe_manipulacion_2.html">5. Manipulación de DataFrames (2º Parte)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_1_dataframe_manipulacion_2_ejercicios.html">📑 Ejercicios sobre <strong>manipulación de datos</strong> en Pandas (Parte 2)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="6_dataframe_graficos_basicos.html">6. Visualizacion de datos en Pandas: Gráficos básicos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_1_dataframe_graficos_basicos_ejercicios.html">📑 Ejercicios de visualización de datos: Gráficos básicos</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -227,6 +248,73 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/citius70/pandas-ticII-2BAC/gh-pages?urlpath=lab/tree/1_introduccion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/citius70/pandas-ticII-2BAC/blob/gh-pages/1_introduccion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -235,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +340,24 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1_introduccion.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/edit/gh-pages/1_introduccion.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/citius70/pandas-ticII-2BAC/issues/new?title=Issue%20on%20page%20%2F1_introduccion.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,9 +473,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-libreria-de-python">1.1. ¿Qué es una librería de Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-una-libreria">1.2. Características de una Librería</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-la-libreria-pandas">1.3.  Importar la librería Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-se-usa-pandas-en-proyectos-reales">1.1. 📌 ¿Para qué se usa Pandas en proyectos reales?**</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-libreria-de-python">1.2. 📖 ¿Qué es una librería de Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-una-libreria">1.3. Características de una librería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-la-libreria-pandas">1.4.  Importar la librería Pandas</a></li>
 </ul>
             </nav>
         </div>
@@ -384,10 +490,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="que-es-pandas">
 <h1>1. ¿Qué es Pandas?<a class="headerlink" href="#que-es-pandas" title="Link to this heading">#</a></h1>
-<p><a class="reference internal" href="#YOUR%20URL%20HERE"><span class="xref myst"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></span></a></p>
 <a class="reference internal image-reference" href="_images/pandas_logo.svg"><img alt="Pandas" class="align-right" src="_images/pandas_logo.svg" style="width: 300px;" /></a>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 🐼 es una potente <strong>librería</strong> de código abierto para Python, la cual nos permite <strong>manipular diversos tipos de datos estructurados</strong>, incluyendo funciones para leer y escribir datos en varios formatos como Excel, CSV, SQL, JSON y más.</p>
-<p>Una de sus principales características son los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, los cuales son muy similares a las hojas de Excel, pero permiten utilizar Python para manipularlos, lo que da mayor flexibilidad en la manipulación de datos, abre más posibilidades manipulación y permite la manipulación de un volumen de datos mucho mayor que en hojas de cálculo.</p>
+<p>Una de sus principales características son los <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, los cuales son muy <em>similares a las hojas de Excel</em>, pero permiten utilizar Python para manipularlos, lo que da mayor flexibilidad en la manipulación de datos, abre más posibilidades manipulación y permite la manipulación de un volumen de datos mucho mayor que en hojas de cálculo.</p>
 <div class="admonition-definiciones admonition">
 <p class="admonition-title">Definiciones</p>
 <ul class="simple">
@@ -398,33 +503,42 @@
 </li>
 </ul>
 </div>
+<section id="para-que-se-usa-pandas-en-proyectos-reales">
+<h2>1.1. 📌 ¿Para qué se usa Pandas en proyectos reales?**<a class="headerlink" href="#para-que-se-usa-pandas-en-proyectos-reales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Ciencia de datos</strong>: Preprocesamiento para machine learning.</p></li>
+<li><p><strong>Finanzas</strong>: Análisis de series temporales.</p></li>
+<li><p><strong>Web scraping</strong>: Organizar datos extraídos de sitios webs.</p></li>
+<li><p><strong>Automoción</strong>: Procesamiento de datos provenientes de sensores.</p></li>
+</ul>
+</section>
 <section id="que-es-una-libreria-de-python">
-<h2>1.1. ¿Qué es una librería de Python?<a class="headerlink" href="#que-es-una-libreria-de-python" title="Link to this heading">#</a></h2>
+<h2>1.2. 📖 ¿Qué es una librería de Python?<a class="headerlink" href="#que-es-una-libreria-de-python" title="Link to this heading">#</a></h2>
 <p>Una <code class="docutils literal notranslate"><span class="pre">librería</span></code> 📖 en programación es un conjunto de <strong>funciones y métodos que se agrupan en un solo paquete para facilitar el desarrollo de software</strong>. Las librerías permiten a los programadores reutilizar código, lo que ahorra tiempo y esfuerzo al evitar la necesidad de escribir código desde cero para tareas comunes. El número total de bibliotecas de Python es de más de 137000.</p>
-<div class="admonition-algunas-de-las-librerias-mas-importantes-de-python admonition">
+<div class="note admonition">
 <p class="admonition-title">Algunas de las librerías más importantes de Python</p>
 <ul class="simple">
-<li><p>NumPy: Para cálculos numéricos y manipulación de matrices y arreglos.</p></li>
-<li><p>Pandas: Para manipulación y análisis de datos estructurados en forma de tablas.</p></li>
-<li><p>Matplotlib, Bokeh y Seaborn: Para visualización de datos y creación de gráficos.</p></li>
-<li><p>OpenCV: Para tareas de procesamiento de imágenes y visión por computadora.</p></li>
-<li><p>Requests: Para realizar solicitudes HTTP y trabajar con APIs web.</p></li>
-<li><p>Flask y Django: Para crear aplicaciones web y sitios web.</p></li>
-<li><p>Scikit-Learn, TensorFlow y PyTorch: Para la implementación de aprendizaje profundo y machine learning.</p></li>
-<li><p>SQLite3 y SQLAlchemy: Para trabajar con bases de datos.</p></li>
+<li><p><strong>NumPy</strong>: Para cálculos numéricos y manipulación de matrices y arreglos.</p></li>
+<li><p><strong>Pandas</strong>: Para manipulación y análisis de datos estructurados en forma de tablas.</p></li>
+<li><p><strong>Matplotlib, Bokeh y Seaborn</strong>: Para visualización de datos y creación de gráficos.</p></li>
+<li><p><strong>OpenCV</strong>: Para tareas de procesamiento de imágenes y visión por computadora.</p></li>
+<li><p><strong>Requests</strong>: Para realizar solicitudes HTTP y trabajar con APIs web.</p></li>
+<li><p><strong>Flask y Django</strong>: Para crear aplicaciones web y sitios web.</p></li>
+<li><p><strong>Scikit-Learn, TensorFlow y PyTorch</strong>: Para la implementación de aprendizaje profundo y machine learning.</p></li>
+<li><p><strong>SQLite3 y SQLAlchemy</strong>: Para trabajar con bases de datos.</p></li>
 </ul>
 </div>
 <p>Una de estas librerías es <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, la cual se utiliza para el <strong>análisis y manipulación de datos</strong>.</p>
 </section>
 <section id="caracteristicas-de-una-libreria">
-<h2>1.2. Características de una Librería<a class="headerlink" href="#caracteristicas-de-una-libreria" title="Link to this heading">#</a></h2>
+<h2>1.3. Características de una librería<a class="headerlink" href="#caracteristicas-de-una-libreria" title="Link to this heading">#</a></h2>
 <p><strong>Reutilización de Código</strong>: Las librerías contienen código que puede ser utilizado en múltiples programas, lo que promueve la eficiencia y la consistencia.</p>
 <p><strong>Abstracción</strong>: Proporcionan una interfaz de alto nivel que oculta la complejidad de las implementaciones subyacentes, permitiendo a los desarrolladores centrarse en la lógica de su aplicación en lugar de en los detalles técnicos.</p>
 <p><strong>Modularidad</strong>: Las librerías suelen estar organizadas en módulos, lo que permite a los desarrolladores importar solo las partes que necesitan, manteniendo el código más limpio y manejable.</p>
 <p><strong>Facilidad de Uso</strong>: Muchas librerías están diseñadas para ser fáciles de usar, con documentación y ejemplos que ayudan a los desarrolladores a integrarlas en sus proyectos.</p>
 </section>
 <section id="importar-la-libreria-pandas">
-<h2>1.3.  Importar la librería Pandas<a class="headerlink" href="#importar-la-libreria-pandas" title="Link to this heading">#</a></h2>
+<h2>1.4.  Importar la librería Pandas<a class="headerlink" href="#importar-la-libreria-pandas" title="Link to this heading">#</a></h2>
 <p>Para utilizarla, debemos importarla de la siguiente manera <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span></code> , aunque la manera usual de hacerlo es con la instrucción <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>. Esto  permite acceder a las funciones y estructuras de datos de Pandas usando el <em>alias</em> <code class="docutils literal notranslate"><span class="pre">pd</span></code>, haciendo tu código más limpio y conciso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,15 +547,23 @@
 </div>
 </div>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">Muy importante</p>
+<p><strong>Páginas interactivas</strong></p>
+<p>Este curso tiene varias páginas configuradas para su uso <strong>interactivo</strong>. Puedes usar el botón “Código en vivo” (o “Live Code”) que aparece al colocar el cursor encima del ícono del <strong>cohete espacial</strong> 🚀 en la <strong>esquina superior derecha</strong> de las páginas que estén adecuadas para activar las funciones interactivas y usar Python de forma más atractiva.</p>
+<p>En ocasiones, la interactividad implicará completar un ejercicio, mientras que en otras páginas simplemente permitirá editar el contenido de las celdas de código y ejecutarlo para explorar el contenido de la página interactivamente.</p>
+</div>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "citius70/pandas-ticII-2BAC",
+            ref: "gh-pages",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -476,11 +598,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="2_dataframe.html"
+       href="1_1_ejemplos.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. ¿Qué es un DataFrame?</p>
+        <p class="prev-next-title">🪄 Ejemplos prácticos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -501,9 +623,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-libreria-de-python">1.1. ¿Qué es una librería de Python?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-una-libreria">1.2. Características de una Librería</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-la-libreria-pandas">1.3.  Importar la librería Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-que-se-usa-pandas-en-proyectos-reales">1.1. 📌 ¿Para qué se usa Pandas en proyectos reales?**</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-libreria-de-python">1.2. 📖 ¿Qué es una librería de Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-una-libreria">1.3. Características de una librería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-la-libreria-pandas">1.4.  Importar la librería Pandas</a></li>
 </ul>
   </nav></div>
 
@@ -518,7 +641,7 @@
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Alberto Durán Pérez
 </p>
 
   </div>
@@ -541,6 +664,9 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  Material educativo creado con ❤️ por Alberto · IES Frei Martín Sarmiento
+</div>
   </div>
   
 </div>
