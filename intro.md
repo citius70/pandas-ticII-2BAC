@@ -1,9 +1,7 @@
 
 # Introducción al curso de `Pandas`
 
-<div style="text-align: left;">
 ![Static Badge](https://img.shields.io/badge/Elaborado%20por-Alberto%20Dur%C3%A1n%20P%C3%A9rez-blue)
-</div>
 
 ¡Bienvenidos al curso de ``Pandas`` en Python! Este curso está diseñado para estudiantes de 2º de Bachillerato que desean aprender a manejar y analizar datos utilizando una de las bibliotecas más poderosas y populares de Python: **`Pandas`**.
 
