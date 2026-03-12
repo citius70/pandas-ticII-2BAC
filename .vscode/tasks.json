@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build:css",
+			"path": "jupyter_env/share/jupyter/labextensions/jupyterlab_pygments",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build:css - jupyter_env/share/jupyter/labextensions/jupyterlab_pygments",
+			"detail": "python generate_css.py"
+		}
+	]
+}
